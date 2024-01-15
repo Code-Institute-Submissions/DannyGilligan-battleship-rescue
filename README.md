@@ -2,12 +2,42 @@
 
 ![Hero Image](assets/documentation/battleship-rescue-hero-image.webp)
 
+## Table of Contents
+
+* [Introduction](#introduction)
+* [Features](#features)
+* [Design](#design)
+* [User Stories](#user-stories)
+* [Bugs](#bugs)
+* [Manual Testing](#manual-testing)
+* [Deployment](#deployment)
+* [Technologies Used](#technologies-used)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+<br>
+<br>
+<br>
 
 
+## Introduction
 
+## Features
 
+## Design
 
+## User Stories
 
+## Bugs
+
+## Manual Testing
+
+## Deployment
+
+## Technologies Used
+
+## Credits
+
+## Acknowledgements
 
 
 
