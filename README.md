@@ -38,6 +38,7 @@ An overview of the key design aspects is included below.
 <br>
 The diagrams below represent the process flows throughout the main phases of the game (these are best viewed in raw format).
 <br>
+<br>
 <details>
   <summary><i> Phase 1: Initialise Game</i></summary>
 <br>
