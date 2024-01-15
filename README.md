@@ -20,8 +20,14 @@
 
 
 ## Introduction
+<br>
+<br>
+<br>
 
 ## Features
+<br>
+<br>
+<br>
 
 ## Design
 
@@ -60,18 +66,39 @@ An overview of the key design aspects is included below.
 </details>
 
 </details> <!-- Container for process flows ends here -->
+<br>
+<br>
+<br>
 
 ## User Stories
+<br>
+<br>
+<br>
 
 ## Bugs
+<br>
+<br>
+<br>
 
 ## Manual Testing
+<br>
+<br>
+<br>
 
 ## Deployment
+<br>
+<br>
+<br>
 
 ## Technologies Used
+<br>
+<br>
+<br>
 
 ## Credits
+<br>
+<br>
+<br>
 
 ## Acknowledgements
 
