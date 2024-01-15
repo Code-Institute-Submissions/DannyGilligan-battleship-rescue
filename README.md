@@ -127,6 +127,14 @@ The diagrams below represent the process flows throughout the main phases of the
 
 </td></tr>
 <!-- Spacer -->
+<tr><td> Milestone 3 Project FAQs by Lane-Sawyer Thompson & Lucy Rush </td>
+<td> 
+
+[here](https://www.youtube.com/watch?v=BDKvisxzEbk)  
+
+</td></tr>
+<!-- Spacer -->
+
 
 </table>
 
