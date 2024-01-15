@@ -121,7 +121,7 @@ The diagrams below represent the process flows throughout the main phases of the
 </td></tr>
 <!-- Spacer -->
 
-
+</table>
 
 </details>
 
