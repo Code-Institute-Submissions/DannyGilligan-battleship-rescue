@@ -108,6 +108,24 @@ An overview of the key design aspects is included below.
   <summary>Images</summary>
 <br>
 
+<table>
+<tr><th><b> Thumbnail </b></th><th><b> Production File Name </b></th><th><b> Description </b></th><th><b> Source </b></th></tr>
+<!-- image 1 begins -->
+<tr><td>
+
+![Hero Image](assets/documentation/hero_image_thumbnail.webp)
+</td>
+<td>battleship-rescue-hero-image.webp</td>
+<td>Hero image used for README.md</td>
+<td>
+
+[here](https://wall.alphacoders.com/big.php?i=652229)
+</td>
+</tr>
+
+
+
+
 
 </details>
 
