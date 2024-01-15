@@ -120,6 +120,13 @@ The diagrams below represent the process flows throughout the main phases of the
 
 </td></tr>
 <!-- Spacer -->
+<tr><td> Guide on code validation by Lane-Sawyer Thompson & Matt Rudge </td>
+<td> 
+
+[here](https://www.youtube.com/watch?v=wiqAvRCheKo)  
+
+</td></tr>
+<!-- Spacer -->
 
 </table>
 
