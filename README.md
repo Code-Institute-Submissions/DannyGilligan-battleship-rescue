@@ -113,7 +113,12 @@ The diagrams below represent the process flows throughout the main phases of the
 
 </td></tr>
 <!-- Reference Material 1 ends -->
+<tr><td> Guide to Milestone 3 MVP by Kasia Bogucka </td>
+<td> 
 
+[here](https://www.youtube.com/watch?v=nNXmC6Tq0qw)  
+
+</td></tr>
 <!-- Spacer -->
 
 
