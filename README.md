@@ -115,6 +115,7 @@ An overview of the key design aspects is included below.
 
 ![Hero Image](assets/documentation/hero_image_thumbnail.webp)
 </td>
+
 <td>battleship-rescue-hero-image.webp</td>
 <td>Hero image used for README.md</td>
 <td>
@@ -123,6 +124,9 @@ An overview of the key design aspects is included below.
 </td>
 </tr>
 
+
+
+</table>
 
 
 
