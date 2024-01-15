@@ -96,12 +96,30 @@ An overview of the key design aspects is included below.
 <br>
 
 ## Credits
+
+<details>
+  <summary>Reference Materials Used</summary>
+<br>
+
+
+</details>
+
+
+
 <br>
 <br>
 <br>
 
 ## Acknowledgements
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
