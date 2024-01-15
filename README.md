@@ -104,6 +104,12 @@ An overview of the key design aspects is included below.
 
 </details>
 
+<details>
+  <summary>Images</summary>
+<br>
+
+
+</details>
 
 
 <br>
