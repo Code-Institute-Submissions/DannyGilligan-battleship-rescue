@@ -37,3 +37,40 @@ banner_art = ('''
                       /_/|_|/___//___/ \___/ \____//___/
 
 ''')
+
+
+
+
+
+sleep(0.4)
+print(banner_art_upper) # Prints 'Battleship' to screen
+typing_effect\
+('\033[36m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+#sleep(0.1)
+typing_effect\
+('\033[36m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+#sleep(0.1)
+typing_effect\
+('\033[36m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
+
+
+# Effects to be used for shot confirmations
+#typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+#print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
+#print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+#print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
+#print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+
+
+
+print(banner_art_lower) # Prints 'Rescue' to screen
+
+
+
+
+def typing_effect(text, speed):   
+    words = text
+    for char in words:
+        time.sleep(speed) #amended to make speed a parameter
+        sys.stdout.write(char)
+        sys.stdout.flush()
