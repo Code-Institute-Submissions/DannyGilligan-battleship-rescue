@@ -13,6 +13,7 @@ from time import sleep
 
 username = None
 mission_difficulty = None
+difficulty_levels = ['cadet', 'captain', 'admiral']
 mission_acceptance = None
 
 def typing_effect(text, speed):   
