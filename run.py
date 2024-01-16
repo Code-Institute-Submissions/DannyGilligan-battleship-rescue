@@ -11,6 +11,9 @@ import time
 from time import sleep
 
 
+username = None
+
+
 
 def typing_effect(text, speed):   
     words = text
