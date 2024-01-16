@@ -65,9 +65,9 @@ def validate_username_screen():
     while len(username) < 2 or len(username) > 15:
         clearscreen() # Screen is cleared
         print(banner_art) 
-        username = input('\n\n           \033[33mAlert!!' + \
+        username = input('\n\n           \x1b[93mAlert!!' + \
         '\033[0m Enter a valid'\
-        + ' callsign between \x1b[33m2\033[0m and \x1b[33m15\033[0m' + \
+        + ' callsign between \x1b[93m2\033[0m and \x1b[93m15\033[0m' + \
         ' characters\n\n                                   ')
         username = username.strip() # Strip method is used
     clearscreen() # Screen is cleared 
@@ -96,9 +96,9 @@ def mission_difficulty_screen():
     while mission_difficulty not in difficulty_levels:
         clearscreen()
         print(banner_art)
-        mission_difficulty = input('\n\n       \033[33mAlert!!\033[0m ' + \
-        'Enter Mission Difficulty (select \x1b[33mCadet\033[0m, \x1b[33mCaptain\033[0m' + \
-        ' or \x1b[33mAdmiral\033[0m) \n\n                                   ')
+        mission_difficulty = input('\n\n       \x1b[93mAlert!!\033[0m ' + \
+        'Enter Mission Difficulty (select \x1b[93mCadet\033[0m, \x1b[93mCaptain\033[0m' + \
+        ' or \x1b[93mmAdmiral\033[0m) \n\n                                   ')
         mission_difficulty = mission_difficulty.lower()
     clearscreen()
 
@@ -181,8 +181,8 @@ def mission_accept_screen():
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
-        mission_acceptance = input('              \033[33mAlert!!\033[0m' + \
-        ' Enter \x1b[33mY\033[0m for Yes or \x1b[33mN\033[0m for No. Accept ' + \
+        mission_acceptance = input('              \x1b[93mAlert!!\033[0m' + \
+        ' Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m for No. Accept ' + \
         'Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
         print(mission_acceptance + " test test test")
@@ -251,7 +251,7 @@ typing_effect('                         The enemy controls the Land.\n', 0.03)
 typing_effect('                         The enemy controls the Skies.\n', 0.03)
 typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
 sleep(0.4)
-username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[33m2\033[0m and \x1b[33m15\033[0m characters):\n\n', 0.03) # Requests user to input 'callsign'
+username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03) # Requests user to input 'callsign'
 username = input('                                 ')
 validate_username_screen()                                                                                              # The steps to validate the username are called in this function
 mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
