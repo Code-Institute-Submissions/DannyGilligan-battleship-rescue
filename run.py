@@ -12,7 +12,7 @@ from time import sleep
 
 
 username = None
-
+mission_difficulty = None
 
 
 def typing_effect(text, speed):   
