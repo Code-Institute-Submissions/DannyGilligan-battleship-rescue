@@ -104,6 +104,94 @@ def mission_difficulty_screen():
 
 
 
+def mission_accept_screen():
+    clearscreen()
+    time.sleep(.4)
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n                   Requesting connection with Central Command.''')
+    time.sleep(1)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n                   Requesting connection with Central Command..''')
+    time.sleep(.4)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n                   Requesting connection with Central Command...''')
+    time.sleep(.4)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command....''')
+    time.sleep(.4)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.....''')
+    time.sleep(.4)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command......''')
+    time.sleep(.4)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    print(''' \n\n\n\n\n\n\n\n\n\n                          \033[32mSecure connection successful.\033[0m''')
+    time.sleep(1)
+    clearscreen()
+    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
+    message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \033[36mURGENT\033[0m Incoming''')
+    message2 = (f''' Message: For {username.capitalize()}'s Eyes Only''')
+    print(message1 + message2)
+    time.sleep(1.5)
+    clearscreen()
+    typing_effect(f'''
+    {mission_difficulty.capitalize()},\n 
+    It is with great regret that I must inform you that the situation 
+    has become dire. Our forces are being routed in every theatre 
+    and on every front, our supply chains have been decimated and our 
+    ability to sustain a defence against this onslaught can be measured 
+    now in hours.\n
+    Your mission is to intercept and eliminate a fleet of 5 enemy 
+    Destroyers that are currently in pursuit of 2 friendly Merchant 
+    ships sailing for our Capital Port. These Merchant ships are on a 
+    clandestine mission to deliver classified cargo that will turn the 
+    tide of this war once and for all!\n
+    Unfortunately, during a recent skirmish, the Merchant ships lost all 
+    communication capabilities and the Enemy's radar jamming technology 
+    is preventing us from locating them. But we know they're out there, 
+    somewhere. Hunt down the enemy with extreme prejudice, avoid 
+    friendly fire at all costs and rescue those Merchant ships.\n
+    Losing that cargo, means losing the war!\n''',0.03)
+    sleep(0.5)
+    mission_acceptance = input('\n                         Accept' + \
+    ' Mission? (Y / N)\n\n                                   ') 
+    mission_acceptance = mission_acceptance.lower()
+
+    while mission_acceptance not in mission_accept_options:
+        clearscreen()
+        print(f'''
+    {mission_difficulty.capitalize()},\n 
+    It is with great regret that I must inform you that the situation 
+    has become dire. Our forces are being routed in every theatre 
+    and on every front, our supply chains have been decimated and our 
+    ability to sustain a defence against this onslaught can be measured 
+    now in hours.\n
+    Your mission is to intercept and eliminate a fleet of 5 enemy 
+    Destroyers that are currently in pursuit of 2 friendly Merchant 
+    ships sailing for our Capital Port. These Merchant ships are on a 
+    clandestine mission to deliver classified cargo that will turn the 
+    tide of this war once and for all!\n
+    Unfortunately, during a recent skirmish, the Merchant ships lost all 
+    communication capabilities and the Enemy's radar jamming technology 
+    is preventing us from locating them. But we know they're out there, 
+    somewhere. Hunt down the enemy with extreme prejudice, avoid 
+    friendly fire at all costs and rescue those Merchant ships.\n
+    Losing that cargo, means losing the war!\n''')
+
+        mission_acceptance = input('              \033[33mAlert!!\033[0m' + \
+        ' Enter Y for Yes or N for No. Accept ' + \
+        'Mission?\n\n                                   ')
+        mission_acceptance = mission_acceptance.lower()
+        print(mission_acceptance + " test test test")
+        print(username + " test test test")
+
 
 
 
