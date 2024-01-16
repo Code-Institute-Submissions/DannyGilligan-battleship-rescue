@@ -143,21 +143,19 @@ def mission_accept_screen():
     clearscreen()
     typing_effect(f'''
     {mission_difficulty.capitalize()},\n 
-    It is with great regret that I must inform you that the situation 
-    has become dire. Our forces are being routed in every theatre 
-    and on every front, our supply chains have been decimated and our 
-    ability to sustain a defence against this onslaught can be measured 
-    now in hours.\n
-    Your mission is to intercept and eliminate a fleet of 5 enemy 
-    Destroyers that are currently in pursuit of 2 friendly Merchant 
-    ships sailing for our Capital Port. These Merchant ships are on a 
-    clandestine mission to deliver classified cargo that will turn the 
-    tide of this war once and for all!\n
-    Unfortunately, during a recent skirmish, the Merchant ships lost all 
-    communication capabilities and the Enemy's radar jamming technology 
-    is preventing us from locating them. But we know they're out there, 
-    somewhere. Hunt down the enemy with extreme prejudice, avoid 
-    friendly fire at all costs and rescue those Merchant ships.\n
+    It is with great regret that I must inform you that the situation has
+    become dire. Our forces are being routed in every theatre and on every
+    front, our supply chains have been decimated and our ability to sustain
+    a defence against this onslaught can be measured now in hours.\n
+    Your mission is to intercept and eliminate a fleet of 5 enemy Destroyers
+    currently pursuing 2 friendly Merchant ships sailing for our Capital Port. 
+    These Merchant ships are on a clandestine mission to deliver classified 
+    cargo that will turn the tide of this war once and for all!\n
+    Unfortunately, during a recent skirmish, the Merchant ships lost all
+    communication capabilities and the Enemy's radar jamming technology is
+    preventing us from locating them. But we know they're out there, somewhere.
+    Hunt down the enemy with extreme prejudice, avoid friendly fire at all
+    costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
     mission_acceptance = input('\n                         Accept' + \
@@ -168,21 +166,19 @@ def mission_accept_screen():
         clearscreen()
         print(f'''
     {mission_difficulty.capitalize()},\n 
-    It is with great regret that I must inform you that the situation 
-    has become dire. Our forces are being routed in every theatre 
-    and on every front, our supply chains have been decimated and our 
-    ability to sustain a defence against this onslaught can be measured 
-    now in hours.\n
-    Your mission is to intercept and eliminate a fleet of 5 enemy 
-    Destroyers that are currently in pursuit of 2 friendly Merchant 
-    ships sailing for our Capital Port. These Merchant ships are on a 
-    clandestine mission to deliver classified cargo that will turn the 
-    tide of this war once and for all!\n
-    Unfortunately, during a recent skirmish, the Merchant ships lost all 
-    communication capabilities and the Enemy's radar jamming technology 
-    is preventing us from locating them. But we know they're out there, 
-    somewhere. Hunt down the enemy with extreme prejudice, avoid 
-    friendly fire at all costs and rescue those Merchant ships.\n
+    It is with great regret that I must inform you that the situation has
+    become dire. Our forces are being routed in every theatre and on every
+    front, our supply chains have been decimated and our ability to sustain
+    a defence against this onslaught can be measured now in hours.\n
+    Your mission is to intercept and eliminate a fleet of 5 enemy Destroyers
+    currently pursuing 2 friendly Merchant ships sailing for our Capital Port. 
+    These Merchant ships are on a clandestine mission to deliver classified 
+    cargo that will turn the tide of this war once and for all!\n
+    Unfortunately, during a recent skirmish, the Merchant ships lost all
+    communication capabilities and the Enemy's radar jamming technology is
+    preventing us from locating them. But we know they're out there, somewhere.
+    Hunt down the enemy with extreme prejudice, avoid friendly fire at all
+    costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
         mission_acceptance = input('              \033[33mAlert!!\033[0m' + \
