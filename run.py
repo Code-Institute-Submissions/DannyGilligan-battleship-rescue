@@ -74,6 +74,36 @@ def validate_username_screen():
 
 
 
+def mission_difficulty_screen():
+    """
+    The mission_difficulty_screen will 
+    display the screen where the user
+    can enter their desired difficulty level.
+    The options available, are Cadet (easy),
+    Captain (normal) and Admiral (hard). 
+    A while loop performs validation on the user
+    input, and compares their input against the 
+    values held in the difficulty_levels
+    variable.
+    """
+    print(banner_art) # Prints the banner art on the screen
+    global mission_difficulty
+    global mission_acceptance
+    mission_difficulty = input(('\n\n               Enter Mission Diffic') + \
+    ('ulty (Cadet, Captain, Admiral) \n\n                                   '))
+    mission_difficulty = mission_difficulty.lower()
+
+    while mission_difficulty not in difficulty_levels:
+        clearscreen()
+        print(banner_art)
+        mission_difficulty = input('\n\n       \033[33mAlert!!\033[0m ' + \
+        'Enter Mission Difficulty (Cadet, Captain,' + \
+        ' Admiral) \n\n                                   ')
+        mission_difficulty = mission_difficulty.lower()
+    clearscreen()
+
+
+
 
 
 
