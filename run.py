@@ -142,7 +142,7 @@ def mission_accept_screen():
     time.sleep(1.5)
     clearscreen()
     typing_effect(f'''
-    {mission_difficulty.capitalize()},\n 
+    {mission_difficulty.capitalize()}, 
     It is with great regret that I must inform you that the situation has
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
@@ -165,7 +165,7 @@ def mission_accept_screen():
     while mission_acceptance not in mission_accept_options:
         clearscreen()
         print(f'''
-    {mission_difficulty.capitalize()},\n 
+    {mission_difficulty.capitalize()}, 
     It is with great regret that I must inform you that the situation has
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
