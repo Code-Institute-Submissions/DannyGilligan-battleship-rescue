@@ -1,6 +1,9 @@
 # Battleship Rescue
 
 ![Hero Image](assets/documentation/battleship-rescue-hero-image.webp)
+<br>
+<br>
+<br>
 
 ## Table of Contents
 
@@ -31,7 +34,7 @@
 
 ## Design
 
-An overview of the key design aspects is included below.
+An overview of the key design aspects of the project is included below.
 
 <details> <!-- Container for process flows starts here -->
   <summary><b>Process Flows</b></summary>
@@ -137,7 +140,9 @@ The diagrams below represent the process flows throughout the main phases of the
 
 
 </table>
-
+<br>
+<br>
+<br>
 </details>
 
 <details>
