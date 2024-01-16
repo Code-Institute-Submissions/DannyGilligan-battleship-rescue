@@ -67,7 +67,7 @@ def validate_username_screen():
         print(banner_art) 
         username = input('\n\n           \033[33mAlert!!' + \
         '\033[0m Enter a valid'\
-        + ' callsign between 2 and 15' + \
+        + ' callsign between \x1b[33m2\033[0m and \x1b[33m15\033[0m' + \
         ' characters\n\n                                   ')
         username = username.strip() # Strip method is used
     clearscreen() # Screen is cleared 
@@ -251,7 +251,7 @@ typing_effect('                         The enemy controls the Land.\n', 0.03)
 typing_effect('                         The enemy controls the Skies.\n', 0.03)
 typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
 sleep(0.4)
-username_prompt = typing_effect('\n            Enter your callsign below (between 2 and 15 characters):\n\n', 0.03) # Requests user to input 'callsign'
+username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[33m2\033[0m and \x1b[33m15\033[0m characters):\n\n', 0.03) # Requests user to input 'callsign'
 username = input('                                 ')
 validate_username_screen()                                                                                              # The steps to validate the username are called in this function
 mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
