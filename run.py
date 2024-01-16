@@ -15,6 +15,8 @@ username = None
 mission_difficulty = None
 difficulty_levels = ['cadet', 'captain', 'admiral']
 mission_acceptance = None
+mission_accept_options = ['y', 'n'] 
+
 
 def typing_effect(text, speed):   
     words = text
