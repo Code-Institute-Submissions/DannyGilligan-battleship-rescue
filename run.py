@@ -11,10 +11,19 @@ import time
 from time import sleep
 
 
+# Stores a valid username
 username = None
+
+# Stores the mission difficulty
 mission_difficulty = None
+
+# Stores the different difficulty levels
 difficulty_levels = ['cadet', 'captain', 'admiral']
+
+# Stores whether the mission was accepted
 mission_acceptance = None
+
+# Stores the valid options to accept or reject mission
 mission_accept_options = ['y', 'n'] 
 
 
@@ -33,6 +42,39 @@ def clearscreen():
     displayed to the user.
     """
     os.system('cls' if os.name=='nt' else 'clear')
+
+
+def validate_username_screen():
+    """
+    The validate_username function will strip any 
+    leading or trailing whitespaces from the
+    username input variable, the value will then be checked
+    to ensure it is more than 2
+    characters and less than 15.
+    """
+
+    global username
+    username = username.strip()
+
+
+    """
+    # While loop is used to perform validation on the username input,
+    # must be greater than 2 characters and less than 15. The while 
+    # loop will display an alert message until the parameters are satisfied.
+    """
+    while len(username) < 2 or len(username) > 15:
+        clearscreen() # Screen is cleared
+        print(banner_art) 
+        username = input('\n\n           \033[33mAlert!!' + \
+        '\033[0m Enter a valid'\
+        + ' callsign between 2 and 15' + \
+        ' characters\n\n                                   ')
+        username = username.strip() # Strip method is used
+    clearscreen() # Screen is cleared 
+
+
+
+
 
 
 banner_art_upper = ('''
