@@ -2,11 +2,32 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+
+
 ########## Imports ##########
 import os
 import sys
 import time
 from time import sleep
+
+
+
+def typing_effect(text, speed):   
+    words = text
+    for char in words:
+        time.sleep(speed) #amended to make speed a parameter
+        sys.stdout.write(char)
+        sys.stdout.flush()
+
+
+def clearscreen():                                    
+    """
+    The clearscreen function will clear any 
+    content from the current screen
+    displayed to the user.
+    """
+    os.system('cls' if os.name=='nt' else 'clear')
+
 
 banner_art_upper = ('''
              ___   ___  ______ ______ __    ____ ____ __ __ ____ ___   
@@ -44,6 +65,7 @@ banner_art = ('''
 
 sleep(0.4)
 print(banner_art_upper) # Prints 'Battleship' to screen
+
 typing_effect\
 ('\033[36m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
 #sleep(0.1)
@@ -53,6 +75,7 @@ typing_effect\
 typing_effect\
 ('\033[36m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
 
+print(banner_art_lower) # Prints 'Rescue' to screen
 
 # Effects to be used for shot confirmations
 #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
@@ -63,14 +86,8 @@ typing_effect\
 
 
 
-print(banner_art_lower) # Prints 'Rescue' to screen
 
 
 
 
-def typing_effect(text, speed):   
-    words = text
-    for char in words:
-        time.sleep(speed) #amended to make speed a parameter
-        sys.stdout.write(char)
-        sys.stdout.flush()
+
