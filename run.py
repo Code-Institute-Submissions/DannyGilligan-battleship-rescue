@@ -98,7 +98,7 @@ def mission_difficulty_screen():
         print(banner_art)
         mission_difficulty = input('\n\n       \033[33mAlert!!\033[0m ' + \
         'Enter Mission Difficulty (Type \x1b[33mCadet\033[0m, \x1b[33mCaptain\033[0m' + \
-        'or \x1b[33mAdmiral\033[0m) \n\n                                   ')
+        ' or \x1b[33mAdmiral\033[0m) \n\n                                   ')
         mission_difficulty = mission_difficulty.lower()
     clearscreen()
 
