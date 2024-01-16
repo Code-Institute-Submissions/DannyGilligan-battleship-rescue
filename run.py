@@ -250,7 +250,16 @@ print(banner_art_lower) # Prints 'Rescue' to screen
 #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
 #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
 
-
+sleep(0.6)
+typing_effect('\n\n                         The enemy controls the Land.\n\n', 0.03)
+typing_effect('                         The enemy controls the Skies.\n\n', 0.03)
+typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
+sleep(0.4)
+username_prompt = typing_effect('\n            Enter your callsign below (between 2 and 15 characters):\n\n', 0.03) # Requests user to input 'callsign'
+username = input('                                 ')
+validate_username_screen()                                                                                              # The steps to validate the username are called in this function
+mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
+mission_accept_screen()
 
 
 
