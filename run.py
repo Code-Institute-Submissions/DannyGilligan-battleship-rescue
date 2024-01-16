@@ -152,7 +152,7 @@ def mission_accept_screen():
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
     Unfortunately, during a recent skirmish, the Merchant ships lost all
-    communication capabilities and the Enemy's radar jamming technology is
+    communication capabilities and the enemy's radar jamming technology is
     preventing us from locating them. But we know they're out there, somewhere.
     Hunt down the enemy with extreme prejudice, avoid friendly fire at all
     costs and rescue those Merchant ships.\n
@@ -175,14 +175,14 @@ def mission_accept_screen():
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
     Unfortunately, during a recent skirmish, the Merchant ships lost all
-    communication capabilities and the Enemy's radar jamming technology is
+    communication capabilities and the enemy's radar jamming technology is
     preventing us from locating them. But we know they're out there, somewhere.
     Hunt down the enemy with extreme prejudice, avoid friendly fire at all
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
         mission_acceptance = input('              \033[33mAlert!!\033[0m' + \
-        ' Enter Y for Yes or N for No. Accept ' + \
+        ' Enter \x1b[33mY\033[0m for Yes or \x1b[33mN\033[0m for No. Accept ' + \
         'Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
         print(mission_acceptance + " test test test")
