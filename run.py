@@ -327,13 +327,13 @@ def initialise_game_values():
     assigned using this function, and driven by the difficulty
     level selected by the user
     """
-    if mission_difficulty === 'cadet':
+    if mission_difficulty == 'cadet':
         enemy_ship_initialise_count = 5
         merchant_ship_initialise_count = 5
         battleship_hull_locations_initialise_count = 5
         battleship_hull_integrity = 100
         torpedo_count = 45
-    else if mission_difficulty === 'captain':
+    elif mission_difficulty == 'captain':
         enemy_ship_initialise_count = 10
         merchant_ship_initialise_count = 4
         battleship_hull_locations_initialise_count = 10
