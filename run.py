@@ -309,6 +309,23 @@ def mission_accept_screen():
         print(username + " test test test")
 
 
+def generate_battleship_hull_hit_locations():
+    """
+    This function will generate random x and y coordinates
+    representing the location of each hull hit points on the 
+    user's battleship. This is what the enemy will be firing
+    upon.
+    """
+    while len(battleship_hull_locations) < 8:
+        x_coordinate = (randint(0, 7))
+        y_coordinate = (randint(0, 7))
+        hull_hit_location = (x_coordinate, y_coordinate)
+        if hull_hit_location in battleship_hull_locations:
+            continue # Note for readme, changed from break to continue, unexpected behaviour
+        else:
+            battleship_hull_locations.append(hull_hit_location)
+
+
 
 
 def main():
@@ -320,7 +337,14 @@ def main():
     validate_username_screen()  # Validates username input
     mission_difficulty_screen() # Requests user to select difficulty  
     mission_accept_screen()     # Displays mission details with prompt
+    generate_battleship_hull_hit_locations() # Create battleship hull hit locations
 
-main()
 
+#main()
 
+generate_battleship_hull_hit_locations()
+generate_enemy_ship_locations()
+generate_merchant_ship_locations()
+print(battleship_hull_locations)
+print(enemy_ship_locations)
+print(merchant_ship_locations)
