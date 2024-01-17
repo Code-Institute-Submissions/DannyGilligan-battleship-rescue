@@ -91,6 +91,32 @@ The diagrams below represent the process flows throughout the main phases of the
 <br>
 
 ## Deployment
+
+The app was deployed as a Minimum Viable Product using the Heroku platform.
+
+<details>
+  <summary><b>The steps for deployment are outlined here</b></summary>
+<br>
+
+<details>
+  <summary><i> Phase 1: Initialise Game</i></summary>
+<br>
+
+
+
+</details>
+
+
+
+<table>
+
+
+
+</table>
+</details>
+
+
+
 <br>
 <br>
 <br>
