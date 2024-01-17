@@ -168,7 +168,7 @@ def mission_difficulty_screen():
     values held in the difficulty_levels
     variable.
     """
-    print(banner_art) # Prints the banner art on the screen
+    print(banner_art)
     global mission_difficulty
     global mission_acceptance
     mission_difficulty = input(('\n\n               Enter Mission Diffic') + \
@@ -215,7 +215,7 @@ def mission_accept_screen():
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command......''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n                          \033[32mSecure connection successful.\033[0m''')
+    print(''' \n\n\n\n\n\n\n\n\n\n                          \x1b[92mSecure connection successful.\033[0m''')
     time.sleep(1)
     clearscreen()
     message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \033[36mURGENT\033[0m Incoming''')
@@ -311,7 +311,7 @@ def start_screen():
     typing_effect('                         The enemy controls the Skies.\n', 0.03)
     typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
     sleep(0.4)
-    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03) # Requests user to input 'callsign'
+    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
     username = input('                                 ')
 
 
