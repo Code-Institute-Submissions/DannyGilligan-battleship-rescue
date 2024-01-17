@@ -45,7 +45,7 @@ merchant_ship_initialise_count = None
 merchant_ship_locations = []
 
 # Stores the initialised count of battleship hull locations
-battleship_hull_initialise_count = None
+battleship_hull_locations_initialise_count = None
 
 # Stores user's battleship hull locations on battle grid
 battleship_hull_locations = []
@@ -56,7 +56,7 @@ miss_locations = []
 # Stores value of the user's battleship hull integrity
 battleship_hull_integrity = None
 
-# Stores torpedo's available to user
+# Stores torpedos available to user
 torpedo_count = None
 
 # Stores the 'Battleship' portion of the banner art
@@ -316,6 +316,35 @@ def mission_accept_screen():
         mission_acceptance = mission_acceptance.lower()
         print(mission_acceptance + " test test test")
         print(username + " test test test")
+
+
+def initialise_game_values():
+    """
+    This function will determine and initialise the game values
+    to be used when the game is launched. The values of the number
+    of battleship hull hit locations, enemy ships, merchant ships,
+    torpedos and the hull integrity starting value will be 
+    assigned using this function, and driven by the difficulty
+    level selected by the user
+    """
+    if mission_difficulty === 'cadet':
+        enemy_ship_initialise_count = 5
+        merchant_ship_initialise_count = 5
+        battleship_hull_locations_initialise_count = 5
+        battleship_hull_integrity = 100
+        torpedo_count = 45
+    else if mission_difficulty === 'captain':
+        enemy_ship_initialise_count = 10
+        merchant_ship_initialise_count = 4
+        battleship_hull_locations_initialise_count = 10
+        battleship_hull_integrity = 80
+        torpedo_count = 40
+    else:
+        enemy_ship_initialise_count = 15
+        merchant_ship_initialise_count = 3
+        battleship_hull_locations_initialise_count = 15
+        battleship_hull_integrity = 60
+        torpedo_count = 35
 
 
 def generate_battleship_hull_hit_locations():
