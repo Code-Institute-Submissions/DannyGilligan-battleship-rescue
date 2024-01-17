@@ -32,7 +32,8 @@ mission_acceptance = None
 # Stores the valid options to accept or reject mission
 mission_accept_options = ['y', 'n'] 
 
-
+# Stores the initialised count of enemy ships
+enemy_ship_initialise_count = None
 
 # Stores enemy ship locations on battle grid
 enemy_ship_locations = []
