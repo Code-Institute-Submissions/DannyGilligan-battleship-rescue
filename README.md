@@ -395,6 +395,9 @@ Once the app build and deployment has been completed in Heroku, a confirmation w
 The deployment process is now complete.
 <br>
 <br>
+The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com/
+<br>
+<br>
 <table>
 <tr>
 <td>

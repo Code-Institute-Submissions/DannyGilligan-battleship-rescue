@@ -133,8 +133,7 @@ def validate_username_screen():
     The validate_username function will strip any 
     leading or trailing whitespaces from the
     username input variable, the value will then be checked
-    to ensure it is more than 2
-    characters and less than 15.
+    to ensure it is more than 2 characters and less than 15.
     """
 
     global username
