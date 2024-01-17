@@ -29,6 +29,8 @@ mission_accept_options = ['y', 'n']
 # Stores enemy ship locations on battle grid
 enemy_ship_locations = []
 
+# Stores merchant_ship_locations on battle grid
+merchant_ship_locations = []
 
 
 def typing_effect(text, speed):   
