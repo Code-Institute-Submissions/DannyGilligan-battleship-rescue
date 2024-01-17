@@ -2,7 +2,9 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+# >>>>>>>>>>>>>>> NOTES TO ADD TO README <<<<<<<<<<<<<<<<
 
+# Resolved bug, made username global in start screen functions, was throwing error 
 
 # >>>>>>>>>>>>>>> Imports <<<<<<<<<<<<<<<
 
@@ -289,6 +291,8 @@ def start_screen():
     The start screen function displays the initial welcome to
     the user along with the banner art and callsign input field
     """
+    global username
+
     sleep(0.4)
     print(banner_art_upper) # Prints 'Battleship' to screen
 
@@ -327,6 +331,6 @@ def main():
 
 
 
-
+main()
 
 
