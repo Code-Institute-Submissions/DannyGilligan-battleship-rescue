@@ -348,8 +348,7 @@ def mission_accept_screen():
         ' Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m for No. Accept ' + \
         'Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
-        print(mission_acceptance + " test test test")
-        print(username + " test test test")
+
 
 
 def generate_battleship_hull_hit_locations():
@@ -431,6 +430,9 @@ print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
 print('Battleship hull locations starting value: ' + str(battleship_hull_locations_initialise_count))
 print('Battleship hull integrity starting value: ' + str(battleship_hull_integrity))
 print('Torpedo count starting value: ' + str(torpedo_count))
-print('Battleship hull locations: ' + battleship_hull_locations)
-print('Enemy ship locations: ' + enemy_ship_locations)
-print('Merchant ship locations: ' + merchant_ship_locations)
+print('\nBattleship hull locations: ', end="")
+print(battleship_hull_locations)
+print('\nEnemy ship locations: ', end="")
+print(enemy_ship_locations)
+print('\nMerchant ship locations: ', end="")
+print(merchant_ship_locations)
