@@ -42,6 +42,8 @@ miss_locations = []
 battleship_hull_integrity = 100
 
 
+# Stores torpedo's available to user
+torpedo_count = 40
 
 
 def typing_effect(text, speed):   
