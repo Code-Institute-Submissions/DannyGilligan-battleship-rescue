@@ -32,8 +32,13 @@ mission_acceptance = None
 # Stores the valid options to accept or reject mission
 mission_accept_options = ['y', 'n'] 
 
+
+
 # Stores enemy ship locations on battle grid
 enemy_ship_locations = []
+
+# Stores the initialised count of merchant ships
+merchant_ship_initialise_count = None
 
 # Stores merchant_ship_locations on battle grid
 merchant_ship_locations = []
@@ -370,12 +375,13 @@ def main():
     The main function will trigger all 
     functions necessary to run the game
     """
-    start_screen()              # Displays start screen
-    validate_username_screen()  # Validates username input
+    start_screen() # Displays start screen
+    validate_username_screen() # Validates username input
     mission_difficulty_screen() # Requests user to select difficulty  
-    mission_accept_screen()     # Displays mission details with prompt
-    generate_battleship_hull_hit_locations() # Create battleship hull hit locations
-
+    mission_accept_screen() # Displays mission details with prompt
+    generate_battleship_hull_hit_locations() # Creates battleship hull hit locations
+    generate_enemy_ship_locations() # Creates enemy ship locations
+    generate_merchant_ship_locations() # Creates merchant ship locations
 
 #main()
 
