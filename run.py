@@ -44,6 +44,9 @@ merchant_ship_initialise_count = None
 # Stores merchant_ship_locations on battle grid
 merchant_ship_locations = []
 
+# Stores the initialised count of battleship hull locations
+battleship_hull_initialise_count = None
+
 # Stores user's battleship hull locations on battle grid
 battleship_hull_locations = []
 
