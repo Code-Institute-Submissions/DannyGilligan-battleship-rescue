@@ -232,6 +232,40 @@ def mission_difficulty_screen():
     clearscreen()
 
 
+def initialise_game_values(): # Note for bug in readme, had to move this higher up in the program due to unexpected behaviour
+    """
+    This function will determine and initialise the game values
+    to be used when the game is launched. The values of the number
+    of battleship hull hit locations, enemy ships, merchant ships,
+    torpedos and the hull integrity starting value will be 
+    assigned using this function, and driven by the difficulty
+    level selected by the user
+    """
+    global enemy_ship_initialise_count
+    global merchant_ship_initialise_count
+    global battleship_hull_locations_initialise_count
+    global battleship_hull_integrity
+    global torpedo_count
+
+    if mission_difficulty == 'cadet':
+        enemy_ship_initialise_count = 5
+        merchant_ship_initialise_count = 5
+        battleship_hull_locations_initialise_count = 5
+        battleship_hull_integrity = 100
+        torpedo_count = 45
+    elif mission_difficulty == 'captain':
+        enemy_ship_initialise_count = 10
+        merchant_ship_initialise_count = 4
+        battleship_hull_locations_initialise_count = 10
+        battleship_hull_integrity = 80
+        torpedo_count = 40
+    else:
+        enemy_ship_initialise_count = 15
+        merchant_ship_initialise_count = 3
+        battleship_hull_locations_initialise_count = 15
+        battleship_hull_integrity = 60
+        torpedo_count = 35
+
 
 def mission_accept_screen():
     """
@@ -275,9 +309,10 @@ def mission_accept_screen():
     It is with great regret that I must inform you that the situation has
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
-    a defence against this onslaught can be measured now in hours.\n
-    Your mission is to intercept and eliminate a fleet of 5 enemy Destroyers
-    currently pursuing 2 friendly Merchant ships sailing for our Capital Port. 
+    a defence against this onslaught can be measured now in hours.\n\nYour 
+    mission is to intercept and eliminate a fleet of {enemy_ship_initialise_count} 
+    enemy Destroyers currently pursuing {merchant_ship_initialise_count} 
+    friendly Merchant ships sailing for our Capital Port. 
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
     Unfortunately, during a recent skirmish, the Merchant ships lost all
@@ -298,9 +333,10 @@ def mission_accept_screen():
     It is with great regret that I must inform you that the situation has
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
-    a defence against this onslaught can be measured now in hours.\n
-    Your mission is to intercept and eliminate a fleet of 5 enemy Destroyers
-    currently pursuing 2 friendly Merchant ships sailing for our Capital Port. 
+    a defence against this onslaught can be measured now in hours.\n\nYour 
+    mission is to intercept and eliminate a fleet of {enemy_ship_initialise_count} 
+    enemy Destroyers currently pursuing {merchant_ship_initialise_count} 
+    friendly Merchant ships sailing for our Capital Port. 
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
     Unfortunately, during a recent skirmish, the Merchant ships lost all
@@ -316,41 +352,6 @@ def mission_accept_screen():
         mission_acceptance = mission_acceptance.lower()
         print(mission_acceptance + " test test test")
         print(username + " test test test")
-
-
-def initialise_game_values():
-    """
-    This function will determine and initialise the game values
-    to be used when the game is launched. The values of the number
-    of battleship hull hit locations, enemy ships, merchant ships,
-    torpedos and the hull integrity starting value will be 
-    assigned using this function, and driven by the difficulty
-    level selected by the user
-    """
-    global enemy_ship_initialise_count
-    global merchant_ship_initialise_count
-    global battleship_hull_locations_initialise_count
-    global battleship_hull_integrity
-    global torpedo_count
-
-    if mission_difficulty == 'cadet':
-        enemy_ship_initialise_count = 5
-        merchant_ship_initialise_count = 5
-        battleship_hull_locations_initialise_count = 5
-        battleship_hull_integrity = 100
-        torpedo_count = 45
-    elif mission_difficulty == 'captain':
-        enemy_ship_initialise_count = 10
-        merchant_ship_initialise_count = 4
-        battleship_hull_locations_initialise_count = 10
-        battleship_hull_integrity = 80
-        torpedo_count = 40
-    else:
-        enemy_ship_initialise_count = 15
-        merchant_ship_initialise_count = 3
-        battleship_hull_locations_initialise_count = 15
-        battleship_hull_integrity = 60
-        torpedo_count = 35
 
 
 def generate_battleship_hull_hit_locations():
@@ -416,15 +417,16 @@ def main():
     """
     start_screen() # Displays start screen
     validate_username_screen() # Validates username input
-    mission_difficulty_screen() # Requests user to select difficulty  
+    mission_difficulty_screen() # Requests user to select difficulty 
+    initialise_game_values() # Initialises the starting game values 
     mission_accept_screen() # Displays mission details with prompt
-    initialise_game_values() # Initialises the starting game values
     generate_battleship_hull_hit_locations() # Creates battleship hull hit locations
     generate_enemy_ship_locations() # Creates enemy ship locations
     generate_merchant_ship_locations() # Creates merchant ship locations
 
 main()
 
+clearscreen()
 print('Mission difficulty selected: ' + mission_difficulty)
 print('Enemy ships starting value: ' + str(enemy_ship_initialise_count))
 print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
