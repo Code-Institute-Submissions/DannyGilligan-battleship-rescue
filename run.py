@@ -218,7 +218,7 @@ def mission_accept_screen():
     print(''' \n\n\n\n\n\n\n\n\n\n                          \x1b[92mSecure connection successful.\033[0m''')
     time.sleep(1)
     clearscreen()
-    message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \033[36mURGENT\033[0m Incoming''')
+    message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \x1b[96mURGENT\033[0m Incoming''')
     message2 = (f''' Message: For {username.capitalize()}'s Eyes Only''')
     print(message1 + message2)
     time.sleep(1.7)
