@@ -112,9 +112,6 @@ In the Heroku dashboard, populate the 'App name' field and choose a region. Then
 ![Create App](assets/documentation/deployment_1_create_app.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -131,9 +128,6 @@ Once the app is created, the setup page will be displayed. This page contains an
 
 ![Create App](assets/documentation/deployment_2_app_setup_page.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -153,9 +147,6 @@ On the Settings page, click on the 'Reveal Config Vars' button.
 
 ![Create App](assets/documentation/deployment_3_settings.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -177,9 +168,6 @@ In the Config Vars, add 'PORT' and '8000' in the fields as shown below. Then cli
 ![Create App](assets/documentation/deployment_4_config_vars.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -196,9 +184,6 @@ Once the Config Vars are added, the next step is to add two buildpacks to the ap
 
 ![Create App](assets/documentation/deployment_5_add_buildpacks.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -218,9 +203,6 @@ Select the python option from the menu, then click 'Add buildpack'. To note, it 
 ![Create App](assets/documentation/deployment_6_add_python_buildpack.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -237,9 +219,6 @@ Once the python buildpack is added, select the node.js buildpack from the menu a
 
 ![Create App](assets/documentation/deployment_7_add_nodejs_buildpack.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -258,9 +237,6 @@ Once the buildpacks have been added (python, followed by node.js), navigate to t
 ![Create App](assets/documentation/deployment_8_deploy_screen.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -277,9 +253,6 @@ Select Github from the 'Deployment method' options.
 
 ![Create App](assets/documentation/deployment_9_select_github.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -299,9 +272,6 @@ Enter the repository name in the 'Connect to Github' field as shown below, then 
 ![Create App](assets/documentation/deployment_10_enter_repository.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -318,9 +288,6 @@ Once the repository has been located, click on the 'Connect' button.
 
 ![Create App](assets/documentation/deployment_11_click_connect.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -339,9 +306,6 @@ A confirmation will be displayed on the Github once the repository is connected 
 ![Create App](assets/documentation/deployment_12_connected_confirmation.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -359,9 +323,6 @@ Automatic deploys can be enabled if so desired by clicking on the 'Enable Automa
 ![Create App](assets/documentation/deployment_13_enable_auto_deploys.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
@@ -378,9 +339,6 @@ The initial deployment of the app can be triggered by selecting 'main' from the 
 
 ![Create App](assets/documentation/deployment_14_manual_deploy.webp)
 
-</td>
-<td>
-:heavy_check_mark:
 </td>
 </table>
 
@@ -405,17 +363,13 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 ![Create App](assets/documentation/deployment_15_deployment_confirmation.webp)
 
 </td>
-<td>
-:heavy_check_mark:
-</td>
 </table>
 
 </details>
 <!-- spacer -->
-
 </details>
-
-
+<br>
+The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com/
 
 <br>
 <br>

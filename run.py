@@ -128,6 +128,45 @@ def clearscreen():
     os.system('cls' if os.name=='nt' else 'clear')
 
 
+
+def start_screen():
+    """
+    The start screen function displays the initial welcome to
+    the user along with the banner art and callsign input field
+    """
+    global username
+
+    sleep(0.4)
+    print(banner_art_upper) # Prints 'Battleship' to screen
+
+    typing_effect\
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+    #sleep(0.1)
+    typing_effect\
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+    #sleep(0.1)
+    typing_effect\
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
+
+    print(banner_art_lower) # Prints 'Rescue' to screen
+
+    # Effects to be used for shot confirmations
+    #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+    #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
+    #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+    #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
+    #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+
+    sleep(0.6)
+    typing_effect('                         The enemy controls the Land.\n', 0.03)
+    typing_effect('                         The enemy controls the Skies.\n', 0.03)
+    typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
+    sleep(0.4)
+    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
+    username = input('                                 ')
+
+
+
 def validate_username_screen():
     """
     The validate_username function will strip any 
@@ -270,41 +309,6 @@ def mission_accept_screen():
         print(username + " test test test")
 
 
-def start_screen():
-    """
-    The start screen function displays the initial welcome to
-    the user along with the banner art and callsign input field
-    """
-    global username
-
-    sleep(0.4)
-    print(banner_art_upper) # Prints 'Battleship' to screen
-
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
-    #sleep(0.1)
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
-    #sleep(0.1)
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
-
-    print(banner_art_lower) # Prints 'Rescue' to screen
-
-    # Effects to be used for shot confirmations
-    #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-    #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
-    #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
-    #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
-    #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
-
-    sleep(0.6)
-    typing_effect('                         The enemy controls the Land.\n', 0.03)
-    typing_effect('                         The enemy controls the Skies.\n', 0.03)
-    typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
-    sleep(0.4)
-    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
-    username = input('                                 ')
 
 
 def main():
