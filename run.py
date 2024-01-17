@@ -345,7 +345,25 @@ def generate_enemy_ship_locations():
             enemy_ship_locations.append(enemy_ship_location)
 
 
-
+def generate_merchant_ship_locations():
+    """
+    This function will generate random x and y coordinates
+    representing the location of each merchant ship on the
+    battle grid. This is what the user will be attempting
+    to avoid hitting with each shot.
+    """
+    while len(merchant_ship_locations) < 8:
+        x_coordinate = (randint(0, 7))
+        y_coordinate = (randint(0, 7))
+        merchant_ship_location = (x_coordinate, y_coordinate)
+        if merchant_ship_location in merchant_ship_locations:
+            continue # Note for readme, changed from break to continue, unexpected behaviour
+        elif merchant_ship_location in enemy_ship_locations:
+            continue
+        elif merchant_ship_location in battleship_hull_locations:
+            continue # Note for readme, changed from break to continue, unexpected behaviour
+        else:
+            merchant_ship_locations.append(merchant_ship_location)
 
 def main():
     """
