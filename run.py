@@ -6,6 +6,7 @@
 
 ########## Imports ##########
 import os
+from random import randint
 import sys
 import time
 from time import sleep
@@ -40,7 +41,6 @@ miss_locations = []
 
 # Stores value of the user's battleship hull integrity
 battleship_hull_integrity = 100
-
 
 # Stores torpedo's available to user
 torpedo_count = 40
