@@ -369,7 +369,7 @@ Automatic deploys can be enabled if so desired by clicking on the 'Enable Automa
 <details>
   <summary><i> Step 14: Manual deployment</i></summary>
 <br>
-The initial deployment of the app can be triggered by selecting 'main' from the 'Choose a branch to deploy' menu, then clicking on the 'Deploy Branc' button.
+The initial deployment of the app can be triggered by selecting 'main' from the 'Choose a branch to deploy' menu, then clicking on the 'Deploy Branch' button.
 <br>
 <br>
 <table>
@@ -390,6 +390,7 @@ The initial deployment of the app can be triggered by selecting 'main' from the 
   <summary><i> Step 15: Deployment confirmation</i></summary>
 <br>
 Once the app build and deployment has been completed in Heroku, a confirmation will be displayed as shown below. The app can now be viewed by clicking on the 'View' button.
+<br>
 <br>
 The deployment process is now complete.
 <br>
@@ -505,34 +506,7 @@ The deployment process is now complete.
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
-
-
-
-
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
