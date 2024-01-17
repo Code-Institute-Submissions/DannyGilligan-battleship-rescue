@@ -326,6 +326,25 @@ def generate_battleship_hull_hit_locations():
             battleship_hull_locations.append(hull_hit_location)
 
 
+def generate_enemy_ship_locations():
+    """
+    This function will generate random x and y coordinates
+    representing the location of each enemy ship on the battle
+    grid. This is what the user will be attempting to hit with
+    each shot.
+    """
+    while len(enemy_ship_locations) < 8:
+        x_coordinate = (randint(0, 7))
+        y_coordinate = (randint(0, 7))
+        enemy_ship_location = (x_coordinate, y_coordinate)
+        if enemy_ship_location in enemy_ship_locations:
+            continue # Note for readme, changed from break to continue, unexpected behaviour
+        elif enemy_ship_location in battleship_hull_locations:
+            continue # Note for readme, changed from break to continue, unexpected behaviour
+        else:
+            enemy_ship_locations.append(enemy_ship_location)
+
+
 
 
 def main():
