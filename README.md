@@ -46,28 +46,28 @@ The diagrams below represent the process flows throughout the main phases of the
   <summary><i> Phase 1: Initialise Game</i></summary>
 <br>
 
-![Phase 1](assets/documentation/01%20Initialise%20Game%20(cropped).webp)
+![Phase 1](assets/documentation/01_initialise_game.webp)
 </details>
 
 <details>
   <summary><i> Phase 2: User Shot</i></summary>
 <br>
 
-![Phase 2](assets/documentation/02%20User%20Shot%20(cropped).webp)
+![Phase 2](assets/documentation/02_user_shot.webp)
 </details>
 
 <details>
   <summary><i> Phase 3: Enemy Shot</i></summary>
 <br>
 
-![Phase 3](assets/documentation/03%20Enemy%20Shot%20(cropped).webp)
+![Phase 3](assets/documentation/03_enemy_shot.webp)
 </details>
 
 <details>
   <summary><i> Phase 4: End Game</i></summary>
 <br>
 
-![Phase 3](assets/documentation/04%20End%20Game%20Conditions%20(cropped).webp)
+![Phase 3](assets/documentation/04_end_game_conditions.webp)
 </details>
 
 </details> <!-- Container for process flows ends here -->
