@@ -33,19 +33,19 @@ mission_acceptance = None
 mission_accept_options = ['y', 'n'] 
 
 # Stores the initialised count of enemy ships
-enemy_ship_initialise_count = None
+enemy_ship_initialise_count = 0
 
 # Stores enemy ship locations on battle grid
 enemy_ship_locations = []
 
 # Stores the initialised count of merchant ships
-merchant_ship_initialise_count = None
+merchant_ship_initialise_count = 0
 
 # Stores merchant_ship_locations on battle grid
 merchant_ship_locations = []
 
 # Stores the initialised count of battleship hull locations
-battleship_hull_locations_initialise_count = None
+battleship_hull_locations_initialise_count = 0
 
 # Stores user's battleship hull locations on battle grid
 battleship_hull_locations = []
@@ -54,10 +54,10 @@ battleship_hull_locations = []
 miss_locations = []
 
 # Stores value of the user's battleship hull integrity
-battleship_hull_integrity = None
+battleship_hull_integrity = 0
 
 # Stores torpedos available to user
-torpedo_count = None
+torpedo_count = 0
 
 # Stores the 'Battleship' portion of the banner art
 banner_art_upper = ('''
@@ -327,6 +327,12 @@ def initialise_game_values():
     assigned using this function, and driven by the difficulty
     level selected by the user
     """
+    global enemy_ship_initialise_count
+    global merchant_ship_initialise_count
+    global battleship_hull_locations_initialise_count
+    global battleship_hull_integrity
+    global torpedo_count
+
     if mission_difficulty == 'cadet':
         enemy_ship_initialise_count = 5
         merchant_ship_initialise_count = 5
@@ -354,7 +360,7 @@ def generate_battleship_hull_hit_locations():
     user's battleship. This is what the enemy will be firing
     upon.
     """
-    while len(battleship_hull_locations) < 8:
+    while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
         hull_hit_location = (x_coordinate, y_coordinate)
@@ -371,7 +377,7 @@ def generate_enemy_ship_locations():
     grid. This is what the user will be attempting to hit with
     each shot.
     """
-    while len(enemy_ship_locations) < 8:
+    while len(enemy_ship_locations) < enemy_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
         enemy_ship_location = (x_coordinate, y_coordinate)
@@ -390,7 +396,7 @@ def generate_merchant_ship_locations():
     battle grid. This is what the user will be attempting
     to avoid hitting with each shot.
     """
-    while len(merchant_ship_locations) < 8:
+    while len(merchant_ship_locations) < merchant_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
         merchant_ship_location = (x_coordinate, y_coordinate)
@@ -412,15 +418,16 @@ def main():
     validate_username_screen() # Validates username input
     mission_difficulty_screen() # Requests user to select difficulty  
     mission_accept_screen() # Displays mission details with prompt
+    initialise_game_values() # Initialises the starting game values
     generate_battleship_hull_hit_locations() # Creates battleship hull hit locations
     generate_enemy_ship_locations() # Creates enemy ship locations
     generate_merchant_ship_locations() # Creates merchant ship locations
 
-#main()
+main()
 
-generate_battleship_hull_hit_locations()
-generate_enemy_ship_locations()
-generate_merchant_ship_locations()
-print(battleship_hull_locations)
-print(enemy_ship_locations)
-print(merchant_ship_locations)
+print('Mission difficulty selected: ' + mission_difficulty)
+print('Enemy ships starting value: ' + str(enemy_ship_initialise_count))
+print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
+print('Battleship hull locations starting value: ' + str(battleship_hull_locations_initialise_count))
+print('Battleship hull integrity starting value: ' + str(battleship_hull_integrity))
+print('Torpedo count starting value: ' + str(torpedo_count))
