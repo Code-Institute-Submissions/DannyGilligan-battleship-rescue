@@ -284,7 +284,7 @@ def mission_accept_screen():
 
 
 
-def start_screen:
+def start_screen():
     """
     The start screen function displays the initial welcome to
     the user along with the banner art and callsign input field
@@ -317,9 +317,13 @@ def start_screen:
     sleep(0.4)
     username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03) # Requests user to input 'callsign'
     username = input('                                 ')
-validate_username_screen()                                                                                              # The steps to validate the username are called in this function
-mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
-mission_accept_screen()
+
+
+def main():
+    start_screen()
+    validate_username_screen()                                                                                              # The steps to validate the username are called in this function
+    mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
+    mission_accept_screen()
 
 
 
