@@ -104,6 +104,7 @@ The app was deployed as a Minimum Viable Product using the Heroku platform.
 <br>
 In the Heroku dashboard, populate the 'App name' field and choose a region. Then click on 'Create app'.
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -122,6 +123,7 @@ In the Heroku dashboard, populate the 'App name' field and choose a region. Then
   <summary><i> Step 2: App setup page</i></summary>
 <br>
 Once the app is created, the setup page will be displayed. This page contains an overview of the data related to the app. From here, navigate to the 'Settings' tab.
+<br>
 <br>
 <table>
 <tr>
@@ -143,6 +145,7 @@ Once the app is created, the setup page will be displayed. This page contains an
   <summary><i> Step 3: Settings</i></summary>
 <br>
 On the Settings page, click on the 'Reveal Config Vars' button.
+<br>
 <br>
 <table>
 <tr>
@@ -166,6 +169,7 @@ On the Settings page, click on the 'Reveal Config Vars' button.
 <br>
 In the Config Vars, add 'PORT' and '8000' in the fields as shown below. Then click 'Add'.
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -184,6 +188,7 @@ In the Config Vars, add 'PORT' and '8000' in the fields as shown below. Then cli
   <summary><i> Step 5: Add buildpacks</i></summary>
 <br>
 Once the Config Vars are added, the next step is to add two buildpacks to the app. Scroll down to the Buildpacks section and click on the 'Add buildpack' button.
+<br>
 <br>
 <table>
 <tr>
@@ -205,6 +210,7 @@ Once the Config Vars are added, the next step is to add two buildpacks to the ap
 <br>
 Select the python option from the menu, then click 'Add buildpack'. To note, it is important that the python buildpack is added first <b>before</b> any other buildpack!
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -223,6 +229,7 @@ Select the python option from the menu, then click 'Add buildpack'. To note, it 
   <summary><i> Step 7: Add node.js buildpack</i></summary>
 <br>
 Once the python buildpack is added, select the node.js buildpack from the menu and click on the 'Add buildpack' button. To note, it is important that the node.js buildpack is added <b>after</b> the python buildpack!
+<br>
 <br>
 <table>
 <tr>
@@ -243,6 +250,7 @@ Once the python buildpack is added, select the node.js buildpack from the menu a
 <br>
 Once the buildpacks have been added (python, followed by node.js), navigate to the 'Deploy' tab.
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -261,6 +269,7 @@ Once the buildpacks have been added (python, followed by node.js), navigate to t
   <summary><i> Step 9: Select Github</i></summary>
 <br>
 Select Github from the 'Deployment method' options.
+<br>
 <br>
 <table>
 <tr>
@@ -282,6 +291,7 @@ Select Github from the 'Deployment method' options.
 <br>
 Enter the repository name in the 'Connect to Github' field as shown below, then click on the 'Seach' button.
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -300,6 +310,7 @@ Enter the repository name in the 'Connect to Github' field as shown below, then 
   <summary><i> Step 11: Connect</i></summary>
 <br>
 Once the repository has been located, click on the 'Connect' button.
+<br>
 <br>
 <table>
 <tr>
@@ -320,6 +331,7 @@ Once the repository has been located, click on the 'Connect' button.
 <br>
 A confirmation will be displayed on the Github once the repository is connected to the Heroku app as shown below.
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -339,6 +351,7 @@ A confirmation will be displayed on the Github once the repository is connected 
 <br>
 Automatic deploys can be enabled if so desired by clicking on the 'Enable Automatic Deploys' button, this will result in the app being refreshed with updated code every time changes are pushed to Github. 
 <br>
+<br>
 <table>
 <tr>
 <td>
@@ -357,6 +370,7 @@ Automatic deploys can be enabled if so desired by clicking on the 'Enable Automa
   <summary><i> Step 14: Manual deployment</i></summary>
 <br>
 The initial deployment of the app can be triggered by selecting 'main' from the 'Choose a branch to deploy' menu, then clicking on the 'Deploy Branc' button.
+<br>
 <br>
 <table>
 <tr>
@@ -378,6 +392,7 @@ The initial deployment of the app can be triggered by selecting 'main' from the 
 Once the app build and deployment has been completed in Heroku, a confirmation will be displayed as shown below. The app can now be viewed by clicking on the 'View' button.
 <br>
 The deployment process is now complete.
+<br>
 <br>
 <table>
 <tr>
