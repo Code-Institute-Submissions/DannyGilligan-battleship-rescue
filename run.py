@@ -67,7 +67,7 @@ banner_art_lower = ('''
 ''')
 
 
-# Stores the banner art in its entirety
+# Stores the banner art in its entirety (used without typing effect)
 banner_art = ('''
              ___   ___  ______ ______ __    ____ ____ __ __ ____ ___   
             / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \ 
@@ -271,13 +271,6 @@ def mission_accept_screen():
         print(username + " test test test")
 
 
-
-
-
-
-
-
-
 def start_screen():
     """
     The start screen function displays the initial welcome to
@@ -320,7 +313,6 @@ def main():
     The main function will trigger all 
     functions necessary to run the game
     """
-
     start_screen()              # Displays start screen
     validate_username_screen()  # Validates username input
     mission_difficulty_screen() # Requests user to select difficulty  
