@@ -54,10 +54,10 @@ battleship_hull_locations = []
 miss_locations = []
 
 # Stores value of the user's battleship hull integrity
-battleship_hull_integrity = 100
+battleship_hull_integrity = None
 
 # Stores torpedo's available to user
-torpedo_count = 40
+torpedo_count = None
 
 # Stores the 'Battleship' portion of the banner art
 banner_art_upper = ('''
