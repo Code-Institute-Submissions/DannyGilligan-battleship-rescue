@@ -32,6 +32,9 @@ enemy_ship_locations = []
 # Stores merchant_ship_locations on battle grid
 merchant_ship_locations = []
 
+# Stores user's battleship hull locations (these will be fired upon by the enemy)
+battleship_hull_locations = []
+
 
 def typing_effect(text, speed):   
     words = text
