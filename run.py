@@ -26,6 +26,10 @@ mission_acceptance = None
 # Stores the valid options to accept or reject mission
 mission_accept_options = ['y', 'n'] 
 
+# Stores enemy ship locations on battle grid
+enemy_ship_locations = []
+
+
 
 def typing_effect(text, speed):   
     words = text
