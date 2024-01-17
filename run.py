@@ -197,35 +197,27 @@ def mission_accept_screen():
 
     clearscreen()
     time.sleep(.4)
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command..''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command...''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command....''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.....''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command......''')
     time.sleep(.4)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     print(''' \n\n\n\n\n\n\n\n\n\n                          \033[32mSecure connection successful.\033[0m''')
     time.sleep(1)
     clearscreen()
-    print('\033[33m*******************************|Battleship Comms|*******************************\033[0m')
     message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \033[36mURGENT\033[0m Incoming''')
     message2 = (f''' Message: For {username.capitalize()}'s Eyes Only''')
     print(message1 + message2)
@@ -324,12 +316,15 @@ def start_screen():
 
 
 def main():
-    start_screen()
-    validate_username_screen()                                                                                              # The steps to validate the username are called in this function
-    mission_difficulty_screen()                                                                                                     # Displays the mission details to the user and prompts to accept  
-    mission_accept_screen()
+    """
+    The main function will trigger all 
+    functions necessary to run the game
+    """
 
-
+    start_screen()              # Displays start screen
+    validate_username_screen()  # Validates username input
+    mission_difficulty_screen() # Requests user to select difficulty  
+    mission_accept_screen()     # Displays mission details with prompt
 
 main()
 
