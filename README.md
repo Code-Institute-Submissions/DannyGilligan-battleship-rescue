@@ -1,6 +1,6 @@
 # Battleship Rescue
 
-![Hero Image](assets/documentation/battleship-rescue-hero-image.webp)
+![Hero Image](assets/documentation/battleship_rescue_hero_image.webp)
 <br>
 <br>
 <br>
