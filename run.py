@@ -221,7 +221,7 @@ def mission_accept_screen():
     message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \x1b[96mURGENT\033[0m Incoming''')
     message2 = (f''' Message: For {username.capitalize()}'s Eyes Only''')
     print(message1 + message2)
-    time.sleep(1.7)
+    time.sleep(2)
     clearscreen()
     typing_effect(f'''
     {mission_difficulty.capitalize()}, 
