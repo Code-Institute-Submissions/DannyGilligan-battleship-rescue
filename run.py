@@ -419,13 +419,27 @@ def generate_merchant_ship_locations():
 def game_screen():
     clearscreen()
     sleep(0.5)
-    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.02)
+    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.00)
     sleep(0.5)
     print('Torpedos remaining:       \x1b[96m00\033[0m            Hull integrity:         \x1b[96m100%\033[0m')
     print('Enemy ships remaining:    \x1b[96m00\033[0m            Enemy ships destroyed:    \x1b[96m00\033[0m')
     print('Merchant ships remaining: \x1b[96m00\033[0m            Merchant ships destroyed: \x1b[96m00\033[0m')
+    print('\n\n')
 
-    for rows in range(8):
+    col_headers = []                                                  # Empty array to hold the column header values based on the userinput
+    for i in range(9):                                                # Iterates based on the range dictated by the user input  
+        col_headers.append(i)                                         # Appends the column header numbers to the array 
+    col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
+    print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+
+    row_counter = 0
+    for row_array in battle_grid: 
+        print("                             ", row_counter, end = " ")
+        row_counter += 1
+        for col_elem in row_array:
+            print(col_elem, end = " ")
+        print()
+        
 
 
 
@@ -443,7 +457,10 @@ def main():
     generate_enemy_ship_locations() # Creates enemy ship locations
     generate_merchant_ship_locations() # Creates merchant ship locations
     game_screen() # Displays the main game screen
-main()
+
+#main()
+
+game_screen()
 
 
 # Debugging messages below, delete when ready!
