@@ -362,7 +362,7 @@ def generate_battleship_hull_hit_locations():
     while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        hull_hit_location = ([x_coordinate], [y_coordinate])
+        hull_hit_location = (str(x_coordinate), str(y_coordinate))
         if hull_hit_location in battleship_hull_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         else:
@@ -379,7 +379,7 @@ def generate_enemy_ship_locations():
     while len(enemy_ship_locations) < enemy_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        enemy_ship_location = ([x_coordinate], [y_coordinate])
+        enemy_ship_location = (str(x_coordinate), str(y_coordinate))
         if enemy_ship_location in enemy_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         elif enemy_ship_location in battleship_hull_locations:
@@ -398,7 +398,7 @@ def generate_merchant_ship_locations():
     while len(merchant_ship_locations) < merchant_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        merchant_ship_location = ([x_coordinate], [y_coordinate])
+        merchant_ship_location = (str(x_coordinate), str(y_coordinate))
         if merchant_ship_location in merchant_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         elif merchant_ship_location in enemy_ship_locations:
@@ -442,7 +442,7 @@ def game_screen():
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
 
-    user_shot = [[int(user_x_coord)], [int(user_y_coord)]]
+    user_shot = str(user_x_coord) + ',' + str(user_y_coord)
     
     print(user_shot) # Debug, delete when ready
 
