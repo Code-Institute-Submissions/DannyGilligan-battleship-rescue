@@ -442,7 +442,7 @@ def game_screen():
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
 
-    user_shot = [[user_x_coord], [user_y_coord]]
+    user_shot = [[int(user_x_coord)], [int(user_y_coord)]]
     
     print(user_shot) # Debug, delete when ready
 
