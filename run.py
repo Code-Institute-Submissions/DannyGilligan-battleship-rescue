@@ -434,18 +434,25 @@ def game_screen():
             print(col_elem, end = " ")
         print()
         
+    print(enemy_ship_locations) # Debug, delete when ready
+    print(merchant_ship_locations) # Debug, delete when ready
+
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
+
     user_shot = [user_x_coord, user_y_coord]
-    print(user_shot)
+    
+    print(user_shot) # Debug, delete when ready
+
     if user_shot in enemy_ship_locations:
-        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
         print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
-        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
     elif user_shot in merchant_ship_locations:
         print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
-        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
     else:
+        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
         print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
 
 
