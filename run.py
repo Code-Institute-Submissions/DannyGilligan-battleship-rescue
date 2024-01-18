@@ -60,15 +60,15 @@ torpedo_count = 0
 
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m']
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m']
+
 ]
 
 
@@ -428,7 +428,7 @@ def game_screen():
     print('\n')
 
     col_headers = []                                                  # Empty array to hold the column header values based on the userinput
-    for i in range(9):                                                # Iterates based on the range dictated by the user input  
+    for i in range(9):                                                # Iterates for 9 x 9 grid size  
         col_headers.append(i)                                         # Appends the column header numbers to the array 
     col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
     print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
@@ -441,6 +441,15 @@ def game_screen():
             print(col_elem, end = " ")
         print()
         
+    user_x_coord = input('\nEnter row to fire upon: \n')
+    user_y_coord = input('Enter column to fire upon: \n')
+    user_shot = [user_x_coord, user_y_coord]
+    print(user_shot)
+
+
+
+
+
 
 
 
