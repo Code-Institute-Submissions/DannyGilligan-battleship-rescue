@@ -170,13 +170,6 @@ def start_screen():
 
     print(banner_art_lower) # Prints 'Rescue' to screen
 
-    # Effects to be used for shot confirmations
-    #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-    #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
-    #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
-    #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
-    #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
-
     sleep(0.6)
     typing_effect('                         The enemy controls the Land.\n', 0.03)
     typing_effect('                         The enemy controls the Skies.\n', 0.03)
@@ -420,11 +413,11 @@ def generate_merchant_ship_locations():
 def game_screen():
     clearscreen()
     sleep(0.5)
-    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.00)
+    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
     sleep(0.5)
-    print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                        Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-    print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                        Enemy ships destroyed:    \x1b[96m00\033[0m')
-    print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                        Merchant ships destroyed: \x1b[96m00\033[0m')
+    print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+    print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m00\033[0m')
+    print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
     print('\n')
 
     col_headers = []                                                  # Empty array to hold the column header values based on the userinput
@@ -445,10 +438,27 @@ def game_screen():
     user_y_coord = input('Enter column to fire upon: \n')
     user_shot = [user_x_coord, user_y_coord]
     print(user_shot)
+    if user_shot in enemy_ship_locations:
+        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+        print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+    elif user_shot in merchant_ship_locations:
+        print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+        typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+    else:
+        print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
+
+
+    
 
 
 
-
+       # Effects to be used for shot confirmations
+    #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+    #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
+    #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+    #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
+    #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
 
 
 
