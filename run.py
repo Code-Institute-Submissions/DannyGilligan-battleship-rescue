@@ -60,7 +60,7 @@ torpedo_count = 0
 
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
-    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m']
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
     ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
     ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
     ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m'],
@@ -428,7 +428,7 @@ def game_screen():
     print('\n\n')
 
     col_headers = []                                                  # Empty array to hold the column header values based on the userinput
-    for i in range(10):                                                # Iterates based on the range dictated by the user input  
+    for i in range(9):                                                # Iterates based on the range dictated by the user input  
         col_headers.append(i)                                         # Appends the column header numbers to the array 
     col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
     print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
