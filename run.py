@@ -59,7 +59,16 @@ battleship_hull_integrity = 0
 torpedo_count = 0
 
 # Stores the battle grid displayed to the user and related shot results
-battle_grid = []
+battle_grid = [
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',],
+    ['\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m','\x1b[94m~\033[0m',]
+]
 
 
 # Stores the 'Battleship' portion of the banner art
@@ -415,6 +424,9 @@ def game_screen():
     print('Torpedos remaining:       \x1b[96m00\033[0m            Hull integrity:         \x1b[96m100%\033[0m')
     print('Enemy ships remaining:    \x1b[96m00\033[0m            Enemy ships destroyed:    \x1b[96m00\033[0m')
     print('Merchant ships remaining: \x1b[96m00\033[0m            Merchant ships destroyed: \x1b[96m00\033[0m')
+
+    for rows in range(8):
+
 
 
 def main():
