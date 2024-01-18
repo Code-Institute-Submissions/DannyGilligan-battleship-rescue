@@ -304,7 +304,7 @@ def mission_accept_screen():
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.....''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n                                   \x1b[92mSecure connection established.\033[0m''')
+    print(''' \n\n\n\n\n\n\n\n\n\n                         \x1b[92mSecure connection established.\033[0m''')
     time.sleep(1)
     clearscreen()
     message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \x1b[96mURGENT\033[0m Incoming''')
@@ -468,9 +468,8 @@ def main():
     generate_merchant_ship_locations() # Creates merchant ship locations
     game_screen() # Displays the main game screen
 
-#main()
+main()
 
-game_screen()
 
 
 # Debugging messages below, delete when ready!
