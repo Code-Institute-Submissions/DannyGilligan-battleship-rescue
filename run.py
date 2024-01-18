@@ -422,9 +422,9 @@ def game_screen():
     sleep(0.5)
     typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.00)
     sleep(0.5)
-    print('Torpedos remaining:       \x1b[96m00\033[0m                        Hull integrity:         \x1b[96m100%\033[0m')
-    print('Enemy ships remaining:    \x1b[96m00\033[0m                        Enemy ships destroyed:    \x1b[96m00\033[0m')
-    print('Merchant ships remaining: \x1b[96m00\033[0m                        Merchant ships destroyed: \x1b[96m00\033[0m')
+    print(f'Torpedos remaining:       \x1b[96m{torpedo_count}\033[0m                        Hull integrity:         \x1b[96m{battleship_hull_integrity}\033[0m')
+    print(f'Enemy ships remaining:    \x1b[96m{len(enemy_ship_locations)}\033[0m                        Enemy ships destroyed:    \x1b[96m00\033[0m')
+    print(f'Merchant ships remaining: \x1b[96m{len(merchant_ship_locations)}\033[0m                        Merchant ships destroyed: \x1b[96m00\033[0m')
     print('\n')
 
     col_headers = []                                                  # Empty array to hold the column header values based on the userinput
