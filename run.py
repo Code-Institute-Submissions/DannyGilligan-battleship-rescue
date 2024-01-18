@@ -420,6 +420,8 @@ def game_screen():
     print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
     print('\n')
 
+    battle_grid
+
     col_headers = []                                                  # Empty array to hold the column header values based on the userinput
     for i in range(9):                                                # Iterates for 9 x 9 grid size  
         col_headers.append(i)                                         # Appends the column header numbers to the array 
@@ -440,7 +442,7 @@ def game_screen():
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
 
-    user_shot = [user_x_coord, user_y_coord]
+    user_shot = [[user_x_coord], [user_y_coord]]
     
     print(user_shot) # Debug, delete when ready
 
