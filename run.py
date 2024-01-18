@@ -14,7 +14,6 @@ import sys
 import time
 from time import sleep
 
-
 # >>>>>>>>>>>>>>> Variables <<<<<<<<<<<<<<<
 
 # Stores a valid username
@@ -58,6 +57,10 @@ battleship_hull_integrity = 0
 
 # Stores torpedos available to user
 torpedo_count = 0
+
+# Stores the battle grid displayed to the user and related shot results
+battle_grid = []
+
 
 # Stores the 'Battleship' portion of the banner art
 banner_art_upper = ('''
@@ -110,7 +113,6 @@ mission_details_message = ('''It is with great regret that I must inform you tha
     Losing that cargo, means losing the war!\n''')
 
 
-
 # >>>>>>>>>>>>>>> Functions <<<<<<<<<<<<<<<
 
 def typing_effect(text, speed):
@@ -135,7 +137,6 @@ def clearscreen():
     displayed to the user.
     """
     os.system('cls' if os.name=='nt' else 'clear')
-
 
 
 def start_screen():
@@ -175,7 +176,6 @@ def start_screen():
     username = input('                                 ')
 
 
-
 def validate_username_screen():
     """
     The validate_username function will strip any 
@@ -183,7 +183,6 @@ def validate_username_screen():
     username input variable, the value will then be checked
     to ensure it is more than 2 characters and less than 15.
     """
-
     global username
     username = username.strip()
 
@@ -200,7 +199,6 @@ def validate_username_screen():
         ' characters\n\n                                   ')
         username = username.strip() # Strip method is used
     clearscreen() # Screen is cleared 
-
 
 
 def mission_difficulty_screen():
@@ -407,6 +405,18 @@ def generate_merchant_ship_locations():
         else:
             merchant_ship_locations.append(merchant_ship_location)
 
+
+
+def game_screen():
+    clearscreen()
+    sleep(0.5)
+    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.02)
+    sleep(0.5)
+    print('Torpedos remaining:       \x1b[96m00\033[0m            Hull integrity:         \x1b[96m100%\033[0m')
+    print('Enemy ships remaining:    \x1b[96m00\033[0m            Enemy ships destroyed:    \x1b[96m00\033[0m')
+    print('Merchant ships remaining: \x1b[96m00\033[0m            Merchant ships destroyed: \x1b[96m00\033[0m')
+
+
 def main():
     """
     The main function will trigger all 
@@ -420,19 +430,21 @@ def main():
     generate_battleship_hull_hit_locations() # Creates battleship hull hit locations
     generate_enemy_ship_locations() # Creates enemy ship locations
     generate_merchant_ship_locations() # Creates merchant ship locations
-
+    game_screen() # Displays the main game screen
 main()
 
-clearscreen()
-print('Mission difficulty selected: ' + mission_difficulty)
-print('Enemy ships starting value: ' + str(enemy_ship_initialise_count))
-print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
-print('Battleship hull locations starting value: ' + str(battleship_hull_locations_initialise_count))
-print('Battleship hull integrity starting value: ' + str(battleship_hull_integrity))
-print('Torpedo count starting value: ' + str(torpedo_count))
-print('\nBattleship hull locations: ', end="")
-print(battleship_hull_locations)
-print('\nEnemy ship locations: ', end="")
-print(enemy_ship_locations)
-print('\nMerchant ship locations: ', end="")
-print(merchant_ship_locations)
+
+# Debugging messages below, delete when ready!
+# clearscreen()
+# print('Mission difficulty selected: ' + mission_difficulty)
+# print('Enemy ships starting value: ' + str(enemy_ship_initialise_count))
+# print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
+# print('Battleship hull locations starting value: ' + str(battleship_hull_locations_initialise_count))
+# print('Battleship hull integrity starting value: ' + str(battleship_hull_integrity))
+# print('Torpedo count starting value: ' + str(torpedo_count))
+# print('\nBattleship hull locations: ', end="")
+# print(battleship_hull_locations)
+# print('\nEnemy ship locations: ', end="")
+# print(enemy_ship_locations)
+# print('\nMerchant ship locations: ', end="")
+# print(merchant_ship_locations)
