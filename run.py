@@ -432,82 +432,87 @@ def generate_merchant_ship_locations():
 
 
 def game_screen():
-    clearscreen()
-    sleep(0.5)
-    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
-    sleep(0.5)
-    print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-    print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m00\033[0m')
-    print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
-    print('\n')
 
-    battle_grid
+    global torpedo_count
 
-    col_headers = []                                                  # Empty array to hold the column header values based on the userinput
-    for i in range(9):                                                # Iterates for 9 x 9 grid size  
-        col_headers.append(i)                                         # Appends the column header numbers to the array 
-    col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
-    print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+    while torpedo_count > 0:
+        clearscreen()
+        sleep(0.5)
+        print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+        sleep(0.5)
+        print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+        print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m00\033[0m')
+        print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
+        print('\n')
 
-    row_counter = 0
-    for row_array in battle_grid: 
-        print("                             ", row_counter, end = " ")
-        row_counter += 1
-        for col_elem in row_array:
-            print(col_elem, end = " ")
-        print()
-        
-    print('Enemy ships: ', end="") # Debug, delete when ready
-    print(enemy_ship_locations) # Debug, delete when ready
-    #print('Merchant ships: ', end="") # Debug, delete when ready
-    #print(merchant_ship_locations) # Debug, delete when ready
-    #print('Hull points: ', end="") # Debug, delete when ready
-    #print(battleship_hull_locations) # Debug, delete when ready
+        battle_grid
+
+        col_headers = []                                                  # Empty array to hold the column header values based on the userinput
+        for i in range(9):                                                # Iterates for 9 x 9 grid size  
+            col_headers.append(i)                                         # Appends the column header numbers to the array 
+        col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
+        print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+
+        row_counter = 0
+        for row_array in battle_grid: 
+            print("                             ", row_counter, end = " ")
+            row_counter += 1
+            for col_elem in row_array:
+                print(col_elem, end = " ")
+            print()
+            
+        print('Enemy ships: ', end="") # Debug, delete when ready
+        print(enemy_ship_locations) # Debug, delete when ready
+        print('Merchant ships: ', end="") # Debug, delete when ready
+        print(merchant_ship_locations) # Debug, delete when ready
+        print('Hull points: ', end="") # Debug, delete when ready
+        print(battleship_hull_locations) # Debug, delete when ready
+
+        print('Before a shot has been taken, the torpedo count is: ' + str(torpedo_count))
+        user_x_coord = input('\nEnter row to fire upon: \n')
+        user_y_coord = input('Enter column to fire upon: \n')
+
+        user_shot = [int(user_x_coord), int(user_y_coord)]
+        torpedo_count -= 1
+        print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
+        ############ DEBUGGING BELOW ######################
+
+        #print(user_shot) 
+        #print(type(user_shot))
+        #enemy = enemy_ship_locations[0]
+        #print(enemy)
+        #print(type(enemy))
+        #if enemy == user_shot:
+        #    print('They are the same')
+        #else: 
+        #    print('They are not the same')
+
+        ############ DEBUGGING ABOVE ######################
+
+        if user_shot in enemy_ship_locations:
+            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            for iterations in range(10):
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+        elif user_shot in merchant_ship_locations:
+            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            for iterations in range(10):
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+        else:
+            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            for iterations in range(10):
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
 
 
-    user_x_coord = input('\nEnter row to fire upon: \n')
-    user_y_coord = input('Enter column to fire upon: \n')
-
-    user_shot = [int(user_x_coord), int(user_y_coord)]
-    
-    ############ DEBUGGING BELOW ######################
-
-    #print(user_shot) 
-    #print(type(user_shot))
-    #enemy = enemy_ship_locations[0]
-    #print(enemy)
-    #print(type(enemy))
-    #if enemy == user_shot:
-    #    print('They are the same')
-    #else: 
-    #    print('They are not the same')
-
-    ############ DEBUGGING ABOVE ######################
-
-    if user_shot in enemy_ship_locations:
-        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-        for iterations in range(10):
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-    elif user_shot in merchant_ship_locations:
-        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-        for iterations in range(10):
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-    else:
-        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-        for iterations in range(10):
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
-            sleep(0.15)
-
-
-
+print("WHILE LOOP HAS WORKED!")
 
 def main():
     """
