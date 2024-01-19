@@ -361,7 +361,12 @@ def generate_battleship_hull_hit_locations():
     This function will generate random x and y coordinates
     representing the location of each hull hit points on the 
     user's battleship. This is what the enemy will be firing
-    upon.
+    upon. The function checks if the generated coordinates 
+    have already been used in the battleship hull list, if
+    they've been used already, the current iteration is skipped
+    until a combination of coordinates that haven't been used
+    already are generated, at which point they will appended
+    to the battleship hull locations list.
     """
     while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 7))
@@ -378,7 +383,13 @@ def generate_enemy_ship_locations():
     This function will generate random x and y coordinates
     representing the location of each enemy ship on the battle
     grid. This is what the user will be attempting to hit with
-    each shot.
+    each shot. The function checks if 
+    the generated coordinates have already been used in the
+    enemy ship and battleship hull lists, if
+    they've been used already, the current iteration is skipped
+    until a combination of coordinates that haven't been used
+    already are generated, at which point they will appended
+    to the enemy ship locations list.
     """
     while len(enemy_ship_locations) < enemy_ship_initialise_count:
         x_coordinate = (randint(0, 7))
@@ -397,12 +408,18 @@ def generate_merchant_ship_locations():
     This function will generate random x and y coordinates
     representing the location of each merchant ship on the
     battle grid. This is what the user will be attempting
-    to avoid hitting with each shot.
+    to avoid hitting with each shot. The function checks if 
+    the generated coordinates have already been used in the
+    merchant ship, enemy ship and battleship hull lists, if
+    they've been used already, the current iteration is skipped
+    until a combination of coordinates that haven't been used
+    already are generated, at which point they will appended
+    to the merchant ship locations list.
     """
     while len(merchant_ship_locations) < merchant_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        merchant_ship_location = (str(x_coordinate), str(y_coordinate))
+        merchant_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if merchant_ship_location in merchant_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         elif merchant_ship_location in enemy_ship_locations:
