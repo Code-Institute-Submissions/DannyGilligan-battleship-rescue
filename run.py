@@ -330,7 +330,7 @@ def mission_accept_screen():
     preventing us from locating them. But we know they're out there, somewhere.
     Hunt down the enemy with extreme prejudice, avoid friendly fire at all
     costs and rescue those Merchant ships.\n
-    Losing that cargo, means losing the war!\n''',0.03)
+    Losing that cargo, means losing the war!\n''',0.00)
     sleep(0.5)
     mission_acceptance = input('\n                         Accept' + \
     ' Mission? (Y / N)\n\n                                   ') 
@@ -481,7 +481,7 @@ def game_screen():
         print('Hull points: ', end="") # Debug, delete when ready
         print(battleship_hull_locations) # Debug, delete when ready
 
-        print('Before a shot has been taken, the torpedo count is: ' + str(torpedo_count))
+        #print('Before a shot has been taken, the torpedo count is: ' + str(torpedo_count))
         user_x_coord = input('\nEnter row to fire upon: \n')
         user_y_coord = input('Enter column to fire upon: \n')
 
@@ -490,7 +490,7 @@ def game_screen():
 
         battle_grid[0][0] = 'X'
 
-        print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
+        #print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
         ############ DEBUGGING BELOW ######################
 
         #print(user_shot) 
@@ -507,7 +507,7 @@ def game_screen():
 
         if user_shot in enemy_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(8):
+            for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
@@ -517,7 +517,7 @@ def game_screen():
             enemy_ships_destroyed += 1
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(10):
+            for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
@@ -527,7 +527,7 @@ def game_screen():
             merchant_ships_destroyed += 1
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(10):
+            for iterations in range(2):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
