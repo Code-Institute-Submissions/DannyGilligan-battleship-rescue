@@ -503,7 +503,7 @@ def main():
     generate_merchant_ship_locations() # Creates merchant ship locations
     game_screen() # Displays the main game screen
 
-main()
+#main()
 
 # Debugging messages below, delete when ready!
 # clearscreen()
@@ -519,3 +519,17 @@ main()
 # print(enemy_ship_locations)
 # print('\nMerchant ship locations: ', end="")
 # print(merchant_ship_locations)
+
+
+    
+print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ')
+print('\033[30m\x1b[42m ENEMY SHIP NEUTRALISED  \x1b[0m')
+
+print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ')
+print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+
+print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ')
+print('\x1b[47m\033[30m      TARGET MISSED      \033[0m\033[22m')
+
+print('\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ')
+print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
