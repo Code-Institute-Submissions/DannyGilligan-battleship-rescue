@@ -434,12 +434,11 @@ def generate_merchant_ship_locations():
 def game_screen():
 
     global torpedo_count
-
+    clearscreen()
+    sleep(0.5)
     typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
 
     while torpedo_count > 0:
-        clearscreen()
-        sleep(0.5)
         print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
         sleep(0.5)
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
