@@ -69,7 +69,6 @@ battle_grid = [
     ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
     ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
     ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m']
-
 ]
 
 
@@ -363,7 +362,7 @@ def generate_battleship_hull_hit_locations():
     while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        hull_hit_location = (str(x_coordinate), str(y_coordinate))
+        hull_hit_location = [int(x_coordinate)] + [int(y_coordinate)]
         if hull_hit_location in battleship_hull_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         else:
@@ -380,7 +379,7 @@ def generate_enemy_ship_locations():
     while len(enemy_ship_locations) < enemy_ship_initialise_count:
         x_coordinate = (randint(0, 7))
         y_coordinate = (randint(0, 7))
-        enemy_ship_location = (str(x_coordinate), str(y_coordinate))
+        enemy_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if enemy_ship_location in enemy_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
         elif enemy_ship_location in battleship_hull_locations:
@@ -439,21 +438,33 @@ def game_screen():
         
     print(enemy_ship_locations) # Debug, delete when ready
     print(merchant_ship_locations) # Debug, delete when ready
+    print(battleship_hull_locations) 
 
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
 
-    user_shot = str(user_x_coord + ',' + user_y_coord)
+    user_shot = [int(user_x_coord), int(user_y_coord)]
     
-    print(user_shot) # Debug, delete when ready
+    ############ DEBUGGING BELOW ######################
+
+    print(user_shot) 
+    print(type(user_shot))
+    enemy = enemy_ship_locations[0]
+    print(enemy)
+    print(type(enemy))
+    if enemy == user_shot:
+        print('They are the same')
+    else: 
+        print('They are not the same')
+
+    ############ DEBUGGING ABOVE ######################
 
     if user_shot in enemy_ship_locations:
         typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
         print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
-        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
     elif user_shot in merchant_ship_locations:
-        print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
         typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+        print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
     else:
         typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
         print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
@@ -490,7 +501,7 @@ def main():
 
 main()
 
-
+print(battleship_hull_locations)
 
 # Debugging messages below, delete when ready!
 # clearscreen()
