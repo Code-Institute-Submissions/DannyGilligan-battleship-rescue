@@ -8,7 +8,7 @@
 # colored text https://replit.com/talk/ask/How-to-change-terminal-color-in-python/125888 
 # typing effect https://stackoverflow.com/questions/20302331/typing-effect-in-python
 # site used for character count
-
+# site used for special symbols https://www.compart.com/en/unicode/U+2731
 
 # >>>>>>>>>>>>>>> Imports <<<<<<<<<<<<<<<
 
@@ -433,12 +433,15 @@ def generate_merchant_ship_locations():
 
 def game_screen():
 
+    global battle_grid
     global torpedo_count
+    
     clearscreen()
     sleep(0.5)
     typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
 
     while torpedo_count > 0:
+
         clearscreen()
         print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
         #sleep(0.5)
@@ -448,7 +451,6 @@ def game_screen():
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
         print('\n')
 
-        battle_grid
 
         col_headers = []                                                  # Empty array to hold the column header values based on the userinput
         for i in range(9):                                                # Iterates for 9 x 9 grid size  
@@ -477,6 +479,9 @@ def game_screen():
 
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
+
+        battle_grid[0][0] = 'X'
+
         print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
         ############ DEBUGGING BELOW ######################
 
@@ -494,12 +499,13 @@ def game_screen():
 
         if user_shot in enemy_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(10):
+            for iterations in range(8):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             enemy_ship_locations.remove(user_shot)
+            battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(10):
