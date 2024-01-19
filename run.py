@@ -439,8 +439,10 @@ def game_screen():
     typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
 
     while torpedo_count > 0:
+        clearscreen()
         print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
-        sleep(0.5)
+        #sleep(0.5)
+        #clearscreen()
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
         print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m00\033[0m')
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
@@ -497,6 +499,7 @@ def game_screen():
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            enemy_ship_locations.remove(user_shot)
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(10):
