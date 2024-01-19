@@ -68,6 +68,9 @@ battleship_hull_integrity = 0
 # Stores torpedos available to user
 torpedo_count = 0
 
+# Stores valid shot input values
+valid_shot_inputs = ['0','1','2','3','4','5','6','7','8']
+
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
     ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
@@ -483,7 +486,61 @@ def game_screen():
 
         #print('Before a shot has been taken, the torpedo count is: ' + str(torpedo_count))
         user_x_coord = input('\nEnter row to fire upon: \n')
+
+        while user_x_coord not in valid_shot_inputs:
+            # This will display the same screen to the user after entering an invalid input
+            clearscreen()
+            print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+            #sleep(0.5)
+            #clearscreen()
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+            print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed}\033[0m')
+            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed}\033[0m')
+            print('\n')
+            col_headers = []                                                  
+            for i in range(9):                                                 
+                col_headers.append(i)                                         
+            col_headers.insert(0, " ")                                        
+            print("                             ", *col_headers, sep = ' ')   
+            row_counter = 0
+            for row_array in battle_grid: 
+                print("                             ", row_counter, end = " ")
+                row_counter += 1
+                for col_elem in row_array:
+                    print(col_elem, end = " ")
+                print()
+
+            user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
+
+
         user_y_coord = input('Enter column to fire upon: \n')
+
+        while user_y_coord not in valid_shot_inputs:
+            # This will display the same screen to the user after entering an invalid input
+            clearscreen()
+            print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+            #sleep(0.5)
+            #clearscreen()
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+            print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed}\033[0m')
+            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed}\033[0m')
+            print('\n')
+            col_headers = []                                                  
+            for i in range(9):                                                 
+                col_headers.append(i)                                         
+            col_headers.insert(0, " ")                                        
+            print("                             ", *col_headers, sep = ' ')   
+            row_counter = 0
+            for row_array in battle_grid: 
+                print("                             ", row_counter, end = " ")
+                row_counter += 1
+                for col_elem in row_array:
+                    print(col_elem, end = " ")
+                print()
+
+            print('\nEnter row to fire upon: ')
+            print(user_x_coord)
+            user_y_coord = input('Enter column to fire up: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
