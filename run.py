@@ -441,11 +441,13 @@ def game_screen():
 
     global battle_grid
     global torpedo_count
-    
+    global enemy_ships_destroyed
+    global merchant_ships_destroyed
+
     clearscreen()
     sleep(0.5)
     typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
-
+    sleep(1)
     while torpedo_count > 0:
 
         clearscreen()
@@ -520,6 +522,9 @@ def game_screen():
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            merchant_ship_locations.remove(user_shot)
+            battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
+            merchant_ships_destroyed += 1
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(10):
