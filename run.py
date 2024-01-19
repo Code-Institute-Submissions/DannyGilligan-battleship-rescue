@@ -488,8 +488,6 @@ def game_screen():
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
 
-        battle_grid[0][0] = 'X'
-
         #print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
         ############ DEBUGGING BELOW ######################
 
@@ -527,14 +525,15 @@ def game_screen():
             merchant_ships_destroyed += 1
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(2):
+            for iterations in range(3):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            miss_locations.append(user_shot)
+            battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[90mX\x1b[0m'
 
 
-print("WHILE LOOP HAS WORKED!")
 
 def main():
     """
