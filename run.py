@@ -436,9 +436,9 @@ def game_screen():
             print(col_elem, end = " ")
         print()
         
-    print(enemy_ship_locations) # Debug, delete when ready
-    print(merchant_ship_locations) # Debug, delete when ready
-    print(battleship_hull_locations) 
+    print('Enemy ships: ' + enemy_ship_locations) # Debug, delete when ready
+    print('Merchant ships: ' + merchant_ship_locations) # Debug, delete when ready
+    print('Hull points: ' + battleship_hull_locations) # Debug, delete when ready
 
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
@@ -447,21 +447,21 @@ def game_screen():
     
     ############ DEBUGGING BELOW ######################
 
-    print(user_shot) 
-    print(type(user_shot))
-    enemy = enemy_ship_locations[0]
-    print(enemy)
-    print(type(enemy))
-    if enemy == user_shot:
-        print('They are the same')
-    else: 
-        print('They are not the same')
+    #print(user_shot) 
+    #print(type(user_shot))
+    #enemy = enemy_ship_locations[0]
+    #print(enemy)
+    #print(type(enemy))
+    #if enemy == user_shot:
+    #    print('They are the same')
+    #else: 
+    #    print('They are not the same')
 
     ############ DEBUGGING ABOVE ######################
 
     if user_shot in enemy_ship_locations:
         typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-        print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+        print('\x1b[42m\x1b[30m\x1b[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
     elif user_shot in merchant_ship_locations:
         typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
         print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
