@@ -435,6 +435,8 @@ def game_screen():
 
     global torpedo_count
 
+    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
+
     while torpedo_count > 0:
         clearscreen()
         sleep(0.5)
