@@ -540,7 +540,7 @@ def game_screen():
 
             print('\nEnter row to fire upon: ')
             print(user_x_coord)
-            user_y_coord = input('Enter column to fire up: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
+            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
