@@ -41,11 +41,17 @@ enemy_ship_initialise_count = 0
 # Stores enemy ship locations on battle grid
 enemy_ship_locations = []
 
+# Stores enemy ships destroyed counter value
+enemy_ships_destroyed = 0
+
 # Stores the initialised count of merchant ships
 merchant_ship_initialise_count = 0
 
-# Stores merchant_ship_locations on battle grid
+# Stores merchant ship locations on battle grid
 merchant_ship_locations = []
+
+# Stores merchant ships destroyed counter value
+merchant_ships_destroyed = 0
 
 # Stores the initialised count of battleship hull locations
 battleship_hull_locations_initialise_count = 0
@@ -447,8 +453,8 @@ def game_screen():
         #sleep(0.5)
         #clearscreen()
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-        print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m00\033[0m')
-        print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m00\033[0m')
+        print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed}\033[0m')
+        print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed}\033[0m')
         print('\n')
 
 
@@ -506,6 +512,7 @@ def game_screen():
                 sleep(0.15)
             enemy_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
+            enemy_ships_destroyed += 1
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(10):
