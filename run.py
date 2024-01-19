@@ -6,6 +6,9 @@
 
 # Resolved bug, made username global in start screen functions, was throwing error
 # colored text https://replit.com/talk/ask/How-to-change-terminal-color-in-python/125888 
+# typing effect https://stackoverflow.com/questions/20302331/typing-effect-in-python
+# site used for character count
+
 
 # >>>>>>>>>>>>>>> Imports <<<<<<<<<<<<<<<
 
@@ -439,10 +442,10 @@ def game_screen():
         
     print('Enemy ships: ', end="") # Debug, delete when ready
     print(enemy_ship_locations) # Debug, delete when ready
-    print('Merchant ships: ', end="") # Debug, delete when ready
-    print(merchant_ship_locations) # Debug, delete when ready
-    print('Hull points: ', end="") # Debug, delete when ready
-    print(battleship_hull_locations) # Debug, delete when ready
+    #print('Merchant ships: ', end="") # Debug, delete when ready
+    #print(merchant_ship_locations) # Debug, delete when ready
+    #print('Hull points: ', end="") # Debug, delete when ready
+    #print(battleship_hull_locations) # Debug, delete when ready
 
 
     user_x_coord = input('\nEnter row to fire upon: \n')
@@ -465,26 +468,26 @@ def game_screen():
     ############ DEBUGGING ABOVE ######################
 
     if user_shot in enemy_ship_locations:
-        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-        print('\x1b[42m\x1b[30m\x1b[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
+        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+        for iterations in range(10):
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
     elif user_shot in merchant_ship_locations:
-        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-        print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+        for iterations in range(10):
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
     else:
-        typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-        print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
-
-
-    
-
-
-
-    # Effects to be used for shot confirmations
-    #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
-    #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
-    #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
-    #print('\033[47m\033[30m\033[1m      TARGET MISSED      \033[0m\033[22m')
-    #print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+        typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+        for iterations in range(10):
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
+            print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+            sleep(0.15)
 
 
 
@@ -523,31 +526,68 @@ def main():
 
 
     
-print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\033[30m\x1b[42m ENEMY SHIP NEUTRALISED  \x1b[0m')
-print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
-print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[47m\033[30m      TARGET MISSED      \033[0m\033[22m')
-print('\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
+#print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\033[30m\x1b[42m ENEMY SHIP NEUTRALISED  \x1b[0m')
+#print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\033[47m\033[31m\033[1m MERCHANT SHIP DESTROYED \033[0m\033[22m')
+#print('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[47m\033[30m      TARGET MISSED      \033[0m\033[22m')
+#print('\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
 
 
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m \x1b[92m ENEMY SHIP NEUTRALISED  \x1b[0m')
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m \x1b[31m MERCHANT SHIP DESTROYED \x1b[0m')
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m')
-print('\n\033[36m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m \x1b[91m      BATTLESHIP HIT     \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[107m \x1b[92m ENEMY SHIP NEUTRALISED  \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[107m \x1b[31m MERCHANT SHIP DESTROYED \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m')
+#rint('\n\033[36m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[107m \x1b[91m      BATTLESHIP HIT     \x1b[0m')
 
 
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[42m\x1b[97m\x1b[1m ENEMY SHIP NEUTRALISED  \x1b[0m')
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m\x1b[31m\x1b[1m MERCHANT SHIP DESTROYED \x1b[0m')
-print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[107m\x1b[30m\x1b[1m     TARGET MISSED      \x1b[0m')
-print('\n\033[36m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
-print('\x1b[101m\x1b[107m\x1b[1m     BATTLESHIP HIT     \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[42m\x1b[97m\x1b[1m ENEMY SHIP DESTROYED \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#print('\x1b[107m\x1b[31m\x1b[1m MERCHANT SHIP DESTROYED \x1b[0m')
+#print('\n\x1b[93m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#rint('\x1b[107m\x1b[30m\x1b[1m     TARGET MISSED      \x1b[0m')
+#print('\n\033[36m >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', end="")
+#rint('\033[41m\033[37m\033[1m     BATTLESHIP HIT     \x1b[0m')
+
+
+#typing_effect('\n\x1b[93m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
+#print('\x1b[107m \x1b[30m      TARGET MISSED     \x1b[0m')
+
+
+typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+for iterations in range(10):
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \033[41m\033[37m\033[1m      BATTLESHIP HIT      \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\033[41m\033[37m\033[1m      BATTLESHIP HIT      \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+
+typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+for iterations in range(10):
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+
+typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+for iterations in range(10):
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+
+typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+for iterations in range(10):
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+    sleep(0.15)
+
+print('\n\n\n')
+print('animation test 1')
+print('animation test 2')
