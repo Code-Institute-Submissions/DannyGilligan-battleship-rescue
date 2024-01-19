@@ -549,3 +549,6 @@ print("\033[1;34;40m Bright Blue \033[0m 1;34;40m \033[0;34;47m Blue \033[0m 0;3
 print("\033[1;35;40m Bright Magenta \033[0m 1;35;40m \033[0;35;47m Magenta \033[0m 0;35;47m \033[0;37;46m Black \033[0m 0;37;46m")
 print("\033[1;36;40m Bright Cyan \033[0m 1;36;40m \033[0;36;47m Cyan \033[0m 0;36;47m \033[0;37;47m Black \033[0m 0;37;47m")
 print("\033[1;37;40m White \033[0m 1;37;40m \033[0;37;40m Light Grey \033[0m 0;37;40m \033[0;37;48m Black \033[0m 0;37;48m")
+
+
+print("\033[0;37;42m \x1b[30mEnemy Ship Hit \033[0m")
