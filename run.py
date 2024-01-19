@@ -436,9 +436,13 @@ def game_screen():
             print(col_elem, end = " ")
         print()
         
-    print('Enemy ships: ' + enemy_ship_locations) # Debug, delete when ready
-    print('Merchant ships: ' + merchant_ship_locations) # Debug, delete when ready
-    print('Hull points: ' + battleship_hull_locations) # Debug, delete when ready
+    print('Enemy ships: ', end="") # Debug, delete when ready
+    print(enemy_ship_locations) # Debug, delete when ready
+    print('Merchant ships: ', end="") # Debug, delete when ready
+    print(merchant_ship_locations) # Debug, delete when ready
+    print('Hull points: ', end="") # Debug, delete when ready
+    print(battleship_hull_locations) # Debug, delete when ready
+
 
     user_x_coord = input('\nEnter row to fire upon: \n')
     user_y_coord = input('Enter column to fire upon: \n')
@@ -474,7 +478,7 @@ def game_screen():
 
 
 
-       # Effects to be used for shot confirmations
+    # Effects to be used for shot confirmations
     #typing_effect('\n\n\n\033[36m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   ', 0.005)
     #print('\033[41m\033[37m\033[1m      BATTLESHIP HIT     \033[0m\033[22m')
     #print('\033[42m\033[30m\033[1m ENEMY SHIP NEUTRALISED  \033[0m\033[22m')
@@ -500,8 +504,6 @@ def main():
     game_screen() # Displays the main game screen
 
 main()
-
-print(battleship_hull_locations)
 
 # Debugging messages below, delete when ready!
 # clearscreen()
