@@ -523,7 +523,7 @@ def game_screen():
             #clearscreen()
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
-            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed}\033[0m')
+            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
             col_headers = []                                                  
             for i in range(9):                                                 
