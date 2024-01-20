@@ -71,6 +71,9 @@ torpedo_count = 0
 # Stores valid shot input values
 valid_shot_inputs = ['0','1','2','3','4','5','6','7','8']
 
+# Stores total number of shots taken (used to calculate accuracy)
+total_shots = []
+
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
     ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
