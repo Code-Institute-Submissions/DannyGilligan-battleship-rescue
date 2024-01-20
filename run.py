@@ -76,7 +76,7 @@ valid_shot_inputs = ['0','1','2','3','4','5','6','7','8']
 total_shots = []
 
 # Stores shot accuracy (enemy ships hit / total shots), will be displayed as a percentage
-shot_accuracy = (enemy_ships_destroyed / len(total_shots) * 100) if len(total_shots) else 0 
+shot_accuracy = ((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0 
 
 
 # Stores the battle grid displayed to the user and related shot results
@@ -454,6 +454,8 @@ def game_screen():
     global torpedo_count
     global enemy_ships_destroyed
     global merchant_ships_destroyed
+    global shot_accuracy
+    global total_shots
 
     clearscreen()
     sleep(0.5)
@@ -465,10 +467,16 @@ def game_screen():
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
         #sleep(0.5)
         #clearscreen()
+        shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-        print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
+        print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{shot_accuracy:02}%\033[0m')
         print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+        print(len(total_shots)) # Debug, delete when ready
+        print(enemy_ships_destroyed)
+        
+        print(shot_accuracy) # Debug, delete when ready)
+        
         print('\n')
 
 
@@ -554,6 +562,8 @@ def game_screen():
 
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
+        total_shots.append(user_shot) # Debug, delete when ready
+
 
         # Check if shot is in the enemy ship locations list
         if user_shot in enemy_ship_locations:
