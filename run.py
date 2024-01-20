@@ -599,9 +599,9 @@ def game_screen():
         else:
             typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       TARGET MISSED       \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       TARGET MISSED       \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             miss_locations.append(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[90mX\x1b[0m'
@@ -669,9 +669,9 @@ def game_screen():
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        ENEMY MISSED       \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        ENEMY MISSED       \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             enemy_misses.append(enemy_shot)
         
