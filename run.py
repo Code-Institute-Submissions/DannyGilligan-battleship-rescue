@@ -519,7 +519,7 @@ def game_screen():
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
             col_headers = []                                                  
-            for i in range(9):                                                 
+            for i in range(8):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
             print("                            ", *col_headers, sep = ' ')   
