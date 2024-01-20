@@ -180,7 +180,7 @@ def start_screen():
     the user along with the banner art and callsign input field
     """
     global username
-
+    clearscreen()
     sleep(0.4)
     print(banner_art_upper) # Prints 'Battleship' to screen
 
