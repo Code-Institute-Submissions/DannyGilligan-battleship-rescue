@@ -9,6 +9,7 @@
 # typing effect https://stackoverflow.com/questions/20302331/typing-effect-in-python
 # site used for character count
 # site used for special symbols https://www.compart.com/en/unicode/U+2731
+#Resolved bug, shot accuracy len(total_shots) was zero, received divide by zero error, used ternary operator to assign value instead https://rollbar.com/blog/python-zerodivisionerror/#
 
 # >>>>>>>>>>>>>>> Imports <<<<<<<<<<<<<<<
 
@@ -73,6 +74,10 @@ valid_shot_inputs = ['0','1','2','3','4','5','6','7','8']
 
 # Stores total number of shots taken (used to calculate accuracy)
 total_shots = []
+
+# Stores shot accuracy (enemy ships hit / total shots), will be displayed as a percentage
+shot_accuracy = (enemy_ships_destroyed / len(total_shots) * 100) if len(total_shots) else 0 
+
 
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
