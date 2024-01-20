@@ -192,9 +192,9 @@ def start_screen():
     print(banner_art_lower) # Prints 'Rescue' to screen
 
     sleep(0.6)
-    typing_effect('                         The enemy controls the Land.\n', 0.03)
-    typing_effect('                         The enemy controls the Skies.\n', 0.03)
-    typing_effect('            One Battleship stands between them controlling the Seas.\n', 0.03)
+    typing_effect('                         The enemy controls the land.\n', 0.03)
+    typing_effect('                         The enemy controls the skies.\n', 0.03)
+    typing_effect('            One Battleship stands between them controlling the seas.\n', 0.03)
     sleep(0.4)
     username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
     username = input('                                 ')
@@ -205,7 +205,8 @@ def validate_username_screen():
     The validate_username function will strip any 
     leading or trailing whitespaces from the
     username input variable, the value will then be checked
-    to ensure it is more than 2 characters and less than 15.
+    to ensure it is more than 2 characters and less than 15
+    using the len() method and a while loop.
     """
     global username
     username = username.strip()
@@ -217,6 +218,9 @@ def validate_username_screen():
     while len(username) < 2 or len(username) > 15:
         clearscreen() # Screen is cleared
         print(banner_art) 
+        print('                         The enemy controls the land.')
+        print('                         The enemy controls the skies.')
+        print('            One Battleship stands between them controlling the seas.')
         username = input('\n\n           \x1b[93mAlert!!' + \
         '\033[0m Enter a valid'\
         + ' callsign between \x1b[93m2\033[0m and \x1b[93m15\033[0m' + \
@@ -382,7 +386,7 @@ def generate_battleship_hull_hit_locations():
     have already been used in the battleship hull list, if
     they've been used already, the current iteration is skipped
     until a combination of coordinates that haven't been used
-    already are generated, at which point they will appended
+    already are generated, at which point they will be appended
     to the battleship hull locations list.
     """
     while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
@@ -405,7 +409,7 @@ def generate_enemy_ship_locations():
     enemy ship and battleship hull lists, if
     they've been used already, the current iteration is skipped
     until a combination of coordinates that haven't been used
-    already are generated, at which point they will appended
+    already are generated, at which point they will be appended
     to the enemy ship locations list.
     """
     while len(enemy_ship_locations) < enemy_ship_initialise_count:
@@ -430,7 +434,7 @@ def generate_merchant_ship_locations():
     merchant ship, enemy ship and battleship hull lists, if
     they've been used already, the current iteration is skipped
     until a combination of coordinates that haven't been used
-    already are generated, at which point they will appended
+    already are generated, at which point they will be appended
     to the merchant ship locations list.
     """
     while len(merchant_ship_locations) < merchant_ship_initialise_count:
@@ -462,11 +466,9 @@ def game_screen():
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(1)
     while torpedo_count > 0:
-
+        ### PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
-        #sleep(0.5)
-        #clearscreen()
         shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
         print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
@@ -475,6 +477,7 @@ def game_screen():
         print('\n')
 
 
+        ### PRINTS BATTLE GRIP TO SCREEN ON EACH LOOP ###
         col_headers = []                                                  # Empty array to hold the column header values based on the userinput
         for i in range(9):                                                # Iterates for 9 x 9 grid size  
             col_headers.append(i)                                         # Appends the column header numbers to the array 
@@ -496,10 +499,11 @@ def game_screen():
         print('Hull points: ', end="") # Debug, delete when ready
         print(battleship_hull_locations) # Debug, delete when ready
 
+
+        ### PROMPTS USER TO ENTER VALID X COORDINATE INPUT ###
         user_x_coord = input('\nEnter row to fire upon: \n')
 
         while user_x_coord not in valid_shot_inputs:
-            # This will display the same screen to the user after entering an invalid input
             clearscreen()
             print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
             #sleep(0.5)
@@ -526,10 +530,10 @@ def game_screen():
             user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
 
+        ### PROMPTS USER TO ENTER VALID Y COORDINATE INPUT ###
         user_y_coord = input('Enter column to fire upon: \n')
 
         while user_y_coord not in valid_shot_inputs:
-            # This will display the same screen to the user after entering an invalid input
             clearscreen()
             print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
             #sleep(0.5)
@@ -557,40 +561,43 @@ def game_screen():
             print(user_x_coord)
             user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
+        ### ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
         total_shots.append(user_shot) # Debug, delete when ready
 
 
-        # Check if shot is in the enemy ship locations list
+        ### CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
         if user_shot in enemy_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[42m\x1b[97m\x1b[1m   ENEMY SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             enemy_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
             enemy_ships_destroyed += 1
-        # Check if shot is in the merchant ship locations list
+
+        ### CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[7m\x1b[103m\x1b[30m\x1b[1m MERCHANT SHIP DESTROYED  \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             merchant_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
-        # If shot is not in enemy or merchant ship list, it's automatically a miss
+        
+        ### IF USER SHOT IS NOT IN ENEMY OR MERCHANT SHIP LOCATION LISTS, IT IS A MISS ###
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       TARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \x1b[107m \x1b[30m      TARGET MISSED      \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       TARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             miss_locations.append(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[90mX\x1b[0m'
