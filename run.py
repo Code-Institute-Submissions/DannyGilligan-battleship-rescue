@@ -631,7 +631,7 @@ def game_screen():
             print()
         sleep(0.3)
         print('\n\n\n')
-        for iterations in range(8):
+        for iterations in range(7):
             print('\x1b[31m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
             print('\x1b[31mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
