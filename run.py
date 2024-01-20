@@ -124,7 +124,6 @@ banner_art = ('''
                         / _ \ / __// __// ___// / / // __/
                        / , _// _/ _\ \ / /__ / /_/ // _/ 
                       /_/|_|/___//___/ \___/ \____//___/
-
 ''')
 
 # Stores the mission details message at the mission accept screen
