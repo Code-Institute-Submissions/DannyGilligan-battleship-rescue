@@ -469,7 +469,7 @@ def game_screen():
         #clearscreen()
         shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-        print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{shot_accuracy:02}%\033[0m')
+        print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
         print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
         print('\n')
@@ -479,11 +479,11 @@ def game_screen():
         for i in range(9):                                                # Iterates for 9 x 9 grid size  
             col_headers.append(i)                                         # Appends the column header numbers to the array 
         col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
-        print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+        print("                            ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
 
         row_counter = 0
         for row_array in battle_grid: 
-            print("                             ", row_counter, end = " ")
+            print("                            ", row_counter, end = " ")
             row_counter += 1
             for col_elem in row_array:
                 print(col_elem, end = " ")
@@ -506,7 +506,7 @@ def game_screen():
             #clearscreen()
             shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{shot_accuracy:02}%\033[0m')
+            print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
@@ -514,10 +514,10 @@ def game_screen():
             for i in range(9):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
-            print("                             ", *col_headers, sep = ' ')   
+            print("                            ", *col_headers, sep = ' ')   
             row_counter = 0
             for row_array in battle_grid: 
-                print("                             ", row_counter, end = " ")
+                print("                            ", row_counter, end = " ")
                 row_counter += 1
                 for col_elem in row_array:
                     print(col_elem, end = " ")
@@ -544,10 +544,10 @@ def game_screen():
             for i in range(9):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
-            print("                             ", *col_headers, sep = ' ')   
+            print("                            ", *col_headers, sep = ' ')   
             row_counter = 0
             for row_array in battle_grid: 
-                print("                             ", row_counter, end = " ")
+                print("                            ", row_counter, end = " ")
                 row_counter += 1
                 for col_elem in row_array:
                     print(col_elem, end = " ")
