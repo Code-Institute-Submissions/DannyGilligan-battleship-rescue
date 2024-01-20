@@ -11,7 +11,7 @@
 # site used for special symbols https://www.compart.com/en/unicode/U+2731
 #Resolved bug, shot accuracy len(total_shots) was zero, received divide by zero error, used ternary operator to assign value instead https://rollbar.com/blog/python-zerodivisionerror/#
 
-# >>>>>>>>>>>>>>> Imports <<<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
 import os
 from random import randint
@@ -19,7 +19,7 @@ import sys
 import time
 from time import sleep
 
-# >>>>>>>>>>>>>>> Variables <<<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> VARIABLES <<<<<<<<<<<<<<<
 
 # Stores a valid username
 username = None
@@ -143,7 +143,7 @@ mission_details_message = ('''It is with great regret that I must inform you tha
     Losing that cargo, means losing the war!\n''')
 
 
-# >>>>>>>>>>>>>>> Functions <<<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> FUNCTIONS <<<<<<<<<<<<<<<
 
 def typing_effect(text, speed):
     """
@@ -220,7 +220,7 @@ def validate_username_screen():
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
         print('            One Battleship stands between them controlling the seas.')
-        username = input('\n\n           \x1b[93mAlert!!' + \
+        username = input('\n           \x1b[93mAlert!!' + \
         '\033[0m Enter a valid'\
         + ' callsign between \x1b[93m2\033[0m and \x1b[93m15\033[0m' + \
         ' characters\n\n                                   ')
@@ -465,7 +465,7 @@ def game_screen():
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(1)
     while torpedo_count > 0:
-        ### PRINTS SITREP PANEL TO SCREEN ###
+        ### 1. PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
         shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
@@ -475,8 +475,7 @@ def game_screen():
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
         print('\n')
 
-
-        ### PRINTS BATTLE GRIP TO SCREEN ON EACH LOOP ###
+        ### 2. PRINTS BATTLE GRIP TO SCREEN ###
         col_headers = []                                                  # Empty array to hold the column header values based on the userinput
         for i in range(9):                                                # Iterates for 9 x 9 grid size  
             col_headers.append(i)                                         # Appends the column header numbers to the array 
@@ -499,7 +498,7 @@ def game_screen():
         print(battleship_hull_locations) # Debug, delete when ready
 
 
-        ### PROMPTS USER TO ENTER VALID X COORDINATE INPUT ###
+        ### 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT ###
         user_x_coord = input('\nEnter row to fire upon: \n')
 
         while user_x_coord not in valid_shot_inputs:
@@ -529,7 +528,7 @@ def game_screen():
             user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
 
-        ### PROMPTS USER TO ENTER VALID Y COORDINATE INPUT ###
+        ### 4. PROMPTS USER TO ENTER VALID Y COORDINATE INPUT ###
         user_y_coord = input('Enter column to fire upon: \n')
 
         while user_y_coord not in valid_shot_inputs:
@@ -560,13 +559,13 @@ def game_screen():
             print(user_x_coord)
             user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
 
-        ### ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
+        ### 5. ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
         total_shots.append(user_shot) # Debug, delete when ready
 
 
-        ### CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
+        ### 6. CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
         if user_shot in enemy_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
@@ -578,7 +577,7 @@ def game_screen():
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
             enemy_ships_destroyed += 1
 
-        ### CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
+        ### 7. CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
@@ -590,7 +589,7 @@ def game_screen():
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
         
-        ### IF USER SHOT IS NOT IN ENEMY OR MERCHANT SHIP LOCATION LISTS, IT IS A MISS ###
+        ### 8. IF USER SHOT IS NOT IN ENEMY OR MERCHANT SHIP LOCATION LISTS, IT IS A MISS ###
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
