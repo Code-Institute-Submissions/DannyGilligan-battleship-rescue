@@ -454,12 +454,13 @@ def game_screen():
     while torpedo_count > 0:
 
         clearscreen()
-        print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+        print('--------------------- Battleship Operations SITREP Display ---------------------\n')
         #sleep(0.5)
         #clearscreen()
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
         print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+        print(f'Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Shot accuracy:           \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
         print('\n')
 
 
@@ -484,7 +485,6 @@ def game_screen():
         print('Hull points: ', end="") # Debug, delete when ready
         print(battleship_hull_locations) # Debug, delete when ready
 
-        #print('Before a shot has been taken, the torpedo count is: ' + str(torpedo_count))
         user_x_coord = input('\nEnter row to fire upon: \n')
 
         while user_x_coord not in valid_shot_inputs:
@@ -496,6 +496,7 @@ def game_screen():
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+            print(f'Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Shot accuracy:           \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
             print('\n')
             col_headers = []                                                  
             for i in range(9):                                                 
@@ -524,6 +525,7 @@ def game_screen():
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+            print(f'Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Shot accuracy:           \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
             print('\n')
             col_headers = []                                                  
             for i in range(9):                                                 
@@ -545,21 +547,7 @@ def game_screen():
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
 
-        #print('A shot has been taken, the torpedo count is now: ' + str(torpedo_count))
-        ############ DEBUGGING BELOW ######################
-
-        #print(user_shot) 
-        #print(type(user_shot))
-        #enemy = enemy_ship_locations[0]
-        #print(enemy)
-        #print(type(enemy))
-        #if enemy == user_shot:
-        #    print('They are the same')
-        #else: 
-        #    print('They are not the same')
-
-        ############ DEBUGGING ABOVE ######################
-
+        # Check if shot is in the enemy ship locations list
         if user_shot in enemy_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
@@ -570,6 +558,7 @@ def game_screen():
             enemy_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
             enemy_ships_destroyed += 1
+        # Check if shot is in the merchant ship locations list
         elif user_shot in merchant_ship_locations:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
@@ -580,6 +569,7 @@ def game_screen():
             merchant_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
+        # If shot is not in enemy or merchant ship list, it's automatically a miss
         else:
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
