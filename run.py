@@ -573,7 +573,7 @@ def game_screen():
 
         ### 6. CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
         if user_shot in enemy_ship_locations:
-            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
@@ -585,7 +585,7 @@ def game_screen():
 
         ### 7. CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
         elif user_shot in merchant_ship_locations:
-            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
@@ -597,7 +597,7 @@ def game_screen():
         
         ### 8. ELSE IT IS A MISS ###
         else:
-            typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       TARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
@@ -631,7 +631,7 @@ def game_screen():
             print()
         sleep(0.3)
         print('\n\n\n')
-        for iterations in range(10):
+        for iterations in range(8):
             print('\x1b[31m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
             print('\x1b[31mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
