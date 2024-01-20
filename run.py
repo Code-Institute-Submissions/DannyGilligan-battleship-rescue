@@ -449,12 +449,12 @@ def game_screen():
 
     clearscreen()
     sleep(0.5)
-    typing_effect('--------------------- Battleship Operations SITREP Display ---------------------\n\n',0.01)
+    typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(1)
     while torpedo_count > 0:
 
         clearscreen()
-        print('--------------------- Battleship Operations SITREP Display ---------------------\n')
+        print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
         #sleep(0.5)
         #clearscreen()
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
@@ -490,7 +490,7 @@ def game_screen():
         while user_x_coord not in valid_shot_inputs:
             # This will display the same screen to the user after entering an invalid input
             clearscreen()
-            print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+            print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
             #sleep(0.5)
             #clearscreen()
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
@@ -519,7 +519,7 @@ def game_screen():
         while user_y_coord not in valid_shot_inputs:
             # This will display the same screen to the user after entering an invalid input
             clearscreen()
-            print('--------------------- Battleship Operations SITREP Display ---------------------\n\n')
+            print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
             #sleep(0.5)
             #clearscreen()
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Hull integrity:          \x1b[96m{battleship_hull_integrity:02}%\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
