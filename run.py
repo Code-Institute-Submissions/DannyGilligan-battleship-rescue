@@ -64,7 +64,7 @@ miss_locations = []
 
 # Stores value of the user's battleship hull integrity
 hull_armour_remaining = 0
-battleship_hull_integrity
+
 # Stores torpedos available to user
 torpedo_count = 0
 
@@ -258,26 +258,26 @@ def initialise_game_values(): # Note for bug in readme, had to move this higher 
     global enemy_ship_initialise_count
     global merchant_ship_initialise_count
     global battleship_hull_locations_initialise_count
-    global battleship_hull_integrity
+    global hull_armour_remaining
     global torpedo_count
 
     if mission_difficulty == 'cadet':
         enemy_ship_initialise_count = 5
         merchant_ship_initialise_count = 5
         battleship_hull_locations_initialise_count = 5
-        battleship_hull_integrity = 100
+        hull_armour_remaining = 50
         torpedo_count = 45
     elif mission_difficulty == 'captain':
         enemy_ship_initialise_count = 10
         merchant_ship_initialise_count = 4
         battleship_hull_locations_initialise_count = 10
-        battleship_hull_integrity = 80
+        hull_armour_remaining = 40
         torpedo_count = 40
     else:
         enemy_ship_initialise_count = 15
         merchant_ship_initialise_count = 3
         battleship_hull_locations_initialise_count = 15
-        battleship_hull_integrity = 60
+        hull_armour_remaining = 30
         torpedo_count = 35
 
 
@@ -458,7 +458,7 @@ def game_screen():
         #sleep(0.5)
         #clearscreen()
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-        print(f'Hull armour remaining:    \x1b[96m{battleship_hull_integrity:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
+        print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
         print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
         print('\n')
@@ -494,7 +494,7 @@ def game_screen():
             #sleep(0.5)
             #clearscreen()
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull armour remaining:    \x1b[96m{battleship_hull_integrity:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
+            print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
@@ -523,7 +523,7 @@ def game_screen():
             #sleep(0.5)
             #clearscreen()
             print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                       Missed shots:             \x1b[96m{(len(merchant_ship_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull armour remaining:    \x1b[96m{battleship_hull_integrity:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
+            print(f'Hull armour remaining:    \x1b[96m{hull_armour_remaining:02}\033[0m                       Shot accuracy:            \x1b[96m{merchant_ships_destroyed:02}%\033[0m')
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                       Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                       Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
@@ -610,7 +610,7 @@ main()
 # print('Enemy ships starting value: ' + str(enemy_ship_initialise_count))
 # print('Merchant ships starting value: ' + str(merchant_ship_initialise_count))
 # print('Battleship hull locations starting value: ' + str(battleship_hull_locations_initialise_count))
-# print('Battleship hull integrity starting value: ' + str(battleship_hull_integrity))
+# print('Battleship hull integrity starting value: ' + str(hull_armour_remaining))
 # print('Torpedo count starting value: ' + str(torpedo_count))
 # print('\nBattleship hull locations: ', end="")
 # print(battleship_hull_locations)
