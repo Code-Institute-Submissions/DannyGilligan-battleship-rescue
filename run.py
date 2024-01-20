@@ -282,19 +282,19 @@ def initialise_game_values(): # Note for bug in readme, had to move this higher 
         enemy_ship_initialise_count = 5
         merchant_ship_initialise_count = 5
         battleship_hull_locations_initialise_count = 5
-        hull_plates_remaining = 50
+        hull_plates_remaining = 10
         torpedo_count = 45
     elif mission_difficulty == 'captain':
         enemy_ship_initialise_count = 10
         merchant_ship_initialise_count = 4
         battleship_hull_locations_initialise_count = 10
-        hull_plates_remaining = 40
+        hull_plates_remaining = 8
         torpedo_count = 40
     else:
         enemy_ship_initialise_count = 15
         merchant_ship_initialise_count = 3
         battleship_hull_locations_initialise_count = 15
-        hull_plates_remaining = 30
+        hull_plates_remaining = 6
         torpedo_count = 35
 
 
@@ -634,7 +634,7 @@ def game_screen():
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\033[41m\033[37m\033[1m       BATTLESHIP HIT       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
             battleship_hull_locations.remove(enemy_shot)
-            hull_plates_remaining -= 10
+            hull_plates_remaining -= 1
 
         ### 12. ELSE IT IS A MISS ###    
         else:
