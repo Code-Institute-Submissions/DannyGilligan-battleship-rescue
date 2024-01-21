@@ -355,7 +355,7 @@ def mission_accept_screen():
     preventing us from locating them. But we know they're out there, somewhere.
     Hunt down the enemy with extreme prejudice, avoid friendly fire at all
     costs and rescue those Merchant ships.\n
-    Losing that cargo, means losing the war!\n''',0.00)
+    Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
     mission_acceptance = input('\n                         Accept' + \
     ' Mission? (Y / N)\n\n                                   ') 
