@@ -461,7 +461,7 @@ def game_screen():
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(0.5)
     print('\033[?25h', end="") # Code to show cursor credited in README.md
-    while torpedo_count > 0 and hull_plates_remaining > 0 and len(enemy_ship_locations) > 0 and len(merchant_ship_locations > 0):
+    while torpedo_count > 0 and hull_plates_remaining > 0 and int(len(enemy_ship_locations)) > 0 and int(len(merchant_ship_locations)) > 0:
         ### 1. PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
@@ -680,13 +680,14 @@ def game_screen():
                 sleep(0.15)
             print('\033[?25h', end="") # Code to show cursor credited in README.md
             enemy_misses.append(enemy_shot)
-    
-def end_game_conditions():
+        
 
+def end_game_conditions():
     if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
         print("YOU WON!!!!!!!!")
     else:
+        clearscreen()
         print("YOU LOST :(")
 
 
@@ -704,6 +705,7 @@ def main():
     generate_enemy_ship_locations() # Creates enemy ship locations
     generate_merchant_ship_locations() # Creates merchant ship locations
     game_screen() # This contains the core game mechanics
+    end_game_conditions() # Checks for end game conditions
 
 main()
 
