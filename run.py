@@ -477,11 +477,11 @@ def game_screen():
         for i in range(7):                                                # Iterates for 9 x 9 grid size  
             col_headers.append(i)                                         # Appends the column header numbers to the array 
         col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
-        print("                            ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+        print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
 
         row_counter = 0
         for row_array in battle_grid: 
-            print("                            ", row_counter, end = " ")
+            print("                             ", row_counter, end = " ")
             row_counter += 1
             for col_elem in row_array:
                 print(col_elem, end = " ")
@@ -513,10 +513,10 @@ def game_screen():
             for i in range(7):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
-            print("                            ", *col_headers, sep = ' ')   
+            print("                             ", *col_headers, sep = ' ')   
             row_counter = 0
             for row_array in battle_grid: 
-                print("                            ", row_counter, end = " ")
+                print("                             ", row_counter, end = " ")
                 row_counter += 1
                 for col_elem in row_array:
                     print(col_elem, end = " ")
@@ -543,10 +543,10 @@ def game_screen():
             for i in range(7):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
-            print("                            ", *col_headers, sep = ' ')   
+            print("                             ", *col_headers, sep = ' ')   
             row_counter = 0
             for row_array in battle_grid: 
-                print("                            ", row_counter, end = " ")
+                print("                             ", row_counter, end = " ")
                 row_counter += 1
                 for col_elem in row_array:
                     print(col_elem, end = " ")
@@ -619,10 +619,10 @@ def game_screen():
         for i in range(7):                                                 
             col_headers.append(i)                                         
         col_headers.insert(0, " ")                                        
-        print("                            ", *col_headers, sep = ' ')   
+        print("                             ", *col_headers, sep = ' ')   
         row_counter = 0
         for row_array in battle_grid: 
-            print("                            ", row_counter, end = " ")
+            print("                             ", row_counter, end = " ")
             row_counter += 1
             for col_elem in row_array:
                 print(col_elem, end = " ")
