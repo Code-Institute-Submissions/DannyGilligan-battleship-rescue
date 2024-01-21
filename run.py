@@ -461,7 +461,7 @@ def game_screen():
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(0.5)
     print('\033[?25h', end="") # Code to show cursor credited in README.md
-    while torpedo_count > 0:
+    while torpedo_count > 0 and hull_plates_remaining > 0 and len(enemy_ship_locations) > 0 and len(merchant_ship_locations > 0):
         ### 1. PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
