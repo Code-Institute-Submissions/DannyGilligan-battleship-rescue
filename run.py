@@ -575,36 +575,42 @@ def game_screen():
 
         ### 6. CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
         if user_shot in enemy_ship_locations:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             enemy_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
             enemy_ships_destroyed += 1
 
         ### 7. CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
         elif user_shot in merchant_ship_locations:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             merchant_ship_locations.remove(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
         
         ### 8. ELSE IT IS A MISS ###
         else:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             miss_locations.append(user_shot)
             battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[90mX\x1b[0m'
 
@@ -647,35 +653,41 @@ def game_screen():
 
         ### 10. CHECKS IF ENEMY SHOT IS IN MERCHANT SHIP LIST ###
         if enemy_shot in merchant_ship_locations:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             merchant_ship_locations.remove(enemy_shot)
             battle_grid[int(enemy_shot_x_coor)][int(enemy_shot_y_coor)] = '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
 
         ### 11. CHECKS IF ENEMY SHOT IS IN BATTLESHIP HULL LIST ###    
         elif enemy_shot in battleship_hull_locations:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \033[41m\033[37m\033[1m       BATTLESHIP HIT       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\033[41m\033[37m\033[1m       BATTLESHIP HIT       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             battleship_hull_locations.remove(enemy_shot)
             hull_plates_remaining -= 1
 
         ### 12. ELSE IT IS A MISS ###    
         else:
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(3):
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
                 print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
+            print('\033[?25h', end="") # Code to show cursor credited in README.md
             enemy_misses.append(enemy_shot)
         
 
