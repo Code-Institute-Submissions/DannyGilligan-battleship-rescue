@@ -680,8 +680,14 @@ def game_screen():
                 sleep(0.15)
             print('\033[?25h', end="") # Code to show cursor credited in README.md
             enemy_misses.append(enemy_shot)
-        
+    
+def end_game_conditions():
 
+    if len(enemy_ship_locations) = 0 and len(merchant_ship_locations) > 0:
+        clearscreen()
+        print("YOU WON!!!!!!!!")
+    else:
+        print("YOU LOST :(")
 
 
 def main():
