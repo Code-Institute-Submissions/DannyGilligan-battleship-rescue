@@ -645,7 +645,7 @@ def game_screen():
             print()
         sleep(0.3)
         print('\n\n\n')
-        for iterations in range(5):
+        for iterations in range(4):
             print('\033[?25l', end="") # Code to hide cursor credited in README.md
             print('\x1b[31m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
