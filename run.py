@@ -133,22 +133,6 @@ banner_art = ('''
                       /_/|_|/___//___/ \___/ \____//___/
 ''')
 
-# Stores the mission details message at the mission accept screen
-mission_details_message = ('''It is with great regret that I must inform you that the situation has
-    become dire. Our forces are being routed in every theatre and on every
-    front, our supply chains have been decimated and our ability to sustain
-    a defence against this onslaught can be measured now in hours.\n
-    Your mission is to intercept and eliminate a fleet of 5 enemy Destroyers
-    currently pursuing 2 friendly Merchant ships sailing for our Capital Port. 
-    These Merchant ships are on a clandestine mission to deliver classified 
-    cargo that will turn the tide of this war once and for all!\n
-    Unfortunately, during a recent skirmish, the Merchant ships lost all
-    communication capabilities and the enemy's radar jamming technology is
-    preventing us from locating them. But we know they're out there, somewhere.
-    Hunt down the enemy with extreme prejudice, avoid friendly fire at all
-    costs and rescue those Merchant ships.\n
-    Losing that cargo, means losing the war!\n''')
-
 
 # >>>>>>>>>>>>>>> FUNCTIONS <<<<<<<<<<<<<<<
 
@@ -198,11 +182,11 @@ def start_screen():
     print(banner_art_lower) # Prints 'Rescue' to screen
     print('\n')
     sleep(0.0)
-    typing_effect('                         The enemy controls the land.\n', 0.03)
-    typing_effect('                         The enemy controls the skies.\n', 0.03)
-    typing_effect('            One Battleship stands between them controlling the seas.\n', 0.03)
+    typing_effect('                         The enemy controls the land.\n', 0.02)
+    typing_effect('                         The enemy controls the skies.\n', 0.02)
+    typing_effect('            One Battleship stands between them controlling the seas.\n', 0.02)
     sleep(0.4)
-    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
+    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.02)
     print('\033[?25h', end="") # Code to show cursor credited in README.md
     username = input('                                 ')
 
