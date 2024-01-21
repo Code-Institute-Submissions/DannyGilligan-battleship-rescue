@@ -625,6 +625,7 @@ def game_screen():
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
         #sleep(0.5)
         #clearscreen()
+        print('\033[?25l', end="") # Code to hide cursor credited in README.md
         shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
         print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
         print(f'Hull plates remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
@@ -646,7 +647,7 @@ def game_screen():
         sleep(0.3)
         print('\n\n\n')
         for iterations in range(3):
-            print('\033[?25l', end="") # Code to hide cursor credited in README.md
+            
             print('\x1b[31m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
             print('\x1b[31mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
