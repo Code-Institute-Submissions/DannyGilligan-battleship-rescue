@@ -10,6 +10,8 @@
 # site used for character count
 # site used for special symbols https://www.compart.com/en/unicode/U+2731
 #Resolved bug, shot accuracy len(total_shots) was zero, received divide by zero error, used ternary operator to assign value instead https://rollbar.com/blog/python-zerodivisionerror/#
+# Add credit for clearscreen function
+# how to hide cursor https://stackoverflow.com/questions/5174810/how-to-turn-off-blinking-cursor-in-command-window
 
 # >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
@@ -632,11 +634,12 @@ def game_screen():
         sleep(0.3)
         print('\n\n\n')
         for iterations in range(7):
+            print('\033[?25l', end="") # Code to hide cursor credited in README.md
             print('\x1b[31m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
             print('\x1b[31mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)
-
+        print('\033[?25h', end="") # Code to show cursor credited in README.md
         enemy_shot_x_coor = (randint(0, 7))
         enemy_shot_y_coor = (randint(0, 7))
         enemy_shot = [int(enemy_shot_x_coor)] + [int(enemy_shot_y_coor)]
