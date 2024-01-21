@@ -473,9 +473,11 @@ def game_screen():
     global hull_plates_remaining
 
     clearscreen()
+    print('\033[?25l', end="") # Code to hide cursor credited in README.md
     sleep(0.5)
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(0.5)
+    print('\033[?25h', end="") # Code to show cursor credited in README.md
     while torpedo_count > 0:
         ### 1. PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
