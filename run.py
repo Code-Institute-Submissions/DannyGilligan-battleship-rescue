@@ -78,7 +78,7 @@ hull_plates_remaining = 0
 torpedo_count = 0
 
 # Stores valid shot input values
-valid_shot_inputs = ['0','1','2','3','4','5','6','7']
+valid_shot_inputs = ['0','1','2','3','4','5','6']
 
 # Stores total number of shots taken (used to calculate accuracy)
 total_shots = []
@@ -383,8 +383,8 @@ def generate_battleship_hull_hit_locations():
     to the battleship hull locations list.
     """
     while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
-        x_coordinate = (randint(0, 7))
-        y_coordinate = (randint(0, 7))
+        x_coordinate = (randint(0, 6))
+        y_coordinate = (randint(0, 6))
         hull_hit_location = [int(x_coordinate)] + [int(y_coordinate)]
         if hull_hit_location in battleship_hull_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
@@ -406,8 +406,8 @@ def generate_enemy_ship_locations():
     to the enemy ship locations list.
     """
     while len(enemy_ship_locations) < enemy_ship_initialise_count:
-        x_coordinate = (randint(0, 7))
-        y_coordinate = (randint(0, 7))
+        x_coordinate = (randint(0, 6))
+        y_coordinate = (randint(0, 6))
         enemy_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if enemy_ship_location in enemy_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
@@ -431,8 +431,8 @@ def generate_merchant_ship_locations():
     to the merchant ship locations list.
     """
     while len(merchant_ship_locations) < merchant_ship_initialise_count:
-        x_coordinate = (randint(0, 7))
-        y_coordinate = (randint(0, 7))
+        x_coordinate = (randint(0, 6))
+        y_coordinate = (randint(0, 6))
         merchant_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if merchant_ship_location in merchant_ship_locations:
             continue # Note for readme, changed from break to continue, unexpected behaviour
@@ -474,7 +474,7 @@ def game_screen():
 
         ### 2. PRINTS BATTLE GRIP TO SCREEN ###
         col_headers = []                                                  # Empty array to hold the column header values based on the userinput
-        for i in range(8):                                                # Iterates for 9 x 9 grid size  
+        for i in range(7):                                                # Iterates for 9 x 9 grid size  
             col_headers.append(i)                                         # Appends the column header numbers to the array 
         col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
         print("                            ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
@@ -510,7 +510,7 @@ def game_screen():
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
             col_headers = []                                                  
-            for i in range(8):                                                 
+            for i in range(7):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
             print("                            ", *col_headers, sep = ' ')   
@@ -522,7 +522,7 @@ def game_screen():
                     print(col_elem, end = " ")
                 print()
 
-            user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
+            user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
 
 
         ### 4. PROMPTS USER TO ENTER VALID Y COORDINATE INPUT (WHILE LOOP VALIDATES) ###
@@ -540,7 +540,7 @@ def game_screen():
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
             print('\n')
             col_headers = []                                                  
-            for i in range(8):                                                 
+            for i in range(7):                                                 
                 col_headers.append(i)                                         
             col_headers.insert(0, " ")                                        
             print("                            ", *col_headers, sep = ' ')   
@@ -554,7 +554,7 @@ def game_screen():
 
             print('\nEnter row to fire upon: ')
             print(user_x_coord)
-            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m8\033[0m) \n')
+            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m7\033[0m) \n')
 
         ### 5. ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
         user_shot = [int(user_x_coord), int(user_y_coord)]
@@ -616,7 +616,7 @@ def game_screen():
         print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
         print('\n')
         col_headers = []                                                  
-        for i in range(8):                                                 
+        for i in range(7):                                                 
             col_headers.append(i)                                         
         col_headers.insert(0, " ")                                        
         print("                            ", *col_headers, sep = ' ')   
@@ -636,8 +636,8 @@ def game_screen():
             print('\x1b[91mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)
         print('\033[?25h', end="") # Code to show cursor credited in README.md
-        enemy_shot_x_coor = (randint(0, 7))
-        enemy_shot_y_coor = (randint(0, 7))
+        enemy_shot_x_coor = (randint(0, 6))
+        enemy_shot_y_coor = (randint(0, 6))
         enemy_shot = [int(enemy_shot_x_coor)] + [int(enemy_shot_y_coor)]
         enemy_shots.append(enemy_shot)
 
