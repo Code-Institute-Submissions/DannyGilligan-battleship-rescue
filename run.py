@@ -634,7 +634,7 @@ def game_screen():
             
             print('\x1b[91m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)  
-            print('\x1b[31mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
+            print('\x1b[91mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
             sleep(0.08)
         print('\033[?25h', end="") # Code to show cursor credited in README.md
         enemy_shot_x_coor = (randint(0, 7))
