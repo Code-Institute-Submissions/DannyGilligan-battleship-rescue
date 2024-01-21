@@ -12,6 +12,7 @@
 #Resolved bug, shot accuracy len(total_shots) was zero, received divide by zero error, used ternary operator to assign value instead https://rollbar.com/blog/python-zerodivisionerror/#
 # Add credit for clearscreen function
 # how to hide cursor https://stackoverflow.com/questions/5174810/how-to-turn-off-blinking-cursor-in-command-window
+# resolved bug, when it's impossible to win, add condition to while loop, torpedo_count >= int(len(enemy_ship_locations)), add screenshot of code
 
 # >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
@@ -461,7 +462,7 @@ def game_screen():
     typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
     sleep(0.5)
     print('\033[?25h', end="") # Code to show cursor credited in README.md
-    while torpedo_count > 0 and hull_plates_remaining > 0 and int(len(enemy_ship_locations)) > 0 and int(len(merchant_ship_locations)) > 0:
+    while torpedo_count > 0 and hull_plates_remaining > 0 and int(len(enemy_ship_locations)) > 0 and int(len(merchant_ship_locations)) > 0 and torpedo_count >= int(len(enemy_ship_locations)):
         ### 1. PRINTS SITREP PANEL TO SCREEN ###
         clearscreen()
         print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
