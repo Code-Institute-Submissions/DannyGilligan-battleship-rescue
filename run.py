@@ -494,6 +494,7 @@ def game_screen():
         #print('Hull points: ', end="") # Debug, delete when ready
         #print(battleship_hull_locations) # Debug, delete when ready
 
+        print('\x1b[92m\x1b[1m WEAPONS READY\x1b[0m')
 
         ### 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT (WHILE LOOP VALIDATES) ###
         user_x_coord = input('\nEnter row to fire upon: \n')
@@ -699,6 +700,25 @@ def main():
     game_screen() # This contains the core game mechanics
 
 main()
+
+
+#print('\x1b[95m WEAPONS READY\x1b[0m') # Bright Magenta
+
+#print('\x1b[95m\x1b[1m WEAPONS READY\x1b[0m') # Bright Magenta
+
+#print('\x1b[35m WEAPONS READY\x1b[0m') # Magenta
+
+#print('\x1b[35m\x1b[1m WEAPONS READY\x1b[0m') # Magenta bold
+
+#print('\x1b[32m WEAPONS READY\x1b[0m') # Green
+
+#print('\x1b[32m\x1b[1m WEAPONS READY\x1b[0m') # Green bold
+
+
+#print('\x1b[92m WEAPONS READY\x1b[0m') # Green
+
+#print('\x1b[92m\x1b[1m WEAPONS READY\x1b[0m') # Green bold
+
 
 
 
