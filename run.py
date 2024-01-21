@@ -329,7 +329,7 @@ def mission_accept_screen():
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
     a defence against this onslaught can be measured now in hours.\n
-    Your mission is to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
+    Your orders are to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
     currently pursuing {merchant_ship_initialise_count} friendly Merchant ships sailing for our Capital Port. 
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
@@ -353,7 +353,7 @@ def mission_accept_screen():
     become dire. Our forces are being routed in every theatre and on every
     front, our supply chains have been decimated and our ability to sustain
     a defence against this onslaught can be measured now in hours.\n
-    Your mission is to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
+    Your orders are to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
     currently pursuing {merchant_ship_initialise_count} friendly Merchant ships sailing for our Capital Port. 
     These Merchant ships are on a clandestine mission to deliver classified 
     cargo that will turn the tide of this war once and for all!\n
