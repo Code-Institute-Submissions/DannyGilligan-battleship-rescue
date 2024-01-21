@@ -339,7 +339,6 @@ def mission_accept_screen():
     print(message1 + message2)
     time.sleep(2)
     clearscreen()
-    #print('\033[?25h', end="") # Code to show cursor credited in README.md
     typing_effect(f'''
     {mission_difficulty.capitalize()}, 
     It is with great regret that I must inform you that the situation has
@@ -357,6 +356,7 @@ def mission_accept_screen():
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
+    print('\033[?25h', end="") # Code to show cursor credited in README.md
     mission_acceptance = input('\n                         Accept' + \
     ' Mission? (Y / N)\n\n                                   ') 
     mission_acceptance = mission_acceptance.lower()
