@@ -195,9 +195,8 @@ def start_screen():
     #sleep(0.1)
     typing_effect\
     ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
-
     print(banner_art_lower) # Prints 'Rescue' to screen
-
+    print('\n')
     sleep(0.0)
     typing_effect('                         The enemy controls the land.\n', 0.03)
     typing_effect('                         The enemy controls the skies.\n', 0.03)
@@ -226,6 +225,7 @@ def validate_username_screen():
     while len(username) < 2 or len(username) > 15:
         clearscreen() # Screen is cleared
         print(banner_art) 
+        print('\n')
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
         print('            One Battleship stands between them controlling the seas.')
