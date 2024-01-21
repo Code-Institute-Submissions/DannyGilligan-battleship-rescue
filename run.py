@@ -494,7 +494,7 @@ def game_screen():
         #print('Hull points: ', end="") # Debug, delete when ready
         #print(battleship_hull_locations) # Debug, delete when ready
 
-        print('\x1b[92m WEAPONS READY\x1b[0m')
+        print('\x1b[92mWEAPONS READY\x1b[0m')
 
         ### 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT (WHILE LOOP VALIDATES) ###
         user_x_coord = input('\nEnter row to fire upon: \n')
@@ -522,7 +522,7 @@ def game_screen():
                 for col_elem in row_array:
                     print(col_elem, end = " ")
                 print()
-
+            print('\x1b[92mWEAPONS READY\x1b[0m')
             user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
 
 
@@ -552,7 +552,7 @@ def game_screen():
                 for col_elem in row_array:
                     print(col_elem, end = " ")
                 print()
-
+            print('\x1b[92mWEAPONS READY\x1b[0m')
             print('\nEnter row to fire upon: ')
             print(user_x_coord)
             user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m7\033[0m) \n')
@@ -629,7 +629,7 @@ def game_screen():
                 print(col_elem, end = " ")
             print()
         sleep(0.3)
-        print('\n\n\n')
+        print('\n\n\n\n')
         for iterations in range(3):
             
             print('\x1b[91m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
