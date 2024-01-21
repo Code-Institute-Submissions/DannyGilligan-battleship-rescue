@@ -266,20 +266,20 @@ def initialise_game_values(): # Note for bug in readme, had to move this higher 
     global torpedo_count
 
     if mission_difficulty == 'cadet':
-        enemy_ship_initialise_count = 5
-        merchant_ship_initialise_count = 5
+        enemy_ship_initialise_count = 10
+        merchant_ship_initialise_count = 7
         battleship_hull_locations_initialise_count = 5
         hull_plates_remaining = 10
         torpedo_count = 45
     elif mission_difficulty == 'captain':
-        enemy_ship_initialise_count = 10
-        merchant_ship_initialise_count = 4
+        enemy_ship_initialise_count = 15
+        merchant_ship_initialise_count = 6
         battleship_hull_locations_initialise_count = 10
         hull_plates_remaining = 8
         torpedo_count = 40
     else:
-        enemy_ship_initialise_count = 15
-        merchant_ship_initialise_count = 3
+        enemy_ship_initialise_count = 20
+        merchant_ship_initialise_count = 5
         battleship_hull_locations_initialise_count = 15
         hull_plates_remaining = 6
         torpedo_count = 35
