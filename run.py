@@ -198,7 +198,7 @@ def start_screen():
 
     print(banner_art_lower) # Prints 'Rescue' to screen
 
-    sleep(0.3)
+    sleep(0.1)
     typing_effect('                         The enemy controls the land.\n', 0.03)
     typing_effect('                         The enemy controls the skies.\n', 0.03)
     typing_effect('            One Battleship stands between them controlling the seas.\n', 0.03)
