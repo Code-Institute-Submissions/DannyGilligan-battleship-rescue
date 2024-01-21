@@ -184,6 +184,7 @@ def start_screen():
     global username
     clearscreen()
     sleep(0.4)
+    print('\033[?25l', end="") # Code to hide cursor credited in README.md
     print(banner_art_upper) # Prints 'Battleship' to screen
 
     typing_effect\
@@ -203,6 +204,7 @@ def start_screen():
     typing_effect('            One Battleship stands between them controlling the seas.\n', 0.03)
     sleep(0.4)
     username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.03)
+    print('\033[?25h', end="") # Code to show cursor credited in README.md
     username = input('                                 ')
 
 
