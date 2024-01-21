@@ -683,7 +683,7 @@ def game_screen():
     
 def end_game_conditions():
 
-    if len(enemy_ship_locations) = 0 and len(merchant_ship_locations) > 0:
+    if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
         print("YOU WON!!!!!!!!")
     else:
