@@ -311,6 +311,7 @@ def mission_accept_screen():
     """
 
     clearscreen()
+    print('\033[?25l', end="") # Code to hide cursor credited in README.md
     time.sleep(.4)
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command''')
     time.sleep(.4)
@@ -338,6 +339,7 @@ def mission_accept_screen():
     print(message1 + message2)
     time.sleep(2)
     clearscreen()
+    print('\033[?25h', end="") # Code to show cursor credited in README.md
     typing_effect(f'''
     {mission_difficulty.capitalize()}, 
     It is with great regret that I must inform you that the situation has
