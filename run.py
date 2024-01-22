@@ -519,7 +519,7 @@ def sitrep_loading():
     typing_effect(f'                                 Torpedo Complement : \x1b[96m16{torpedo_count}\033[0m\n', 0.01)
     typing_effect("                                  Propulsion Systems : \x1b[92mOnline\033[0m\n", 0.01)
     typing_effect("                                  Navigation Systems : \x1b[92mOnline\033[0m\n", 0.01)
-    typing_effect("                                  Radar Targetting   : \x1b[92mOnline\033[0m\n", 0.01)
+    typing_effect("                                  Radar Targetting   : \x1b[91mOffline\033[0m\n", 0.01)
     typing_effect("                                  \x1b[92SITREP Display Module Loaded\033[0m\n", 0.01)
 
 
