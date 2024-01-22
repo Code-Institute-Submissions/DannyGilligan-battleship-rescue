@@ -809,13 +809,33 @@ def end_game_conditions():
         clearscreen()
         print("YOU LOST :(")
         if torpedo_count < int(len(enemy_ship_locations)):
-            print('Not enough torpedos')
-        elif torpedo_count == 0:
-            print('You ran out of torpedos')
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
+            for iterations in range(25):
+                    print('             \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
+                    print('             \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
+        elif torpedo_count == 0 and int(len(enemy_ship_locations)) > 0:
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle Update : \x1b[96mTorpedo Complement Exhausted\x1b[0m\n')
+            for iterations in range(25):
+                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
+                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
         elif len(merchant_ship_locations) == 0:
-            print('All merchant ships destroyed')
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle Update : \x1b[96mAll Merchant Ships Destroyed\x1b[0m\n')
+            for iterations in range(25):
+                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
+                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
         else:
-            print('Hull has been breached')
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                    Battle Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
+            for iterations in range(25):
+                    print('                    \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
+                    print('                    \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                    sleep(0.1)
 
 
 def main():
@@ -847,8 +867,17 @@ def main():
     end_game_conditions()
 
 
-main()
+#main()
 
+
+
+print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
+
+for iterations in range(25):
+        print('             \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+        sleep(0.1)
+        print('             \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+        sleep(0.1)
 
 
 
