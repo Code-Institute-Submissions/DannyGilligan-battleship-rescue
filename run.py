@@ -221,7 +221,7 @@ characters):\n\n', 0.02)
 
 def validate_username_screen():
     """
-    The validate_username function will strip any 
+    The validate_username function will strip any
     leading or trailing whitespaces from the
     username input variable, the value will then be checked
     to ensure it is more than 2 characters and less than 15
@@ -231,22 +231,21 @@ def validate_username_screen():
     username = username.strip()
 
     # While loop is used to perform validation on the username input,
-    # must be greater than 2 characters and less than 15. The while 
+    # must be greater than 2 characters and less than 15. The while
     # loop will display an alert message until the parameters are satisfied.
     while len(username) < 2 or len(username) > 15:
-        clearscreen() # Screen is cleared
-        print(banner_art) 
+        clearscreen()  # Screen is cleared
+        print(banner_art)
         print('\n')
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
         print('            One Battleship stands betwe\
 en them controlling the seas.')
-        username = input('\n           \x1b[93mAlert!!' + \
-        '\033[0m Enter a valid'\
-        + ' callsign between \x1b[93m2\033[0m and \x1b[93m15\033[0m' + \
-        ' characters\n\n                                   ')
-        username = username.strip() # Strip method is used
-    clearscreen() # Screen is cleared 
+        username = input('\n           \x1b[93mAlert!!\
+\033[0m Enter a valid callsign between \x1b[93m2\033[0m and \
+\x1b[93m15\033[0m characters\n\n                                   ')
+        username = username.strip()  # Strip method is used
+    clearscreen()  # Screen is cleared
 
 
 def mission_difficulty_screen():
@@ -391,8 +390,8 @@ friendly fire at all
     Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
     print('\033[?25h', end = "") # Code to show cursor credited in README.md
-    mission_acceptance = input('\n                         Accept' + \
-    ' Mission? (Y / N)\n\n                                   ') 
+    mission_acceptance = input('\n                         Accept')\
+    + (' Mission? (Y / N)\n\n                                   ') 
     mission_acceptance = mission_acceptance.lower()
 
     while mission_acceptance not in mission_accept_options:
@@ -438,17 +437,17 @@ friendly fire at all
 def generate_battleship_hull_hit_locations():
     """
     This function will generate random x and y coordinates
-    representing the location of each hull hit points on the 
+    representing the location of each hull hit points on the
     user's battleship. This is what the enemy will be firing
-    upon. The function checks if the generated coordinates 
+    upon. The function checks if the generated coordinates
     have already been used in the battleship hull list, if
     they've been used already, the current iteration is skipped
     until a combination of coordinates that haven't been used
     already are generated, at which point they will be appended
     to the battleship hull locations list.
     """
-    while len(battleship_hull_locations) < \
-    int(battleship_hull_locations_initialise_count):
+    while len(battleship_hull_locations) \
+            < int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 6))
         y_coordinate = (randint(0, 6))
         hull_hit_location = [int(x_coordinate)] + [int(y_coordinate)]
@@ -488,7 +487,7 @@ def generate_merchant_ship_locations():
     This function will generate random x and y coordinates
     representing the location of each merchant ship on the
     battle grid. This is what the user will be attempting
-    to avoid hitting with each shot. The function checks if 
+    to avoid hitting with each shot. The function checks if
     the generated coordinates have already been used in the
     merchant ship, enemy ship and battleship hull lists, if
     they've been used already, the current iteration is skipped
@@ -501,7 +500,7 @@ def generate_merchant_ship_locations():
         y_coordinate = (randint(0, 6))
         merchant_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if merchant_ship_location in merchant_ship_locations:
-            continue 
+            continue
         elif merchant_ship_location in enemy_ship_locations:
             continue
         elif merchant_ship_location in battleship_hull_locations:
