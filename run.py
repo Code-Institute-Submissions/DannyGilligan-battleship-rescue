@@ -499,7 +499,7 @@ def generate_merchant_ship_locations():
         else:
             merchant_ship_locations.append(merchant_ship_location)
 
-##################################################################################################################################################################### VALIDATED IN PEP8 CHECKER UP TO THIS POINT
+##################################################################################################################################################################### VALIDATED IN CI LINTER UP TO THIS POINT
 
 def game_screen():
 
@@ -604,7 +604,7 @@ def game_screen():
             print('\x1b[92mWEAPONS READY\x1b[0m')
             print('\nEnter row to fire upon: ')
             print(user_x_coord)
-            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m7\033[0m) \n')
+            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
 
         ### 5. ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
         user_shot = [int(user_x_coord), int(user_y_coord)]
@@ -664,7 +664,7 @@ def game_screen():
             #clearscreen()
             print('\033[?25l', end="") # Code to hide cursor credited in README.md
             shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-            print(f'Torpedos remaining:       \x1b[96m\{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
             print(f'Hull plates remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
