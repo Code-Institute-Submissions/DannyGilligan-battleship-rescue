@@ -530,6 +530,8 @@ def sitrep_loading():
     sleep(0.2)
     typing_effect("                    Navigation Systems : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
     sleep(0.2)
+    typing_effect("                    Weapons Systems    : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    sleep(0.2)
     typing_effect("                    Radar Targetting   : \x1b[91m\x1b[1mOffline\033[0m\n\n\n", 0.01)
     sleep(0.2)
     print("                          \x1b[92m\x1b[1mSITREP Display Module Ready\033[0m")
