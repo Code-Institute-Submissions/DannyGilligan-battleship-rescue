@@ -171,13 +171,13 @@ def typing_effect(text, speed):
         sys.stdout.flush()
 
 
-def clearscreen():                                    
+def clearscreen():
     """
-    The clearscreen function will clear any 
+    The clearscreen function will clear any
     content from the current screen
     displayed to the user.
     """
-    os.system('cls' if os.name=='nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def start_screen():
