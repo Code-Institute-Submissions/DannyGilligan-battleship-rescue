@@ -277,7 +277,7 @@ def initialise_game_values():
     This function will determine and initialise the game values
     to be used when the game is launched. The values of the number
     of battleship hull hit locations, enemy ships, merchant ships,
-    torpedos and the hull integrity starting value will be 
+    torpedos and the hull integrity starting value will be
     assigned using this function, and driven by the difficulty
     level selected by the user
     """
@@ -309,15 +309,15 @@ def initialise_game_values():
 
 def mission_accept_screen():
     """
-    The mission accept screen function will provide a 
+    The mission accept screen function will provide a
     visual effect where the user is connecting to 'Central Command'
     in order to access a message containing the mission details.
-    This message will then display an input field requesting the 
+    This message will then display an input field requesting the
     user to accept or reject.
     """
 
     clearscreen()
-    print('\033[?25l', end = "") # Code to hide cursor credited in README.md
+    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     time.sleep(.4)
     print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
 secure connection with Central Command''')
@@ -355,7 +355,7 @@ Eyes Only''')
     time.sleep(2)
     clearscreen()
     typing_effect(f'''
-    {mission_difficulty.capitalize()}, 
+    {mission_difficulty.capitalize()},
     It is with great regret that I must inform you that \
 the situation has
     become dire. Our forces are being routed in every \
@@ -365,11 +365,11 @@ ability to sustain
     a defence against this onslaught can be measured now \
 in hours.\n
     Your orders are to intercept and eliminate a fleet of \
-{enemy_ship_initialise_count} enemy Destroyers 
+{enemy_ship_initialise_count} enemy Destroyers
     currently pursuing {merchant_ship_initialise_count} \
-friendly Merchant ships sailing for our Capital Port. 
+friendly Merchant ships sailing for our Capital Port.
     These Merchant ships are on a clandestine mission to \
-deliver classified 
+deliver classified
     cargo that will turn the tide of this war once and for \
 all!\n
     Unfortunately, during a recent skirmish, the Merchant \
@@ -381,17 +381,17 @@ out there, somewhere.
     Hunt down the enemy with extreme prejudice, avoid \
 friendly fire at all
     costs and rescue those Merchant ships.\n
-    Losing that cargo, means losing the war!\n''',0.03)
+    Losing that cargo, means losing the war!\n''', 0.03)
     sleep(0.5)
-    print('\033[?25h', end = "") # Code to show cursor credited in README.md
+    print('\033[?25h', end="")  # Code to show cursor credited in README.md
     mission_acceptance = input('\n                         Accept \
-    Mission? (Y / N)\n\n                                   ') 
+Mission? (Y / N)\n\n                                   ')
     mission_acceptance = mission_acceptance.lower()
 
     while mission_acceptance not in mission_accept_options:
         clearscreen()
         print(f'''
-    {mission_difficulty.capitalize()}, 
+    {mission_difficulty.capitalize()},
     It is with great regret that I must inform you that \
 the situation has
     become dire. Our forces are being routed in every \
@@ -401,11 +401,11 @@ ability to sustain
     a defence against this onslaught can be measured now \
 in hours.\n
     Your orders are to intercept and eliminate a fleet of \
-{enemy_ship_initialise_count} enemy Destroyers 
+{enemy_ship_initialise_count} enemy Destroyers
     currently pursuing {merchant_ship_initialise_count} \
-friendly Merchant ships sailing for our Capital Port. 
+friendly Merchant ships sailing for our Capital Port.
     These Merchant ships are on a clandestine mission to \
-deliver classified 
+deliver classified
     cargo that will turn the tide of this war once and for \
 all!\n
     Unfortunately, during a recent skirmish, the Merchant \
@@ -419,9 +419,10 @@ friendly fire at all
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
-        mission_acceptance = input('              \x1b[93mAlert!!\033[0m Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m for No. Accept Mission?\n\n                                   ')
+        mission_acceptance = input('              \x1b[93mAler\
+t!!\033[0m Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m \
+for No. Accept Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
-
 
 
 def generate_battleship_hull_hit_locations():
