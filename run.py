@@ -15,6 +15,7 @@
 # resolved bug, when it's impossible to win, add condition to while loop, torpedo_count >= int(len(enemy_ship_locations)), add screenshot of code
 # resolved bug, add condition to prevent an enemy shot when all enemy or merchant ships are destroyed, add screenshot of code
 # resolved bug, add conditions to prevent overwriting an enemy hit or merchant hit symbol when coordinates are fired upon again
+# https://pep8ci.herokuapp.com/ PEP8 Code Checker
 
 # >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
@@ -39,7 +40,7 @@ difficulty_levels = ['cadet', 'captain', 'admiral']
 mission_acceptance = None
 
 # Stores the valid options to accept or reject mission
-mission_accept_options = ['y', 'n'] 
+mission_accept_options = ['y', 'n']
 
 # Stores the initialised count of enemy ships
 enemy_ship_initialise_count = 0
@@ -81,25 +82,42 @@ hull_plates_remaining = 0
 torpedo_count = 0
 
 # Stores valid shot input values
-valid_shot_inputs = ['0','1','2','3','4','5','6']
+valid_shot_inputs = ['0', '1', '2', '3', '4', '5', '6']
 
 # Stores total number of shots taken (used to calculate accuracy)
 total_shots = []
 
-# Stores shot accuracy (enemy ships hit / total shots), will be displayed as a percentage
-shot_accuracy = ((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0 
+# Stores shot accuracy (enemy ships hit / total shots), displayed as percentage
+shot_accuracy = ((enemy_ships_destroyed / len(total_shots)) * 100) \
+    if len(total_shots) > 0 else 0
 
 
 # Stores the battle grid displayed to the user and related shot results
 battle_grid = [
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m'],
-    ['\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m','\x1b[96m~\033[0m']
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m'],
+    ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+        '\x1b[96m~\033[0m']
 ]
+
+# **************************************************************************************************************** VALIDATED WITH CI LINTER UP TO THIS POINT
 
 
 # Stores the 'Battleship' portion of the banner art
@@ -170,26 +188,34 @@ def start_screen():
     global username
     clearscreen()
     sleep(0.4)
-    print('\033[?25l', end="") # Code to hide cursor credited in README.md
+    print('\033[?25l', end = "") # Code to hide cursor credited in README.md
     print(banner_art_upper) # Prints 'Battleship' to screen
 
     typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
     #sleep(0.1)
     typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
     #sleep(0.1)
     typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
+    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
     print(banner_art_lower) # Prints 'Rescue' to screen
     print('\n')
     sleep(0.0)
-    typing_effect('                         The enemy controls the land.\n', 0.02)
-    typing_effect('                         The enemy controls the skies.\n', 0.02)
-    typing_effect('            One Battleship stands between them controlling the seas.\n', 0.02)
+    typing_effect('                         The enemy \
+controls the land.\n', 0.02)
+    typing_effect('                         The enemy \
+controls the skies.\n', 0.02)
+    typing_effect('            One Battleship stands between \
+them controlling the seas.\n', 0.02)
     sleep(0.4)
-    username_prompt = typing_effect('\n            Enter your callsign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m characters):\n\n', 0.02)
-    print('\033[?25h', end="") # Code to show cursor credited in README.md
+    username_prompt = typing_effect('\n            Enter your call \
+sign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m \
+characters):\n\n', 0.02)
+    print('\033[?25h', end = "") # Code to show cursor credited in README.md
     username = input('                                 ')
 
 
@@ -207,14 +233,14 @@ def validate_username_screen():
     # While loop is used to perform validation on the username input,
     # must be greater than 2 characters and less than 15. The while 
     # loop will display an alert message until the parameters are satisfied.
-    
     while len(username) < 2 or len(username) > 15:
         clearscreen() # Screen is cleared
         print(banner_art) 
         print('\n')
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
-        print('            One Battleship stands between them controlling the seas.')
+        print('            One Battleship stands betwe\
+en them controlling the seas.')
         username = input('\n           \x1b[93mAlert!!' + \
         '\033[0m Enter a valid'\
         + ' callsign between \x1b[93m2\033[0m and \x1b[93m15\033[0m' + \
@@ -246,13 +272,14 @@ def mission_difficulty_screen():
         clearscreen()
         print(banner_art)
         mission_difficulty = input('\n\n       \x1b[93mAlert!!\033[0m ' + \
-        'Enter Mission Difficulty (select \x1b[93mCadet\033[0m, \x1b[93mCaptain\033[0m' + \
+        'Enter Mission Difficulty (select \x1b[93mC\
+adet\033[0m, \x1b[93mCaptain\033[0m' + \
         ' or \x1b[93mAdmiral\033[0m) \n\n                                   ')
         mission_difficulty = mission_difficulty.lower()
     clearscreen()
 
 
-def initialise_game_values(): # Note for bug in readme, had to move this higher up in the program due to unexpected behaviour
+def initialise_game_values():
     """
     This function will determine and initialise the game values
     to be used when the game is launched. The values of the number
@@ -297,52 +324,73 @@ def mission_accept_screen():
     """
 
     clearscreen()
-    print('\033[?25l', end="") # Code to hide cursor credited in README.md
+    print('\033[?25l', end = "") # Code to hide cursor credited in README.md
     time.sleep(.4)
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command''')
-    time.sleep(.4)
-    clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command..''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command.''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command...''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command..''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command....''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command...''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing secure connection with Central Command.....''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command....''')
     time.sleep(.4)
     clearscreen()
-    print(''' \n\n\n\n\n\n\n\n\n\n                         \x1b[92mSecure connection established.\033[0m''')
+    print(''' \n\n\n\n\n\n\n\n\n\n              Establishing \
+secure connection with Central Command.....''')
+    time.sleep(.4)
+    clearscreen()
+    print(''' \n\n\n\n\n\n\n\n\n\n                         \x1b\
+[92mSecure connection established.\033[0m''')
     time.sleep(1)
     clearscreen()
-    message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \x1b[96mURGENT\033[0m Incoming''')
-    message2 = (f''' Message: For {username.capitalize()}'s Eyes Only''')
+    message1 = (f''' \n\n\n\n\n\n\n\n\n\n                \x1b\
+[96mURGENT\033[0m Incoming''')
+    message2 = (f''' Message: For {username.capitalize()}'s \
+Eyes Only''')
     print(message1 + message2)
     time.sleep(2)
     clearscreen()
     typing_effect(f'''
     {mission_difficulty.capitalize()}, 
-    It is with great regret that I must inform you that the situation has
-    become dire. Our forces are being routed in every theatre and on every
-    front, our supply chains have been decimated and our ability to sustain
-    a defence against this onslaught can be measured now in hours.\n
-    Your orders are to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
-    currently pursuing {merchant_ship_initialise_count} friendly Merchant ships sailing for our Capital Port. 
-    These Merchant ships are on a clandestine mission to deliver classified 
-    cargo that will turn the tide of this war once and for all!\n
-    Unfortunately, during a recent skirmish, the Merchant ships lost all
-    communication capabilities and the enemy's radar jamming technology is
-    preventing us from locating them. But we know they're out there, somewhere.
-    Hunt down the enemy with extreme prejudice, avoid friendly fire at all
+    It is with great regret that I must inform you that \
+the situation has
+    become dire. Our forces are being routed in every \
+theatre and on every
+    front, our supply chains have been decimated and our \
+ability to sustain
+    a defence against this onslaught can be measured now \
+in hours.\n
+    Your orders are to intercept and eliminate a fleet of \
+{enemy_ship_initialise_count} enemy Destroyers 
+    currently pursuing {merchant_ship_initialise_count} \
+friendly Merchant ships sailing for our Capital Port. 
+    These Merchant ships are on a clandestine mission to \
+deliver classified 
+    cargo that will turn the tide of this war once and for \
+all!\n
+    Unfortunately, during a recent skirmish, the Merchant \
+ships lost all
+    communication capabilities and the enemy's radar jamming \
+technology is
+    preventing us from locating them. But we know they're \
+out there, somewhere.
+    Hunt down the enemy with extreme prejudice, avoid \
+friendly fire at all
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
-    print('\033[?25h', end="") # Code to show cursor credited in README.md
+    print('\033[?25h', end = "") # Code to show cursor credited in README.md
     mission_acceptance = input('\n                         Accept' + \
     ' Mission? (Y / N)\n\n                                   ') 
     mission_acceptance = mission_acceptance.lower()
@@ -351,23 +399,37 @@ def mission_accept_screen():
         clearscreen()
         print(f'''
     {mission_difficulty.capitalize()}, 
-    It is with great regret that I must inform you that the situation has
-    become dire. Our forces are being routed in every theatre and on every
-    front, our supply chains have been decimated and our ability to sustain
-    a defence against this onslaught can be measured now in hours.\n
-    Your orders are to intercept and eliminate a fleet of {enemy_ship_initialise_count} enemy Destroyers 
-    currently pursuing {merchant_ship_initialise_count} friendly Merchant ships sailing for our Capital Port. 
-    These Merchant ships are on a clandestine mission to deliver classified 
-    cargo that will turn the tide of this war once and for all!\n
-    Unfortunately, during a recent skirmish, the Merchant ships lost all
-    communication capabilities and the enemy's radar jamming technology is
-    preventing us from locating them. But we know they're out there, somewhere.
-    Hunt down the enemy with extreme prejudice, avoid friendly fire at all
+    It is with great regret that I must inform you that \
+the situation has
+    become dire. Our forces are being routed in every \
+theatre and on every
+    front, our supply chains have been decimated and our \
+ability to sustain
+    a defence against this onslaught can be measured now \
+in hours.\n
+    Your orders are to intercept and eliminate a fleet of \
+{enemy_ship_initialise_count} enemy Destroyers 
+    currently pursuing {merchant_ship_initialise_count} \
+friendly Merchant ships sailing for our Capital Port. 
+    These Merchant ships are on a clandestine mission to \
+deliver classified 
+    cargo that will turn the tide of this war once and for \
+all!\n
+    Unfortunately, during a recent skirmish, the Merchant \
+ships lost all
+    communication capabilities and the enemy's radar jamming \
+technology is
+    preventing us from locating them. But we know they're \
+out there, somewhere.
+    Hunt down the enemy with extreme prejudice, avoid \
+friendly fire at all
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
-        mission_acceptance = input('              \x1b[93mAlert!!\033[0m' + \
-        ' Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m for No. Accept ' + \
+        mission_acceptance = input('              \x1b\
+        [93mAlert!!\033[0m' + \
+        ' Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033\
+        [0m for No. Accept ' + \
         'Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
 
@@ -385,12 +447,13 @@ def generate_battleship_hull_hit_locations():
     already are generated, at which point they will be appended
     to the battleship hull locations list.
     """
-    while len(battleship_hull_locations) < int(battleship_hull_locations_initialise_count):
+    while len(battleship_hull_locations) < \
+    int(battleship_hull_locations_initialise_count):
         x_coordinate = (randint(0, 6))
         y_coordinate = (randint(0, 6))
         hull_hit_location = [int(x_coordinate)] + [int(y_coordinate)]
         if hull_hit_location in battleship_hull_locations:
-            continue # Note for readme, changed from break to continue, unexpected behaviour
+            continue
         else:
             battleship_hull_locations.append(hull_hit_location)
 
@@ -400,7 +463,7 @@ def generate_enemy_ship_locations():
     This function will generate random x and y coordinates
     representing the location of each enemy ship on the battle
     grid. This is what the user will be attempting to hit with
-    each shot. The function checks if 
+    each shot. The function checks if
     the generated coordinates have already been used in the
     enemy ship and battleship hull lists, if
     they've been used already, the current iteration is skipped
@@ -413,9 +476,9 @@ def generate_enemy_ship_locations():
         y_coordinate = (randint(0, 6))
         enemy_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if enemy_ship_location in enemy_ship_locations:
-            continue # Note for readme, changed from break to continue, unexpected behaviour
+            continue
         elif enemy_ship_location in battleship_hull_locations:
-            continue # Note for readme, changed from break to continue, unexpected behaviour
+            continue
         else:
             enemy_ship_locations.append(enemy_ship_location)
 
@@ -438,15 +501,15 @@ def generate_merchant_ship_locations():
         y_coordinate = (randint(0, 6))
         merchant_ship_location = [int(x_coordinate)] + [int(y_coordinate)]
         if merchant_ship_location in merchant_ship_locations:
-            continue # Note for readme, changed from break to continue, unexpected behaviour
+            continue 
         elif merchant_ship_location in enemy_ship_locations:
             continue
         elif merchant_ship_location in battleship_hull_locations:
-            continue # Note for readme, changed from break to continue, unexpected behaviour
+            continue
         else:
             merchant_ship_locations.append(merchant_ship_location)
 
-
+##################################################################################################################################################################### VALIDATED IN PEP8 CHECKER UP TO THIS POINT
 
 def game_screen():
 
@@ -489,13 +552,6 @@ def game_screen():
             for col_elem in row_array:
                 print(col_elem, end = " ")
             print()
-            
-        #print('Enemy ships: ', end="") # Debug, delete when ready
-        #print(enemy_ship_locations) # Debug, delete when ready
-        #print('Merchant ships: ', end="") # Debug, delete when ready
-        #print(merchant_ship_locations) # Debug, delete when ready
-        #print('Hull points: ', end="") # Debug, delete when ready
-        #print(battleship_hull_locations) # Debug, delete when ready
 
         print('\x1b[92mWEAPONS READY\x1b[0m')
 
@@ -618,7 +674,7 @@ def game_screen():
             #clearscreen()
             print('\033[?25l', end="") # Code to hide cursor credited in README.md
             shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
+            print(f'Torpedos remaining:       \x1b[96m\{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
             print(f'Hull plates remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
             print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
             print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
@@ -703,16 +759,26 @@ def main():
     The main function will trigger all 
     functions necessary to run the game
     """
-    start_screen() # Displays start screen
-    validate_username_screen() # Validates username input
-    mission_difficulty_screen() # Requests user to select difficulty 
-    initialise_game_values() # Initialises the starting game values 
-    mission_accept_screen() # Displays mission details with prompt
-    generate_battleship_hull_hit_locations() # Creates battleship hull hit locations
-    generate_enemy_ship_locations() # Creates enemy ship locations
-    generate_merchant_ship_locations() # Creates merchant ship locations
-    game_screen() # This contains the core game mechanics
-    end_game_conditions() # Checks for end game conditions
+    # Displays start screen
+    start_screen()
+    # Validates username input
+    validate_username_screen() 
+    # Requests user to select difficulty
+    mission_difficulty_screen()  
+    # Initialises the starting game values 
+    initialise_game_values() 
+    # Displays mission details with prompt
+    mission_accept_screen() 
+    # Creates battleship hull locations
+    generate_battleship_hull_hit_locations() 
+    # Creates enemy ship locations
+    generate_enemy_ship_locations() 
+    # Creates merchant ship locations
+    generate_merchant_ship_locations() 
+    # This contains the core game mechanics
+    game_screen() 
+    # Checks for end game conditions
+    end_game_conditions() 
 main()
 
 
