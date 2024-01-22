@@ -428,6 +428,16 @@ t!!\033[0m Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m \
 for No. Accept Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
 
+    if mission_acceptance == 'n':
+        sleep(0.2)
+        clearscreen()
+        sleep(0.2)
+        print('\n\n\n\n\n\n\n\n\n')
+        print('    This war will only be won, when those with the courage to fight, use it.\n\n')
+        print('                       \x1b[91mDisconnecting from Central Command\x1b[1m')
+        sleep(5)
+        raise SystemExit()
+
 
 def generate_battleship_hull_hit_locations():
     """
