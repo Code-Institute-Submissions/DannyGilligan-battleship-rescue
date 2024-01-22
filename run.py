@@ -867,17 +867,10 @@ def main():
     end_game_conditions()
 
 
-#main()
+main()
 
 
 
-print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
-
-for iterations in range(25):
-        print('             \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
-        sleep(0.1)
-        print('             \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
-        sleep(0.1)
 
 
 
