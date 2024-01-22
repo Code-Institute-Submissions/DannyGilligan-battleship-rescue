@@ -849,20 +849,24 @@ def end_game_conditions():
                 sleep(0.1)
     clearscreen()
     sleep(0.2)
+    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     typing_effect(f'''{username},
-We've received confirmation that all merchant ships have now been destroyed.\n
-The cargo has been lost. This was our last hope. there is nothing more we \
-can do. Your orders are to stand down. All communication channels have been\
-opened and made available to the Meridian Queen. Have your crew contact their\
-loved ones, or make peace in whichever way they choose.\n\nWe will lose this \
-war. But so will the enemy.\n\n4 minutes ago the Oppenheimer Protocol was \
-activated. Our last remaining ICBMs were equipped with the experimental \
-'Hades' warhead and are currently en route to targets of strategic value \
-within enemy territory. The enemy has reciprocated in kind.\n\nOur analysts \
-predict that small pockets of humanity around the globe will survive \
-the initial blast waves and subsequent fallout in just enough numbers to \
-prevent the extinction of our species.\n\nMay the survivors be granted wisdom \
-beyond our own.\n\nGod forgive us.''', 0.03)
+    We've received confirmation that the merchant ships have been destroyed.
+    The cargo has been lost. There is nothing more we can do. Your orders are
+    to stand down. All communication channels have been opened and made avail\
+    able to the Meridian Queen. Have your crew contact their loved ones, or \
+    make peace in whichever way they choose.\n\nWe will lose this war. But so \
+    will the enemy.\n4 minutes ago the Oppenheimer Protocol was activated. \
+    Our last remaining ICBMs were equipped with the experimental 'Hades' \
+    warhead and are currently en route to targets of strategic value within \
+    enemy territory. The enemy has already reciprocated in kind. Our analysts \
+    predict that small pockets of humanity around the globe will survive the \
+    initial blast waves and subsequent fallout in just enough numbers to \
+    prevent the extinction of our species.\n\nMay the survivors \
+    be granted wisdom beyond our own.\n\n''', 0.03)
+    sleep(2)
+    print('God forive us.')
+    print('\033[?25h', end="")  # Code to show cursor credited in README.md
 
 
 def main():
@@ -894,5 +898,23 @@ def main():
     end_game_conditions()
 
 
-main()
+#main()
 
+
+print('\033[?25l', end="") # Code to hide cursor credited in README.md
+typing_effect(f'''{username},
+We've received confirmation that the merchant ships have been destroyed.
+The cargo has been lost. There is nothing more we can do. Your orders are 
+to stand down. All communication channels have been opened and made available
+to the Meridian Queen. Have your crew contact their loved ones, or make peace 
+in whichever way they choose.\n\nWe will lose this war. But so will the enemy.\n
+4 minutes ago the Oppenheimer Protocol was activated. Our last remaining ICBMs 
+were equipped with the experimental 'Hades' warhead and are currently en route
+to targets of strategic value within enemy territory. The enemy has already 
+reciprocated in kind. Our analysts predict that small pockets of humanity around
+the globe will survive the initial blast waves and subsequent fallout in just 
+enough numbers to prevent the extinction of our species.\n\nMay the survivors \
+be granted wisdom beyond our own.\n\n''', 0.03)
+sleep(2)
+print('God forive us.')
+print('\033[?25h', end="") # Code to show cursor credited in README.md
