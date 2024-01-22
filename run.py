@@ -435,7 +435,8 @@ for No. Accept Mission?\n\n                                   ')
         print('\n\n\n\n\n\n\n\n\n')
         print('    This war will only be won, when those with the courage to fight, use it.\n\n')
         print('                       \x1b[91mDisconnecting from Central Command\x1b[1m')
-        sleep(5)
+        sleep(10)
+        clearscreen()
         raise SystemExit()
 
 
