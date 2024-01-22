@@ -235,7 +235,7 @@ def validate_username_screen():
         print('            One Battleship stands betwe\
 en them controlling the seas.')
         username = input('\n           \x1b[93mAlert!!\
-\033[0m Enter a valid callsign between \x1b[93m2\033[0m and \
+\033[0m Enter a valid call sign between \x1b[93m2\033[0m and \
 \x1b[93m15\033[0m characters\n\n                                   ')
         username = username.strip()  # Strip method is used
     clearscreen()  # Screen is cleared
@@ -505,27 +505,36 @@ def generate_merchant_ship_locations():
 
 
 def sitrep_loading():
+
+    global hull_plates_remaining
+    global torpedo_count
+
     clearscreen()
     print('\033[?25l', end="") # Code to hide cursor credited in README.md
-    print('\n\n\n\n\n\n\n\n\n')
+    print('\n\n\n\n')
     sleep(0.2)
-    typing_effect("                                  \x1b[95mLoading SITREP Display Module\033[0m\n", 0.01)
-    typing_effect("                                  Vessel Name        : \x1b[96mMeridian Queen\033[0m\n", 0.01)
-    typing_effect("                                  Vessel Type        : \x1b[96mSovereign Class Heavy Battleship\033[0m\n", 0.01)
-    typing_effect("                                  Primary Armament   : \x1b[96m'Sea Stiletto' Tactical Nuclear Torpedo\033[0m\n", 0.01)
-    typing_effect("                                  Secondary Armament : \x1b[96m16\"\ 50 Caliber 'Arbiter' Deck Guns\033[0m\n", 0.01)
-    typing_effect("                                  Hull Armour        : \x1b[96m16\50mm Deflective Plates\033[0m\n", 0.00)
-    typing_effect(f'                                 Hull Armour Plates : \x1b[96m16{hull_plates_remaining}\033[0m\n', 0.01)
-    typing_effect(f'                                 Torpedo Complement : \x1b[96m16{torpedo_count}\033[0m\n', 0.01)
-    typing_effect("                                  Propulsion Systems : \x1b[92mOnline\033[0m\n", 0.01)
-    typing_effect("                                  Navigation Systems : \x1b[92mOnline\033[0m\n", 0.01)
-    typing_effect("                                  Radar Targetting   : \x1b[91mOffline\033[0m\n", 0.01)
-    typing_effect("                                  \x1b[92SITREP Display Module Loaded\033[0m\n", 0.01)
-
-
-
-
+    typing_effect("                         Loading SITREP Display Module:\n\n", 0.01)
+    sleep(0.2)
+    #print('.......................................||.......................................')
+    typing_effect("                    Vessel Name        : \x1b[96mMeridian Queen\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Vessel Type        : \x1b[96mSovereign Class Heavy Battleship\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Primary Armament   : \x1b[96m'Sea Stiletto' Tactical Nuclear Torpedo\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Secondary Armament : \x1b[96m'Arbiter' 16\" 50 Caliber Deck Guns\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Hull Armour        : \x1b[96m25mm Deflective Titanium Plates\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Propulsion Systems : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Navigation Systems : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    sleep(0.2)
+    typing_effect("                    Radar Targetting   : \x1b[91m\x1b[1mOffline\033[0m\n\n\n", 0.01)
+    sleep(0.2)
+    print("                          \x1b[92m\x1b[1mSITREP Display Module Ready\033[0m")
     print('\033[?25h', end="") # Code to show cursor credited in README.md
+    sleep(1)
 
 
 ##################################################################################################################################################################### VALIDATED IN CI LINTER UP TO THIS POINT
@@ -780,27 +789,27 @@ def main():
     functions necessary to run the game
     """
     # Displays start screen
-    start_screen()
+    #start_screen()
     # Validates username input
-    validate_username_screen()
+    #validate_username_screen()
     # Requests user to select difficulty
-    mission_difficulty_screen()
+    #mission_difficulty_screen()
     # Initialises the starting game values
-    initialise_game_values()
+    #initialise_game_values()
     # Displays mission details with prompt
-    mission_accept_screen()
+    #mission_accept_screen()
     # Creates battleship hull locations
-    generate_battleship_hull_hit_locations()
+    #generate_battleship_hull_hit_locations()
     # Creates enemy ship locations
-    generate_enemy_ship_locations()
+    #generate_enemy_ship_locations()
     # Creates merchant ship locations
-    generate_merchant_ship_locations()
+    #generate_merchant_ship_locations()
     # Displays battleship information to user
     sitrep_loading()
     # Contains the core game mechanics and logic
-    game_screen()
+    #game_screen()
     # Checks for end game conditions
-    end_game_conditions()
+    #end_game_conditions()
 
 
 main()
