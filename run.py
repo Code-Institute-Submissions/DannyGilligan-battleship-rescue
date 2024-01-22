@@ -163,7 +163,7 @@ def typing_effect(text, speed):
         sys.stdout.flush()
 
 # The clearscreen code below was taken
-# in full, without any tweakingfrom a
+# in full, without any tweaking from a
 # Stackoverflow post credited in the README.md file
 
 
@@ -503,6 +503,31 @@ def generate_merchant_ship_locations():
         else:
             merchant_ship_locations.append(merchant_ship_location)
 
+
+def sitrep_loading():
+    clearscreen()
+    print('\033[?25l', end="") # Code to hide cursor credited in README.md
+    print('\n\n\n\n\n\n\n\n\n')
+    sleep(0.2)
+    typing_effect("                                  \x1b[95mLoading SITREP Display Module\033[0m\n", 0.03)
+    typing_effect("                                  Vessel Name        : \x1b[96mMeridian Queen\033[0m", 0.03)
+    typing_effect("                                  Vessel Type        : \x1b[96mSovereign Class Heavy Battleship\033[0m", 0.03)
+    typing_effect("                                  Primary Armament   : \x1b[96m'Sea Stiletto' Tactical Nuclear Torpedo\033[0m", 0.03)
+    typing_effect("                                  Secondary Armament : \x1b[96m16\"\ 50 Caliber 'Arbiter' Deck Guns\033[0m", 0.03)
+    typing_effect("                                  Hull Armour        : \x1b[96m16\50mm Deflective Plates\033[0m", 0.03)
+    typing_effect(f'                                 Hull Armour Plates : \x1b[96m16{hull_plates_remaining}\033[0m', 0.03)
+    typing_effect(f'                                 Torpedo Complement : \x1b[96m16{torpedo_count}\033[0m', 0.03)
+    typing_effect("                                  Propulsion Systems : \x1b[92mOnline\033[0m", 0.03)
+    typing_effect("                                  Navigation Systems : \x1b[92mOnline\033[0m", 0.03)
+    typing_effect("                                  Radar Targetting   : \x1b[92mOnline\033[0m\n", 0.03)
+    typing_effect("                                  \x1b[92SITREP Display Module Loaded\033[0m\n", 0.03)
+
+
+
+
+    print('\033[?25h', end="") # Code to show cursor credited in README.md
+
+
 ##################################################################################################################################################################### VALIDATED IN CI LINTER UP TO THIS POINT
 
 def game_screen():
@@ -740,6 +765,7 @@ def game_screen():
         
 
 def end_game_conditions():
+    sleep(0.5)
     if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
         print("YOU WON!!!!!!!!")
@@ -769,7 +795,7 @@ def main():
     generate_enemy_ship_locations()
     # Creates merchant ship locations
     generate_merchant_ship_locations()
-    # This contains the core game mechanics
+    # Contains the core game mechanics and logic
     game_screen()
     # Checks for end game conditions
     end_game_conditions()
