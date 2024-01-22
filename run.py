@@ -807,35 +807,67 @@ def end_game_conditions():
         print("YOU WON!!!!!!!!")
     else:
         clearscreen()
-        print("YOU LOST :(")
         if torpedo_count < int(len(enemy_ship_locations)):
-            print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
-            for iterations in range(25):
-                    print('             \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
-                    print('             \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle \
+            Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
+            for iterations in range(20):
+                print('             \x1b[1mMission Status:\
+                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
+                print('             \x1b[1mMission Status:\
+                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
         elif torpedo_count == 0 and int(len(enemy_ship_locations)) > 0:
-            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle Update : \x1b[96mTorpedo Complement Exhausted\x1b[0m\n')
-            for iterations in range(25):
-                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
-                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle \
+            Update : \x1b[96mTorpedo Complement Exhausted\x1b[0m\n')
+            for iterations in range(20):
+                print('                  \x1b[1mMission Status:\
+                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
+                print('                  \x1b[1mMission Status:\
+                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
         elif len(merchant_ship_locations) == 0:
-            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle Update : \x1b[96mAll Merchant Ships Destroyed\x1b[0m\n')
-            for iterations in range(25):
-                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
-                    print('                  \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle \
+            Update : \x1b[96mAll Merchant Ships Destroyed\x1b[0m\n')
+            for iterations in range(20):
+                print('                  \x1b[1mMission Status:\
+                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
+                print('                  \x1b[1mMission Status:\
+                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
         else:
-            print('\n\n\n\n\n\n\n\n\n\x1b[1m                    Battle Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
+            print('\n\n\n\n\n\n\n\n\n\x1b[1m                    Battle \
+            Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
             for iterations in range(25):
-                    print('                    \x1b[1mMission Status:\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
-                    print('                    \x1b[1mMission Status:\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
-                    sleep(0.1)
+                print('                    \x1b[1mMission Status:\
+                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
+                print('                    \x1b[1mMission Status:\
+                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+                sleep(0.1)
+    clearscreen()
+    sleep(0.2)
+    print(f'{username},')
+    typing_effect("We've received \
+    confirmation that all merchant have now been \
+    destroyed.\nThe cargo has been lost. This was our last hope. there \
+    is nothing more we can do.\nYour orders are to stand down. All \
+    communication channels have been opened and made available to \
+    the Meridian Queen. Have your crew contact their loved ones, \
+    or make peace in whichever way they choose.\nWe will lose this \
+    war. But so will the enemy.\n4 minutes ago the Oppenheimer Prot\
+    ocol was activated. Our last remaining ICBMs were equipped \
+    with the experimental 'Hades' warhead and are currently en \
+    route to strategic targets within enemy territory. \
+    The enemy has reciprocated in kind.\nOur analysts predict \
+    that small pockets of humanity around the globe will survive \
+    the initial blast waves and subsequent fallout in just enough \
+    numbers to prevent the extinction of our species.\n\nMay the \
+    survivors be granted wisdom beyond our own.\n\nGod forgive us.", 0.03)
+
+
 
 
 def main():
