@@ -808,6 +808,14 @@ def end_game_conditions():
     else:
         clearscreen()
         print("YOU LOST :(")
+        if torpedo_count < int(len(enemy_ship_locations)):
+            print('Not enough torpedos')
+        elif torpedo_count == 0:
+            print('You ran out of torpedos')
+        elif len(merchant_ship_locations) == 0:
+            print('All merchant ships destroyed')
+        else:
+            print('Hull has been breached')
 
 
 def main():
