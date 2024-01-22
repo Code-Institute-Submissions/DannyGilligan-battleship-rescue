@@ -506,36 +506,44 @@ def generate_merchant_ship_locations():
 
 def sitrep_loading():
 
-    global hull_plates_remaining
-    global torpedo_count
 
     clearscreen()
-    print('\033[?25l', end="") # Code to hide cursor credited in README.md
+    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     print('\n\n\n\n')
     sleep(0.2)
-    typing_effect("                         \x1b[1mLoading SITREP Display Module\x1b[0m\n\n", 0.01)
+    typing_effect("                         \x1b[1mLoading \
+    SITREP Display Module\x1b[0m\n\n", 0.01)
     sleep(0.2)
-    #print('.......................................||.......................................')
-    typing_effect("                    Vessel Name        : \x1b[96mMeridian Queen\033[0m\n", 0.01)
+    typing_effect("                    Vessel Name        \
+    : \x1b[96mMeridian Queen\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Vessel Type        : \x1b[96mSovereign Class Heavy Battleship\033[0m\n", 0.01)
+    typing_effect("                    Vessel Type        \
+    : \x1b[96mSovereign Class Heavy Battleship\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Primary Armament   : \x1b[96m'Sea Stiletto' Nuclear Torpedo\033[0m\n", 0.01)
+    typing_effect("                    Primary Armament   \
+    : \x1b[96m'Sea Stiletto' Nuclear Torpedo\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Secondary Armament : \x1b[96m'Arbiter' 16\" Deck Guns\033[0m\n", 0.01)
+    typing_effect("                    Secondary Armament \
+    : \x1b[96m'Arbiter' 16\" Deck Guns\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Hull Armour        : \x1b[96m50mm Titanium Plates\033[0m\n", 0.01)
+    typing_effect("                    Hull Armour        \
+    : \x1b[96m50mm Titanium Plates\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Propulsion Systems : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    typing_effect("                    Propulsion Systems \
+    : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Navigation Systems : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    typing_effect("                    Navigation Systems \
+    : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Weapons Systems    : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+    typing_effect("                    Weapons Systems    \
+    : \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
     sleep(0.2)
-    typing_effect("                    Radar Targetting   : \x1b[91m\x1b[1mOffline\033[0m\n\n\n", 0.01)
+    typing_effect("                    Radar Targetting   \
+    : \x1b[91m\x1b[1mOffline\033[0m\n\n\n", 0.01)
     sleep(0.2)
-    print("                          \x1b[92m\x1b[1mSITREP Display Module Ready\033[0m")
-    print('\033[?25h', end="") # Code to show cursor credited in README.md
+    print("                          \x1b[92m\x1b[1mSITRE\
+    P Display Module Ready\033[0m")
+    print('\033[?25h', end="")  # Code to show cursor credited in README.md
     sleep(1)
 
 
