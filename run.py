@@ -117,39 +117,37 @@ battle_grid = [
         '\x1b[96m~\033[0m']
 ]
 
-# **************************************************************************************************************** VALIDATED WITH CI LINTER UP TO THIS POINT
-
 
 # Stores the 'Battleship' portion of the banner art
-banner_art_upper = ('''
-             ___   ___  ______ ______ __    ____ ____ __ __ ____ ___   
-            / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \ 
+banner_art_upper = (r'''
+             ___   ___  ______ ______ __    ____ ____ __ __ ____ ___
+            / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \
            / _  |/ __ | / /    / /  / /__ / _/ _\ \ / _  /_/ / / ___/
-          /____//_/ |_|/_/    /_/  /____//___//___//_//_//___//_/    
+          /____//_/ |_|/_/    /_/  /____//___//___//_//_//___//_/
 ''')
 
 # Stores the 'Rescue' portion of the banner art
-banner_art_lower = ('''
+banner_art_lower = (r'''
                          ___   ____ ____ _____ __  __ ____
                         / _ \ / __// __// ___// / / // __/
-                       / , _// _/ _\ \ / /__ / /_/ // _/ 
+                       / , _// _/ _\ \ / /__ / /_/ // _/
                       /_/|_|/___//___/ \___/ \____//___/
 ''')
 
 
 # Stores the banner art in its entirety (used without typing effect)
 banner_art = ('''
-             ___   ___  ______ ______ __    ____ ____ __ __ ____ ___   
-            / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \ 
+             ___   ___  ______ ______ __    ____ ____ __ __ ____ ___
+            / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \\
            / _  |/ __ | / /    / /  / /__ / _/ _\ \ / _  /_/ / / ___/
-          /____//_/ |_|/_/    /_/  /____//___//___//_//_//___//_/    
+          /____//_/ |_|/_/    /_/  /____//___//___//_//_//___//_/
 
 \x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
 \x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
 \x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
                          ___   ____ ____ _____ __  __ ____
                         / _ \ / __// __// ___// / / // __/
-                       / , _// _/ _\ \ / /__ / /_/ // _/ 
+                       / , _// _/ _\ \ / /__ / /_/ // _/
                       /_/|_|/___//___/ \___/ \____//___/
 ''')
 
@@ -386,8 +384,8 @@ friendly fire at all
     Losing that cargo, means losing the war!\n''',0.03)
     sleep(0.5)
     print('\033[?25h', end = "") # Code to show cursor credited in README.md
-    mission_acceptance = input('\n                         Accept')\
-    + (' Mission? (Y / N)\n\n                                   ') 
+    mission_acceptance = input('\n                         Accept \
+    Mission? (Y / N)\n\n                                   ') 
     mission_acceptance = mission_acceptance.lower()
 
     while mission_acceptance not in mission_accept_options:
@@ -421,11 +419,7 @@ friendly fire at all
     costs and rescue those Merchant ships.\n
     Losing that cargo, means losing the war!\n''')
 
-        mission_acceptance = input('              \x1b\
-        [93mAlert!!\033[0m' + \
-        ' Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033\
-        [0m for No. Accept ' + \
-        'Mission?\n\n                                   ')
+        mission_acceptance = input('              \x1b[93mAlert!!\033[0m Enter \x1b[93mY\033[0m for Yes or \x1b[93mN\033[0m for No. Accept Mission?\n\n                                   ')
         mission_acceptance = mission_acceptance.lower()
 
 
