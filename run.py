@@ -795,6 +795,8 @@ def main():
     generate_enemy_ship_locations()
     # Creates merchant ship locations
     generate_merchant_ship_locations()
+    # Displays battleship information to user
+    sitrep_loading()
     # Contains the core game mechanics and logic
     game_screen()
     # Checks for end game conditions
