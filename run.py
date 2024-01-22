@@ -161,12 +161,12 @@ def typing_effect(text, speed):
     The typing effect functions will provide a visual
     effect that mimics the text being 'typed' in real
     time across the screen. This functions has been
-    adapted from a Stackoverflow post credited in the 
+    adapted from a Stackoverflow post credited in the
     README.md file
-    """ 
+    """
     words = text
     for char in words:
-        time.sleep(speed) #amended to make speed a parameter
+        time.sleep(speed)  # amended to make speed a parameter
         sys.stdout.write(char)
         sys.stdout.flush()
 
