@@ -513,7 +513,7 @@ def sitrep_loading():
     print('\033[?25l', end="") # Code to hide cursor credited in README.md
     print('\n\n\n\n')
     sleep(0.2)
-    typing_effect("                         Loading SITREP Display Module:\n\n", 0.01)
+    typing_effect("                         \x1b[1mLoading SITREP Display Module\x1b[0m\n\n", 0.01)
     sleep(0.2)
     #print('.......................................||.......................................')
     typing_effect("                    Vessel Name        : \x1b[96mMeridian Queen\033[0m\n", 0.01)
