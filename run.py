@@ -851,21 +851,21 @@ def end_game_conditions():
     sleep(0.2)
     print(f'{username},')
     typing_effect("We've received \
-    confirmation that all merchant have now been \
-    destroyed.\nThe cargo has been lost. This was our last hope. there \
-    is nothing more we can do.\nYour orders are to stand down. All \
-    communication channels have been opened and made available to \
-    the Meridian Queen. Have your crew contact their loved ones, \
-    or make peace in whichever way they choose.\nWe will lose this \
-    war. But so will the enemy.\n4 minutes ago the Oppenheimer Prot\
-    ocol was activated. Our last remaining ICBMs were equipped \
-    with the experimental 'Hades' warhead and are currently en \
-    route to strategic targets within enemy territory. \
-    The enemy has reciprocated in kind.\nOur analysts predict \
-    that small pockets of humanity around the globe will survive \
-    the initial blast waves and subsequent fallout in just enough \
-    numbers to prevent the extinction of our species.\n\nMay the \
-    survivors be granted wisdom beyond our own.\n\nGod forgive us.", 0.03)
+confirmation that all merchant ships have now been \
+destroyed.\nThe cargo has been lost. This was our last hope. there \
+is nothing more we can do.\nYour orders are to stand down. All \
+communication channels have been opened and made available to \
+the Meridian Queen. Have your crew contact their loved ones, \
+or make peace in whichever way they choose.\nWe will lose this \
+war. But so will the enemy.\n4 minutes ago the Oppenheimer Prot\
+ocol was activated. Our last remaining ICBMs were equipped \
+with the experimental 'Hades' warhead and are currently en \
+route to targets of strategic value within enemy territory. \
+The enemy has reciprocated in kind.\nOur analysts predict \
+that small pockets of humanity around the globe will survive \
+the initial blast waves and subsequent fallout in just enough \
+numbers to prevent the extinction of our species.\n\nMay the \
+survivors be granted wisdom beyond our own.\n\nGod forgive us.", 0.03)
 
 
 
