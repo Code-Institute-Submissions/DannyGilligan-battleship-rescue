@@ -505,8 +505,12 @@ def generate_merchant_ship_locations():
 
 
 def sitrep_loading():
-
-
+    """
+    The sitrep loading function will display information
+    to the user about the battleship, this is an attempt
+    at further immersion into the game to enhance
+    the user experience
+    """
     clearscreen()
     print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     print('\n\n\n\n')
