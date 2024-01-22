@@ -200,9 +200,9 @@ def start_screen():
     typing_effect('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
     typing_effect('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
-〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
+〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
     print(banner_art_lower)  # Prints 'Rescue' to screen
-    #print('\n')
+    print('\n')
     sleep(0.0)
     typing_effect('                         The enemy \
 controls the land.\n', 0.02)
@@ -237,7 +237,7 @@ def validate_username_screen():
         print(banner_art_upper)
         print(banner_art_mid)
         print(banner_art_lower)
-        #print('\n')
+        print('\n')
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
         print('            One Battleship stands betwe\
@@ -783,33 +783,9 @@ def main():
     end_game_conditions()
 
 
-#main()
+main()
 
 
-test = ('''
-             ___   ___  ______ ______ __    ____ ____ __ __ ____ ___
-            / _ ) / _ |/_  __//_  __// /   / __// __// // //  _// _ \\
-           / _  |/ __ | / /    / /  / /__ / _/ _\ \ / _  /_/ / / ___/
-          /____//_/ |_|/_/    /_/  /____//___//___//_//_//___//_/
-
-\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
-\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
-\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m
-                         ___   ____ ____ _____ __  __ ____
-                        / _ \ / __// __// ___// / / // __/
-                       / , _// _/ _\ \ / /__ / /_/ // _/
-                      /_/|_|/___//___/ \___/ \____//___/
-''')
-
-
-
-
-
-print(test)
-print('***************************************************************************')
-print(banner_art_upper)
-print(banner_art_mid)
-print(banner_art_lower)
 
 
 #print('\x1b[95m WEAPONS READY\x1b[0m') # Bright Magenta
