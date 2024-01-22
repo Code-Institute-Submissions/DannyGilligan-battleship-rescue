@@ -746,29 +746,31 @@ def end_game_conditions():
 
 def main():
     """
-    The main function will trigger all 
+    The main function will trigger all
     functions necessary to run the game
     """
     # Displays start screen
     start_screen()
     # Validates username input
-    validate_username_screen() 
+    validate_username_screen()
     # Requests user to select difficulty
-    mission_difficulty_screen()  
-    # Initialises the starting game values 
-    initialise_game_values() 
+    mission_difficulty_screen()
+    # Initialises the starting game values
+    initialise_game_values()
     # Displays mission details with prompt
-    mission_accept_screen() 
+    mission_accept_screen()
     # Creates battleship hull locations
-    generate_battleship_hull_hit_locations() 
+    generate_battleship_hull_hit_locations()
     # Creates enemy ship locations
-    generate_enemy_ship_locations() 
+    generate_enemy_ship_locations()
     # Creates merchant ship locations
-    generate_merchant_ship_locations() 
+    generate_merchant_ship_locations()
     # This contains the core game mechanics
-    game_screen() 
+    game_screen()
     # Checks for end game conditions
-    end_game_conditions() 
+    end_game_conditions()
+
+
 main()
 
 
