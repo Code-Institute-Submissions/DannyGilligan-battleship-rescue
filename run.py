@@ -234,7 +234,9 @@ def validate_username_screen():
     # loop will display an alert message until the parameters are satisfied.
     while len(username) < 2 or len(username) > 15:
         clearscreen()  # Screen is cleared
-        print(banner_art)
+        print(banner_art_upper)
+        print(banner_art_mid)
+        print(banner_art_lower)
         #print('\n')
         print('                         The enemy controls the land.')
         print('                         The enemy controls the skies.')
@@ -259,7 +261,9 @@ def mission_difficulty_screen():
     values held in the difficulty_levels
     variable.
     """
-    print(banner_art)
+    print(banner_art_upper)
+    print(banner_art_mid)
+    print(banner_art_lower)
     global mission_difficulty
     global mission_acceptance
     mission_difficulty = input(('\n\n               Enter Mis\
@@ -269,7 +273,9 @@ al) \n\n                                   '))
 
     while mission_difficulty not in difficulty_levels:
         clearscreen()
-        print(banner_art)
+        print(banner_art_upper)
+        print(banner_art_mid)
+        print(banner_art_lower)
         mission_difficulty = input('\n\n       \x1b[93mAlert!\
 !\033[0m Enter Mission Difficulty (select \x1b[93mC\
 adet\033[0m, \x1b[93mCaptain\033[0m or \x1b[93mAdmir\
