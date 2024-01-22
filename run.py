@@ -117,7 +117,6 @@ battle_grid = [
         '\x1b[96m~\033[0m']
 ]
 
-
 # Stores the 'Battleship' portion of the banner art
 banner_art_upper = (r'''
              ___   ___  ______ ______ __    ____ ____ __ __ ____ ___
@@ -140,9 +139,14 @@ banner_art_lower =\
                       /_/|_|/___//___/ \___/ \____//___/
     ''')
 
-
-
 # >>>>>>>>>>>>>>> FUNCTIONS <<<<<<<<<<<<<<<
+
+# The typing effect code was adapted from
+# a Stackoverflow post credited in the
+# README.md file, I tweaked it to make
+# 'speed' a parameter so it could be
+# customised depending on the context.
+
 
 def typing_effect(text, speed):
     """
@@ -157,6 +161,10 @@ def typing_effect(text, speed):
         time.sleep(speed)  # amended to make speed a parameter
         sys.stdout.write(char)
         sys.stdout.flush()
+
+# The clearscreen code below was taken
+# in full, without any tweakingfrom a
+# Stackoverflow post credited in the README.md file
 
 
 def clearscreen():
