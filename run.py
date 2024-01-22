@@ -433,8 +433,10 @@ for No. Accept Mission?\n\n                                   ')
         clearscreen()
         sleep(0.2)
         print('\n\n\n\n\n\n\n\n\n')
-        print('    This war will only be won, when those with the courage to fight, use it.\n\n')
-        print('                       \x1b[91mDisconnecting from Central Command\x1b[1m')
+        print('    This war will only be won, when those\
+with the courage to fight, use it.\n\n')
+        print('                       \x1b[91mDisconnect\
+ing from Central Command\x1b[1m')
         sleep(10)
         clearscreen()
         raise SystemExit()
