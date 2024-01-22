@@ -245,30 +245,31 @@ en them controlling the seas.')
 
 def mission_difficulty_screen():
     """
-    The mission_difficulty_screen will 
+    The mission_difficulty_screen will
     display the screen where the user
     can enter their desired difficulty level.
     The options available, are Cadet (easy),
-    Captain (normal) and Admiral (hard). 
+    Captain (normal) and Admiral (hard).
     A while loop performs validation on the user
-    input, and compares their input against the 
+    input, and compares their input against the
     values held in the difficulty_levels
     variable.
     """
     print(banner_art)
     global mission_difficulty
     global mission_acceptance
-    mission_difficulty = input(('\n\n               Enter Mission Diffic') + \
-    ('ulty (Cadet, Captain, Admiral) \n\n                                   '))
+    mission_difficulty = input(('\n\n               Enter Mis\
+sion Difficulty (Cadet, Captain, Admir\
+al) \n\n                                   '))
     mission_difficulty = mission_difficulty.lower()
 
     while mission_difficulty not in difficulty_levels:
         clearscreen()
         print(banner_art)
-        mission_difficulty = input('\n\n       \x1b[93mAlert!!\033[0m ' + \
-        'Enter Mission Difficulty (select \x1b[93mC\
-adet\033[0m, \x1b[93mCaptain\033[0m' + \
-        ' or \x1b[93mAdmiral\033[0m) \n\n                                   ')
+        mission_difficulty = input('\n\n       \x1b[93mAlert!\
+!\033[0m Enter Mission Difficulty (select \x1b[93mC\
+adet\033[0m, \x1b[93mCaptain\033[0m or \x1b[93mAdmir\
+al\033[0m) \n\n                                   ')
         mission_difficulty = mission_difficulty.lower()
     clearscreen()
 
