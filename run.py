@@ -133,12 +133,12 @@ banner_art_mid = ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜�
 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m')
 
 # Stores the 'Rescue' portion of the banner art
-banner_art_lower = \
-(r'''                         ___   ____ ____ _____ __  __ ____
+banner_art_lower =\
+    (r'''                         ___   ____ ____ _____ __  __ ____
                         / _ \ / __// __// ___// / / // __/
                        / , _// _/ _\ \ / /__ / /_/ // _/
                       /_/|_|/___//___/ \___/ \____//___/
-''')
+    ''')
 
 
 # Stores the banner art in its entirety (used without typing effect)
