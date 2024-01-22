@@ -861,7 +861,7 @@ def end_game_conditions():
     equipped with the experimental 'Hades' warhead and are currently en route
     to targets of strategic value within enemy territory. The enemy has
     already reciprocated in kind. Our analysts predict that small pockets of
-    humanity around the globe will survive the initial blast waves and subsequent
+    humanity around the globe will survive the initial blasts and subsequent
     fallout in just enough numbers to prevent the extinction of our species.
     \n May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
     sleep(2)
@@ -898,24 +898,7 @@ def main():
     end_game_conditions()
 
 
-#main()
+main()
 
 
-print('\033[?25l', end="")  # Code to hide cursor credited in README.md
-typing_effect(f''' {username},
- We've received confirmation that the merchant ships have been destroyed.
- The cargo has been lost, there is nothing more we can do. Your orders are
- to stand down. All communication channels have been opened and made
- available to the Meridian Queen. Have your crew contact loved ones, or
- make peace in whichever way they choose.\n
- We have lost this war, but so has the enemy. 4 minutes ago the
- Oppenheimer Protocol was activated. Our last remaining ICBMs were
- equipped with the experimental 'Hades' warhead and are currently en route
- to targets of strategic value within enemy territory. The enemy has
- already reciprocated in kind. Our analysts predict that small pockets of
- humanity around the globe will survive the initial blast waves and subsequent
- fallout in just enough numbers to prevent the extinction of our species.
- \n May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
-sleep(2)
-print(' God forive us.')
-print('\033[?25h', end="")  # Code to show cursor credited in README.md
+
