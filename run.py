@@ -188,21 +188,16 @@ def start_screen():
     global username
     clearscreen()
     sleep(0.4)
-    print('\033[?25l', end = "") # Code to hide cursor credited in README.md
-    print(banner_art_upper) # Prints 'Battleship' to screen
+    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
+    print(banner_art_upper)  # Prints 'Battleship' to screen
 
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+    typing_effect('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
-    #sleep(0.1)
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+    typing_effect('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m\n', 0.005)
-    #sleep(0.1)
-    typing_effect\
-    ('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
+    typing_effect('\x1b[96m〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\
 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜\033[0m', 0.005)
-    print(banner_art_lower) # Prints 'Rescue' to screen
+    print(banner_art_lower)  # Prints 'Rescue' to screen
     print('\n')
     sleep(0.0)
     typing_effect('                         The enemy \
@@ -215,7 +210,7 @@ them controlling the seas.\n', 0.02)
     username_prompt = typing_effect('\n            Enter your call \
 sign below (between \x1b[93m2\033[0m and \x1b[93m15\033[0m \
 characters):\n\n', 0.02)
-    print('\033[?25h', end = "") # Code to show cursor credited in README.md
+    print('\033[?25h', end="")  # Code to show cursor credited in README.md
     username = input('                                 ')
 
 
