@@ -293,7 +293,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 ## Manual Testing
 
-Several manual tests were performed across different devices, browsers and code validators. The results of which are outlined below.
+Several manual tests were performed during playthroughs of the game. The results of which are outlined below.
 
 <!-- Manual tests are shown below -->
 <details>
@@ -434,6 +434,10 @@ Several manual tests were performed across different devices, browsers and code 
 <!-- spacer -->
 <tr>
 <td>The battle grid is updated correctly with an 'M' symbol if the user shot destroys an enemy ship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The battle grid does not overwrite an 'E' or 'M' symbol with 'X' if user fires on same coordinates</td><td>:heavy_check_mark:</td>
 </tr>
 <!-- spacer -->
 <tr>
