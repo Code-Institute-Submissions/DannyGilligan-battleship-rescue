@@ -298,11 +298,11 @@ Several manual tests were performed across different devices, browsers and code 
 <br>
 <!-- 'As a user' User Stories are shown below -->
 <details>
-  <summary><b>As a User</b></summary>
+  <summary><b>Manual Testing</b></summary>
 <br>
 <table>
 <tr>
-<th>Manual Testing</th><th>Result</th>
+<th>Manual Test Scenario</th><th>Result</th>
 </tr>
 <!-- User Story 1 begins -->
 <tr>
