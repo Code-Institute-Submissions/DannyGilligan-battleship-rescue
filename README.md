@@ -295,8 +295,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 Several manual tests were performed across different devices, browsers and code validators. The results of which are outlined below.
 
-<br>
-<!-- 'As a user' User Stories are shown below -->
+<!-- Manual tests are shown below -->
 <details>
   <summary><b>Manual Testing</b></summary>
 <br>
