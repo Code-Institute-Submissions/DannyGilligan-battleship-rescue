@@ -613,7 +613,7 @@ def game_screen():
             for col_elem in row_array:
                 print(col_elem, end = " ")
             print()
-
+        print(enemy_ship_locations)
         print('\x1b[92mWEAPONS READY\x1b[0m')
 
         ### 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT (WHILE LOOP VALIDATES) ###
@@ -834,23 +834,26 @@ Update : \x1b[96mEnemy Ships Destroyed\x1b[0m\n')
         clearscreen()
         sleep(0.2)
         print('\033[?25l', end="")  # Code to hide cursor credited in README.md
-        typing_effect(f'''\n    {username},
-        We've received confirmation that the merchant ships have been destroyed.
-        The cargo has been lost, there is nothing more we can do. Your orders are
-        to stand down. All communication channels have been opened and made
-        available to the Meridian Queen. Have your crew contact loved ones, or
-        make their peace in whichever way they choose.\n
-        We have lost this war, but so has the enemy. 4 minutes ago the
-        Oppenheimer Protocol was activated. Our last remaining ICBMs were
-        equipped with the experimental 'Hades' warhead and are currently en route
-        to targets of strategic value within enemy territory. The enemy has
-        already reciprocated in kind. Our analysts predict that small pockets of
-        humanity around the globe will survive the initial blasts and subsequent
-        fallout in just enough numbers to prevent the extinction of our species.
-        \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
-        sleep(3)
-        print('    God forgive us.\n')
+        typing_effect(f'''\n    {username},   
+    We've received confirmation that the merchant ships have reached our
+    Capital Port. The cargo has been secured successfully. That cargo was
+    the enemy's Chief Intelligence Officer, she defected after witnessing
+    the barbarity that that totalitarian regime was attempting to impose upon
+    the world. Our spy network was able to arrange her extraction from behind
+    enemy lines, but your intervention was the key to the mission's success.\n
+    We have everything we need to take the fight to the enemy now, details of
+    every troop movement, artillery installation, ammunition depot, airbase,
+    naval base, weapons schematics and armour vulnerabilities.\n 
+    Our forces have been depleted, but they have never been more potent. In 
+    the last 4 minutes, surgical strikes have wiped out 20% of the enemy's 
+    fighting capacity. Our long range radars are now operational, we can
+    provide you with air support effectively. The Meridian Queen is now
+    our flagship, and sole surviving battleship. Your orders are to sail
+    her into the heart of enemy territory, satisfy her thirst for vengeance,
+    visit justice upon the enemy and restore peace to the seas.\n\n''', 0.03)
         sleep(2)
+        print('    Happy hunting.\n')
+        sleep(1)
         print('\033[?25h', end="")  # Code to show cursor credited in README.md
         valid_end_game_choices = ['r', 'e']
         end_game_prompt = print("         Type 'R' to return to the start \
@@ -860,20 +863,23 @@ screen, or 'E' to exit program\n")
         while end_game_choice not in valid_end_game_choices:
             clearscreen()
             print(f'''\n    {username},
-        We've received confirmation that the merchant ships have been destroyed.
-        The cargo has been lost, there is nothing more we can do. Your orders are
-        to stand down. All communication channels have been opened and made
-        available to the Meridian Queen. Have your crew contact loved ones, or
-        make their peace in whichever way they choose.\n
-        We have lost this war, but so has the enemy. 4 minutes ago the
-        Oppenheimer Protocol was activated. Our last remaining ICBMs were
-        equipped with the experimental 'Hades' warhead and are currently en route
-        to targets of strategic value within enemy territory. The enemy has
-        already reciprocated in kind. Our analysts predict that small pockets of
-        humanity around the globe will survive the initial blasts and subsequent
-        fallout in just enough numbers to prevent the extinction of our species.
-            \n    May the survivors be granted wisdom beyond our own.\n''')
-            print('    God forgive us.\n')
+    We've received confirmation that the merchant ships have reached our
+    Capital Port. The cargo has been secured successfully. That cargo was
+    the enemy's Chief Intelligence Officer, she defected after witnessing
+    the barbarity that that totalitarian regime was attempting to impose upon
+    the world. Our spy network was able to arrange her extraction from behind
+    enemy lines, but your intervention was the key to the mission's success.\n
+    We have everything we need to take the fight to the enemy now, details of
+    every troop movement, artillery installation, ammunition depot, airbase,
+    naval base, weapons schematics and armour vulnerabilities.\n 
+    Our forces have been depleted, but they have never been more potent. In 
+    the last 4 minutes, surgical strikes have wiped out 20% of the enemy's 
+    fighting capacity. Our long range radars are now operational, we can
+    provide you with air support effectively. The Meridian Queen is now
+    our flagship, and sole surviving battleship. Your orders are to sail
+    her into the heart of enemy territory, satisfy her thirst for vengeance,
+    visit justice upon the enemy and restore peace to the seas.\n\n''', 0.03)
+        print('    Happy hunting.\n')
             end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
