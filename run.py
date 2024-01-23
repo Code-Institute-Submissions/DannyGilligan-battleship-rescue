@@ -528,7 +528,7 @@ def sitrep_loading():
     print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     print('\n\n\n\n')
     sleep(0.2)
-    typing_effect("                         \x1b[1mLoading \
+    typing_effect("                         Loading \
 SITREP Display Module\x1b[0m\n\n", 0.01)
     sleep(0.4)
     typing_effect("                    Vessel Name        \
@@ -547,18 +547,18 @@ SITREP Display Module\x1b[0m\n\n", 0.01)
 : \x1b[96m50mm Titanium Plates\033[0m\n", 0.01)
     sleep(0.4)
     typing_effect("                    Propulsion Systems \
-: \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+: \x1b[92mOnline\033[0m\n", 0.01)
     sleep(0.4)
     typing_effect("                    Navigation Systems \
-: \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+: \x1b[92mOnline\033[0m\n", 0.01)
     sleep(0.4)
     typing_effect("                    Weapons Systems    \
-: \x1b[92m\x1b[1mOnline\033[0m\n", 0.01)
+: \x1b[92mOnline\033[0m\n", 0.01)
     sleep(0.4)
     typing_effect("                    Radar Targetting   \
-: \x1b[91m\x1b[1mOffline\033[0m\n\n\n", 0.01)
+: \x1b[91mOffline\033[0m\n\n\n", 0.01)
     sleep(0.4)
-    print("                          \x1b[92m\x1b[1mSITRE\
+    print("                          \x1b[92mSITRE\
 P Display Module Ready\033[0m")
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
     sleep(2)
@@ -892,6 +892,19 @@ def end_game_conditions():
         end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\x1b[0m' to return to the start screen, or '\x1b[93mE\x1b[0m' to exit program\n")
         end_game_choice = input("                                       ")
         end_game_choice = end_game_choice.lower()
+
+    if end_game_choice == "r":
+        main()
+    else:
+        sleep(0.3)
+        clearscreen()
+        sleep(0.2)
+        print('\n\n\n\n\n\n\n\n\n')
+        print('                       \x1b[96mDisconnect\
+ing from Central Command\x1b[1m')
+        sleep(4)
+        clearscreen()
+        raise SystemExit()
 
 
 
