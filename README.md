@@ -498,10 +498,10 @@ Several manual tests were performed during playthroughs of the game. The results
 <br>
 <!-- spacer -->
 <details>
-  <summary>  <i>Code Institute PEP8 Linter Validation</i></summary>
+  <summary> <i>Code Institute PEP8 Linter Validation</i></summary>
 <br>
 
-The python code passed through the [Code Institure PEP Linter](https://pep8ci.herokuapp.com/#) without returning any warnings or errors.
+The python code passed through the [Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/#) without returning any warnings or errors.
 
 <br>
 <table>
@@ -518,6 +518,7 @@ The python code passed through the [Code Institure PEP Linter](https://pep8ci.he
 </td>
 </tr>
 </table>
+</details>
 </details>
 
 
