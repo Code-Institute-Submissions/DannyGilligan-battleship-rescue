@@ -299,19 +299,19 @@ def initialise_game_values():
 
     if mission_difficulty == 'cadet':
         enemy_ship_initialise_count = 10
-        merchant_ship_initialise_count = 7
+        merchant_ship_initialise_count = 8
         battleship_hull_locations_initialise_count = 5
         hull_plates_remaining = 10
         torpedo_count = 45
     elif mission_difficulty == 'captain':
-        enemy_ship_initialise_count = 15
-        merchant_ship_initialise_count = 6
+        enemy_ship_initialise_count = 12
+        merchant_ship_initialise_count = 7
         battleship_hull_locations_initialise_count = 10
         hull_plates_remaining = 8
         torpedo_count = 40
     else:
-        enemy_ship_initialise_count = 20
-        merchant_ship_initialise_count = 5
+        enemy_ship_initialise_count = 14
+        merchant_ship_initialise_count = 6
         battleship_hull_locations_initialise_count = 15
         hull_plates_remaining = 6
         torpedo_count = 35
@@ -818,9 +818,83 @@ def end_game_conditions():
     or exit the program.
     """
     sleep(0.5)
+
+    # NARRATIVE FOR MISSION SUCCESS IS SHOWN BELOW
     if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
-        print("YOU WON!!!!!!!!")
+        print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle \
+Update : \x1b[96mEnemy Ships Destroyed\x1b[0m\n')
+        for iterations in range(20):
+            print('             \x1b[1mMission Status:\
+\x1b[0m \x1b[1m\x1b[92mSuccess\x1b[0m\r', end="", flush=True)
+            sleep(0.1)
+            print('             \x1b[1mMission Status:\
+\x1b[0m \x1b[97mSuccess\x1b[0m\r', end="", flush=True)
+            sleep(0.1)
+        clearscreen()
+        sleep(0.2)
+        print('\033[?25l', end="")  # Code to hide cursor credited in README.md
+        typing_effect(f'''\n    {username},
+        We've received confirmation that the merchant ships have been destroyed.
+        The cargo has been lost, there is nothing more we can do. Your orders are
+        to stand down. All communication channels have been opened and made
+        available to the Meridian Queen. Have your crew contact loved ones, or
+        make their peace in whichever way they choose.\n
+        We have lost this war, but so has the enemy. 4 minutes ago the
+        Oppenheimer Protocol was activated. Our last remaining ICBMs were
+        equipped with the experimental 'Hades' warhead and are currently en route
+        to targets of strategic value within enemy territory. The enemy has
+        already reciprocated in kind. Our analysts predict that small pockets of
+        humanity around the globe will survive the initial blasts and subsequent
+        fallout in just enough numbers to prevent the extinction of our species.
+        \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
+        sleep(3)
+        print('    God forgive us.\n')
+        sleep(2)
+        print('\033[?25h', end="")  # Code to show cursor credited in README.md
+        valid_end_game_choices = ['r', 'e']
+        end_game_prompt = print("         Type 'R' to return to the start \
+screen, or 'E' to exit program\n")
+        end_game_choice = input("                                       ")
+        end_game_choice = end_game_choice.lower()
+        while end_game_choice not in valid_end_game_choices:
+            clearscreen()
+            print(f'''\n    {username},
+        We've received confirmation that the merchant ships have been destroyed.
+        The cargo has been lost, there is nothing more we can do. Your orders are
+        to stand down. All communication channels have been opened and made
+        available to the Meridian Queen. Have your crew contact loved ones, or
+        make their peace in whichever way they choose.\n
+        We have lost this war, but so has the enemy. 4 minutes ago the
+        Oppenheimer Protocol was activated. Our last remaining ICBMs were
+        equipped with the experimental 'Hades' warhead and are currently en route
+        to targets of strategic value within enemy territory. The enemy has
+        already reciprocated in kind. Our analysts predict that small pockets of
+        humanity around the globe will survive the initial blasts and subsequent
+        fallout in just enough numbers to prevent the extinction of our species.
+            \n    May the survivors be granted wisdom beyond our own.\n''')
+            print('    God forgive us.\n')
+            end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
+\x1b[0m' to return to the start screen, or '\x1b[93mE\
+\x1b[0m' to exit program\n")
+            end_game_choice = input("                                       ")
+            end_game_choice = end_game_choice.lower()
+
+        if end_game_choice == "r":
+            main()
+        else:
+            sleep(0.3)
+            clearscreen()
+            sleep(0.2)
+            print('\n\n\n\n\n\n\n\n\n')
+            print('                       \x1b[96mDisconnect\
+ing from Central Command\x1b[1m')
+            sleep(4)
+            clearscreen()
+            raise SystemExit()
+
+
+    # NARRATIVE FOR MISSION FAILURE IS SHOWN BELOW
     else:
         clearscreen()
         if torpedo_count < int(len(enemy_ship_locations)):
@@ -863,67 +937,67 @@ Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
                 print('                    \x1b[1mMission Status:\
 \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
-    clearscreen()
-    sleep(0.2)
-    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
-    typing_effect(f'''\n    {username},
-    We've received confirmation that the merchant ships have been destroyed.
-    The cargo has been lost, there is nothing more we can do. Your orders are
-    to stand down. All communication channels have been opened and made
-    available to the Meridian Queen. Have your crew contact loved ones, or
-    make their peace in whichever way they choose.\n
-    We have lost this war, but so has the enemy. 4 minutes ago the
-    Oppenheimer Protocol was activated. Our last remaining ICBMs were
-    equipped with the experimental 'Hades' warhead and are currently en route
-    to targets of strategic value within enemy territory. The enemy has
-    already reciprocated in kind. Our analysts predict that small pockets of
-    humanity around the globe will survive the initial blasts and subsequent
-    fallout in just enough numbers to prevent the extinction of our species.
-    \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
-    sleep(3)
-    print('    God forgive us.\n')
-    sleep(2)
-    print('\033[?25h', end="")  # Code to show cursor credited in README.md
-    valid_end_game_choices = ['r', 'e']
-    end_game_prompt = print("         Type 'R' to return to the start \
-screen, or 'E' to exit program\n")
-    end_game_choice = input("                                       ")
-    end_game_choice = end_game_choice.lower()
-    while end_game_choice not in valid_end_game_choices:
-        clearscreen()
-        print(f'''\n    {username},
-    We've received confirmation that the merchant ships have been destroyed.
-    The cargo has been lost, there is nothing more we can do. Your orders are
-    to stand down. All communication channels have been opened and made
-    available to the Meridian Queen. Have your crew contact loved ones, or
-    make their peace in whichever way they choose.\n
-    We have lost this war, but so has the enemy. 4 minutes ago the
-    Oppenheimer Protocol was activated. Our last remaining ICBMs were
-    equipped with the experimental 'Hades' warhead and are currently en route
-    to targets of strategic value within enemy territory. The enemy has
-    already reciprocated in kind. Our analysts predict that small pockets of
-    humanity around the globe will survive the initial blasts and subsequent
-    fallout in just enough numbers to prevent the extinction of our species.
-        \n    May the survivors be granted wisdom beyond our own.\n''')
-        print('    God forgive us.\n')
-        end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
-\x1b[0m' to return to the start screen, or '\x1b[93mE\
-\x1b[0m' to exit program\n")
-        end_game_choice = input("                                       ")
-        end_game_choice = end_game_choice.lower()
-
-    if end_game_choice == "r":
-        main()
-    else:
-        sleep(0.3)
         clearscreen()
         sleep(0.2)
-        print('\n\n\n\n\n\n\n\n\n')
-        print('                       \x1b[96mDisconnect\
+        print('\033[?25l', end="")  # Code to hide cursor credited in README.md
+        typing_effect(f'''\n    {username},
+    We've received confirmation that the merchant ships have been destroyed.
+    The cargo has been lost, there is nothing more we can do. Your orders are
+    to stand down. All communication channels have been opened and made
+    available to the Meridian Queen. Have your crew contact loved ones, or
+    make their peace in whichever way they choose.\n
+    We have lost this war, but so has the enemy. 4 minutes ago the
+    Oppenheimer Protocol was activated. Our last remaining ICBMs were
+    equipped with the experimental 'Hades' warhead and are currently en route
+    to targets of strategic value within enemy territory. The enemy has
+    already reciprocated in kind. Our analysts predict that small pockets of
+    humanity around the globe will survive the initial blasts and subsequent
+    fallout in just enough numbers to prevent the extinction of our species.
+        \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
+        sleep(3)
+        print('    God forgive us.\n')
+        sleep(2)
+        print('\033[?25h', end="")  # Code to show cursor credited in README.md
+        valid_end_game_choices = ['r', 'e']
+        end_game_prompt = print("         Type 'R' to return to the start \
+screen, or 'E' to exit program\n")
+        end_game_choice = input("                                       ")
+        end_game_choice = end_game_choice.lower()
+        while end_game_choice not in valid_end_game_choices:
+            clearscreen()
+            print(f'''\n    {username},
+    We've received confirmation that the merchant ships have been destroyed.
+    The cargo has been lost, there is nothing more we can do. Your orders are
+    to stand down. All communication channels have been opened and made
+    available to the Meridian Queen. Have your crew contact loved ones, or
+    make their peace in whichever way they choose.\n
+    We have lost this war, but so has the enemy. 4 minutes ago the
+    Oppenheimer Protocol was activated. Our last remaining ICBMs were
+    equipped with the experimental 'Hades' warhead and are currently en route
+    to targets of strategic value within enemy territory. The enemy has
+    already reciprocated in kind. Our analysts predict that small pockets of
+    humanity around the globe will survive the initial blasts and subsequent
+    fallout in just enough numbers to prevent the extinction of our species.
+            \n    May the survivors be granted wisdom beyond our own.\n''')
+            print('    God forgive us.\n')
+            end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
+\x1b[0m' to return to the start screen, or '\x1b[93mE\
+\x1b[0m' to exit program\n")
+            end_game_choice = input("                                       ")
+            end_game_choice = end_game_choice.lower()
+
+        if end_game_choice == "r":
+            main()
+        else:
+            sleep(0.3)
+            clearscreen()
+            sleep(0.2)
+            print('\n\n\n\n\n\n\n\n\n')
+            print('                       \x1b[96mDisconnect\
 ing from Central Command\x1b[1m')
-        sleep(4)
-        clearscreen()
-        raise SystemExit()
+            sleep(4)
+            clearscreen()
+            raise SystemExit()
 
 
 def main():
@@ -956,6 +1030,3 @@ def main():
 
 
 main()
-
-
-
