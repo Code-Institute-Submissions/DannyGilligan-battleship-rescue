@@ -484,7 +484,7 @@ Several manual tests were performed during playthroughs of the game. The results
 
 </table>
 
-[Back to Bug](#bugs)
+[Back to Manual Testing](#manual-testing)
 <br>
 <br>
 <br>
