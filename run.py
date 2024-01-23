@@ -892,7 +892,7 @@ Update : \x1b[96mEnemy Ships Destroyed\x1b[0m\n')
     extraction, but your intervention was the key to the mission's success.\n
     We have everything we need to take the fight to the enemy now,
     details of every troop movement, artillery installation, ammunition depot,
-    airbase, naval base, weapons schematics and armour vulnerabilities.\n 
+    airbase, naval base, weapons schematics and armour vulnerabilities.\n
     Our forces have been depleted, but they have never been more potent. In the
     last 4 minutes, surgical strikes have wiped out 20% of the enemy's fighting
     capacity. Our long range radars are now operational, we can provide you
@@ -908,7 +908,7 @@ screen, or 'E' to exit program\n")
         end_game_choice = input("                                       ")
         end_game_choice = end_game_choice.lower()
         while end_game_choice not in valid_end_game_choices:
-            print('\033[?25l', end="")  # Code to hide cursor credited in README.md
+            print('\033[?25l', end="")  # Code credited in README.md
             clearscreen()
             print(f'''\n    {username},
     We received confirmation that the merchant ships have reached our Capital
@@ -918,7 +918,7 @@ screen, or 'E' to exit program\n")
     extraction, but your intervention was the key to the mission's success.\n
     We have everything we need to take the fight to the enemy now,
     details of every troop movement, artillery installation, ammunition depot,
-    airbase, naval base, weapons schematics and armour vulnerabilities.\n 
+    airbase, naval base, weapons schematics and armour vulnerabilities.\n
     Our forces have been depleted, but they have never been more potent. In the
     last 4 minutes, surgical strikes have wiped out 20% of the enemy's fighting
     capacity. Our long range radars are now operational, we can provide you
@@ -926,17 +926,18 @@ screen, or 'E' to exit program\n")
     sole surviving battleship. Your orders are to sail her into the heart of
     enemy territory, satisfy her thirst for vengeance, visit justice upon the
     enemy and restore peace to the seas. Happy hunting.\n''')
-            end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
+            end_game_prompt = print("     \x1b[93mAle\
+rt!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
-            print('\033[?25h', end="")  # Code to show cursor credited in README.md
+            print('\033[?25h', end="")  # Code credited in README.md
             end_game_choice = input("                                       ")
-            end_game_choice = end_game_choice.lower() 
+            end_game_choice = end_game_choice.lower()
         if end_game_choice == "r":
             main()
         else:
             sleep(0.3)
-            print('\033[?25l', end="")  # Code to hide cursor credited in README.md
+            print('\033[?25l', end="")  # Code credited in README.md
             clearscreen()
             sleep(0.2)
             print('\n\n\n\n\n\n\n\n\n')
@@ -945,7 +946,6 @@ ing from Central Command\x1b[1m')
             sleep(4)
             clearscreen()
             raise SystemExit()
-
 
     # NARRATIVE FOR MISSION FAILURE IS SHOWN BELOW
     else:
@@ -1033,7 +1033,8 @@ screen, or 'E' to exit program\n")
     fallout in just enough numbers to prevent the extinction of our species.
             \n    May the survivors be granted wisdom beyond our own.\n''')
             print('    God forgive us.\n')
-            end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
+            end_game_prompt = print("     \x1b[93mAle\
+            rt!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
             end_game_choice = input("                                       ")
