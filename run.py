@@ -1,24 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
-# >>>>>>>>>>>>>>> NOTES TO ADD TO README <<<<<<<<<<<<<<<<
-
-# Resolved bug, made username global in start screen functions, was throwing error
-# colored text https://replit.com/talk/ask/How-to-change-terminal-color-in-python/125888 
-# typing effect https://stackoverflow.com/questions/20302331/typing-effect-in-python
-# site used for character count
-# site used for special symbols https://www.compart.com/en/unicode/U+2731
-# Resolved bug, shot accuracy len(total_shots) was zero, received divide by zero error, used ternary operator to assign value instead https://rollbar.com/blog/python-zerodivisionerror/#
-# Add credit for clearscreen function
-# how to hide cursor https://stackoverflow.com/questions/5174810/how-to-turn-off-blinking-cursor-in-command-window
-# resolved bug, when it's impossible to win, add condition to while loop, torpedo_count >= int(len(enemy_ship_locations)), add screenshot of code
-# resolved bug, add condition to prevent an enemy shot when all enemy or merchant ships are destroyed, add screenshot of code
-# resolved bug, add conditions to prevent overwriting an enemy hit or merchant hit symbol when coordinates are fired upon again
-# https://pep8ci.herokuapp.com/ PEP8 Code Checker
-# Future feature, skip text
-# Future feature, user feedback to adjust game variables
-
 # >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
 import os
@@ -154,7 +133,7 @@ def typing_effect(text, speed):
     """
     The typing effect functions will provide a visual
     effect that mimics the text being 'typed' in real
-    time across the screen. 
+    time across the screen.
     """
     # This function has been adapted from a Stackoverflow
     # post credited in the README.md file.
@@ -166,8 +145,6 @@ def typing_effect(text, speed):
         time.sleep(speed)  # amended to make speed a parameter
         sys.stdout.write(char)
         sys.stdout.flush()
-
-
 
 
 def clearscreen():
@@ -314,7 +291,7 @@ def initialise_game_values():
     miss_locations = []
     total_shots = []
 
-    # Reset counters
+    # Resets counters
     torpedo_count = 0
     enemy_ship_initialise_count = 0
     enemy_ships_destroyed = 0
@@ -620,8 +597,6 @@ P Display Module Ready\033[0m")
     sleep(3)
 
 
-##################################################################################################################################################################### VALIDATED IN CI LINTER UP TO THIS POINT
-
 def game_screen():
 
     global battle_grid
@@ -633,230 +608,357 @@ def game_screen():
     global hull_plates_remaining
 
     clearscreen()
-    print('\033[?25l', end="") # Code to hide cursor credited in README.md
+    print('\033[?25l', end="")  # Code to hide cursor credited in README.md
     sleep(0.5)
-    typing_effect('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n',0.01)
+    typing_effect('--------------------- \x1b[96mBattleship Operations SITREP \
+Display\033[0m ---------------------\n', 0.01)
     sleep(0.5)
-    print('\033[?25h', end="") # Code to show cursor credited in README.md
-    while torpedo_count > 0 and hull_plates_remaining > 0 and int(len(enemy_ship_locations)) > 0 and int(len(merchant_ship_locations)) > 0 and torpedo_count >= int(len(enemy_ship_locations)):
-        ### 1. PRINTS SITREP PANEL TO SCREEN ###
+    print('\033[?25h', end="")  # Code to show cursor credited in README.md
+    while torpedo_count > 0 and hull_plates_remaining > 0 and \
+        int(len(enemy_ship_locations)) > 0 and \
+            int(len(merchant_ship_locations)) > 0 and \
+            torpedo_count >= int(len(enemy_ship_locations)):
+
+        # 1. PRINTS SITREP PANEL TO SCREEN
         clearscreen()
-        print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
-        shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-        print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-        print(f'Hull plates remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
-        print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
-        print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+        print('--------------------- \x1b[96mBattleship Operations SITREP D\
+isplay\033[0m ---------------------\n')
+        shot_accuracy = \
+            int((enemy_ships_destroyed / len(total_shots)) * 100) if\
+            len(total_shots) > 0 else 0
+
+        print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033\
+[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b\
+[96m{(len(miss_locations)):02}\033[0m')
+
+        print(f'Hull plates remaining:    \x1b[96m\
+{hull_plates_remaining:02}\033[0m                       Shot accurac\
+y:           \x1b[96m{shot_accuracy:02}%\033[0m')
+
+        print(f'Enemy ships remaining:    \x1b[96m\
+{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92m\
+E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
+{enemy_ships_destroyed:02}\033[0m')
+
+        print(f'Merchant ships remaining: \x1b\
+[96m{(len(merchant_ship_locations)):02}\033[0m                   \
+(\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
+{merchant_ships_destroyed:02}\033[0m')
         print('\n')
 
-        ### 2. PRINTS BATTLE GRIP TO SCREEN ###
-        col_headers = []                                                  # Empty array to hold the column header values based on the userinput
-        for i in range(7):                                                # Iterates for 9 x 9 grid size  
-            col_headers.append(i)                                         # Appends the column header numbers to the array 
-        col_headers.insert(0, " ")                                        # NOTE FOR BUG, HAD TO INDENT THIS OUTSIDE OF THE LOOP, and insert a blank space so it would align
-        print("                             ", *col_headers, sep = ' ')   # Breaks out the column headers from the array and prints horizontally
+        # 2. PRINTS BATTLE GRIP TO SCREEN
+        # The code used below to print the 2D list was,
+        # adapted from YouTube Tutorials published by,
+        # the original creators 'Knowledge Mavens' and
+        # 'Dr Codie, the links have been credited
+        # in the README.md file
+
+        col_headers = []
+        for i in range(7):
+            col_headers.append(i)
+        col_headers.insert(0, " ")
+        print("                             ", *col_headers, sep=' ')
 
         row_counter = 0
-        for row_array in battle_grid: 
-            print("                             ", row_counter, end = " ")
+        for row_array in battle_grid:
+            print("                             ", row_counter, end=" ")
             row_counter += 1
             for col_elem in row_array:
-                print(col_elem, end = " ")
+                print(col_elem, end=" ")
             print()
-        print(enemy_ship_locations)
+
         print('\x1b[92mWEAPONS READY\x1b[0m')
 
-        ### 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT (WHILE LOOP VALIDATES) ###
+        # 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT
         user_x_coord = input('\nEnter row to fire upon: \n')
 
         while user_x_coord not in valid_shot_inputs:
             clearscreen()
-            print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
-            #sleep(0.5)
-            #clearscreen()
-            shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull armour remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
-            print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
-            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+
+            print('--------------------- \x1b[96mBattleship Operations SITRE\
+P Display\033[0m ---------------------\n')
+
+            shot_accuracy = \
+                int((enemy_ships_destroyed / len(total_shots)) * 100) if\
+                len(total_shots) > 0 else 0
+
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033\
+[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b\
+[96m{(len(miss_locations)):02}\033[0m')
+
+            print(f'Hull plates remaining:    \x1b[96m\
+{hull_plates_remaining:02}\033[0m                       Shot accurac\
+y:           \x1b[96m{shot_accuracy:02}%\033[0m')
+
+            print(f'Enemy ships remaining:    \x1b[96m\
+{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92m\
+E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
+{enemy_ships_destroyed:02}\033[0m')
+
+            print(f'Merchant ships remaining: \x1b\
+[96m{(len(merchant_ship_locations)):02}\033[0m                   \
+(\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
+{merchant_ships_destroyed:02}\033[0m')
             print('\n')
-            col_headers = []                                                  
-            for i in range(7):                                                 
-                col_headers.append(i)                                         
-            col_headers.insert(0, " ")                                        
-            print("                             ", *col_headers, sep = ' ')   
+
+            # Code below for printing out the 2D list
+            # was taken from YouTube tutorial credited
+            # in README.md
+            col_headers = []
+            for i in range(7):
+                col_headers.append(i)
+            col_headers.insert(0, " ")
+            print("                             ", *col_headers, sep=' ')
             row_counter = 0
-            for row_array in battle_grid: 
-                print("                             ", row_counter, end = " ")
+            for row_array in battle_grid:
+                print("                             ", row_counter, end=" ")
                 row_counter += 1
                 for col_elem in row_array:
-                    print(col_elem, end = " ")
+                    print(col_elem, end=" ")
                 print()
+
             print('\x1b[92mWEAPONS READY\x1b[0m')
-            user_x_coord = input('\nEnter row to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
+            user_x_coord = input('\nEnter row to fire upon: (ente\
+r coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
 
-
-        ### 4. PROMPTS USER TO ENTER VALID Y COORDINATE INPUT (WHILE LOOP VALIDATES) ###
+        # 4. PROMPTS USER TO ENTER VALID Y COORDINATE INPUT
         user_y_coord = input('Enter column to fire upon: \n')
 
         while user_y_coord not in valid_shot_inputs:
             clearscreen()
-            print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
-            #sleep(0.5)
-            #clearscreen()
-            shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull armour remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
-            print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
-            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+            print('--------------------- \x1b[96mBattleship Operations S\
+ITREP Display\033[0m ---------------------\n')
+
+            shot_accuracy = \
+                int((enemy_ships_destroyed / len(total_shots)) * 100) if\
+                len(total_shots) > 0 else 0
+
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033\
+[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b\
+[96m{(len(miss_locations)):02}\033[0m')
+
+            print(f'Hull plates remaining:    \x1b[96m\
+{hull_plates_remaining:02}\033[0m                       Shot accurac\
+y:           \x1b[96m{shot_accuracy:02}%\033[0m')
+
+            print(f'Enemy ships remaining:    \x1b[96m\
+{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92m\
+E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
+{enemy_ships_destroyed:02}\033[0m')
+
+            print(f'Merchant ships remaining: \x1b\
+[96m{(len(merchant_ship_locations)):02}\033[0m                   \
+(\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
+{merchant_ships_destroyed:02}\033[0m')
             print('\n')
-            col_headers = []                                                  
-            for i in range(7):                                                 
-                col_headers.append(i)                                         
-            col_headers.insert(0, " ")                                        
-            print("                             ", *col_headers, sep = ' ')   
+
+            col_headers = []
+            for i in range(7):
+                col_headers.append(i)
+            col_headers.insert(0, " ")
+            print("                             ", *col_headers, sep=' ')
             row_counter = 0
-            for row_array in battle_grid: 
-                print("                             ", row_counter, end = " ")
+            for row_array in battle_grid:
+                print("                             ", row_counter, end=" ")
                 row_counter += 1
                 for col_elem in row_array:
-                    print(col_elem, end = " ")
+                    print(col_elem, end=" ")
                 print()
+
             print('\x1b[92mWEAPONS READY\x1b[0m')
             print('\nEnter row to fire upon: ')
             print(user_x_coord)
-            user_y_coord = input('Enter column to fire upon: (enter coordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
+            user_y_coord = input('Enter column to fire upon: (enter c\
+oordinate between \x1b[93m0\033[0m and \x1b[93m6\033[0m) \n')
 
-        ### 5. ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT ###
+        # 5. ASSIGNS VALID X AND Y COORDINATE INPUTS to USER SHOT
         user_shot = [int(user_x_coord), int(user_y_coord)]
         torpedo_count -= 1
-        total_shots.append(user_shot) # Debug, delete when ready
+        total_shots.append(user_shot)
 
-
-        ### 6. CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST ###
+        # 6. CHECKS IF USER SHOT IS IN ENEMY SHIPS LOCATIONS LIST
         if user_shot in enemy_ship_locations:
-            print('\033[?25l', end="") # Code to hide cursor credited in README.md
-            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            print('\033[?25l', end="")  # Code credited in README.md
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>\033[0m \x1b[42m\x1b[97m\x1b[1m    ENEMY SHI\
+P DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[42m\x1b[97m\x1b[1m    ENEMY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[42m\x1b[97m\x1b[1m    ENE\
+MY SHIP DESTROYED    \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-            print('\033[?25h', end="") # Code to show cursor credited in README.md
+            print('\033[?25h', end="")  # Code credited in README.md
             enemy_ship_locations.remove(user_shot)
-            battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[92mE\x1b[0m'
+            battle_grid[int(user_x_coord)][int(user_y_coord)] = \
+                '\x1b[92mE\x1b[0m'
             enemy_ships_destroyed += 1
 
-        ### 7. CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST ###
+        # 7. CHECKS IF USER SHOT IS IN MERCHANT SHIPS LOCATIONS LIST
         elif user_shot in merchant_ship_locations:
-            print('\033[?25l', end="") # Code to hide cursor credited in README.md
-            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            print('\033[?25l', end="")  # Code credited in README.md
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
             for iterations in range(4):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCH\
+ANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\
+\x1b[1m  MERCHANT SHIP DESTROY\
+ED   \x1b[0m\r', end="", flush=True)
                 sleep(0.15)
-            print('\033[?25h', end="") # Code to show cursor credited in README.md
+            print('\033[?25h', end="")  # Code credited in README.md
             merchant_ship_locations.remove(user_shot)
-            battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[93mM\x1b[0m'
+            battle_grid[int(user_x_coord)][int(user_y_coord)] = \
+                '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
-        
-        ### 8. ELSE IT IS A MISS ###
-        else:
-            print('\033[?25l', end="") # Code to hide cursor credited in README.md
-            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
-            for iterations in range(3):
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
-                sleep(0.15)
-                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
-                sleep(0.15)
-            print('\033[?25h', end="") # Code to show cursor credited in README.md
-            miss_locations.append(user_shot)
-            # The condition below will prevent overwriting 
-            # an enemy ship hit or merchant ship hit symbol
-            if battle_grid[int(user_x_coord)][int(user_y_coord)] == '\x1b[96m~\033[0m':
-                battle_grid[int(user_x_coord)][int(user_y_coord)] = '\x1b[90mX\x1b[0m'
 
-        ### 9. ENEMY SHOT IS GENERATED BY COMPUTER, IF ENEMY SHIPS ARE STILL AFLOAT ###
-        if len(enemy_ship_locations) > 0 and len(merchant_ship_locations) > 0 and torpedo_count >= int(len(enemy_ship_locations)):
+        # 8. ELSE IT IS A MISS ###
+        else:
+            print('\033[?25l', end="")  # Code credited in README.md
+            typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+            for iterations in range(3):
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30\
+m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+                print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30\
+m       \x1b[1mTARGET MISSED       \x1b[0m\r', end="", flush=True)
+                sleep(0.15)
+            print('\033[?25h', end="")  # Code credited in README.md
+            miss_locations.append(user_shot)
+            # The condition below will prevent overwriting
+            # an enemy ship hit or merchant ship hit symbol
+            if battle_grid[int(user_x_coord)][int(user_y_coord)] == \
+                    '\x1b[96m~\033[0m':
+                battle_grid[int(user_x_coord)][int(user_y_coord)] = \
+                    '\x1b[90mX\x1b[0m'
+
+        # 9. ENEMY SHOT IS GENERATED, IF ENEMY SHIPS ARE STILL AFLOAT
+        if len(enemy_ship_locations) > 0 and len(merchant_ship_locations) \
+                > 0 and torpedo_count >= int(len(enemy_ship_locations)):
             clearscreen()
-            print('--------------------- \x1b[96mBattleship Operations SITREP Display\033[0m ---------------------\n')
-            #sleep(0.5)
-            #clearscreen()
-            print('\033[?25l', end="") # Code to hide cursor credited in README.md
-            shot_accuracy = int((enemy_ships_destroyed / len(total_shots)) * 100) if len(total_shots) > 0 else 0
-            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b[96m{(len(miss_locations)):02}\033[0m')   # Note for bug resolved, https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string
-            print(f'Hull plates remaining:    \x1b[96m{hull_plates_remaining:02}\033[0m                       Shot accuracy:           \x1b[96m{shot_accuracy:02}%\033[0m')
-            print(f'Enemy ships remaining:    \x1b[96m{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92mE\x1b[0m) Enemy ships destroyed:    \x1b[96m{enemy_ships_destroyed:02}\033[0m')
-            print(f'Merchant ships remaining: \x1b[96m{(len(merchant_ship_locations)):02}\033[0m                   (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m{merchant_ships_destroyed:02}\033[0m')
+
+            print('--------------------- \x1b[96mBattleship Operations SITRE\
+P Display\033[0m ---------------------\n')
+
+            print('\033[?25l', end="")  # Code credited in README.md
+            shot_accuracy = \
+                int((enemy_ships_destroyed / len(total_shots)) * 100) if\
+                len(total_shots) > 0 else 0
+
+            print(f'Torpedos remaining:       \x1b[96m{torpedo_count:02}\033\
+[0m                   (\x1b[90mX\x1b[0m) Missed shots:             \x1b\
+[96m{(len(miss_locations)):02}\033[0m')
+
+            print(f'Hull plates remaining:    \x1b[96m\
+{hull_plates_remaining:02}\033[0m                       Shot accurac\
+y:           \x1b[96m{shot_accuracy:02}%\033[0m')
+
+            print(f'Enemy ships remaining:    \x1b[96m\
+{(len(enemy_ship_locations)):02}\033[0m                   (\x1b[92m\
+E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
+{enemy_ships_destroyed:02}\033[0m')
+
+            print(f'Merchant ships remaining: \x1b\
+[96m{(len(merchant_ship_locations)):02}\033[0m                   \
+(\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
+{merchant_ships_destroyed:02}\033[0m')
             print('\n')
-            col_headers = []                                                  
-            for i in range(7):                                                 
-                col_headers.append(i)                                         
-            col_headers.insert(0, " ")                                        
-            print("                             ", *col_headers, sep = ' ')   
+
+            col_headers = []
+            for i in range(7):
+                col_headers.append(i)
+            col_headers.insert(0, " ")
+            print("                             ", *col_headers, sep=' ')
             row_counter = 0
-            for row_array in battle_grid: 
-                print("                             ", row_counter, end = " ")
+            for row_array in battle_grid:
+                print("                             ", row_counter, end=" ")
                 row_counter += 1
                 for col_elem in row_array:
-                    print(col_elem, end = " ")
+                    print(col_elem, end=" ")
                 print()
             sleep(0.3)
             print('\n\n\n\n')
             for iterations in range(3):
-                
-                print('\x1b[91m\x1b[1mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
-                sleep(0.08)  
-                print('\x1b[91mALERT!!! ENEMY TORPEDO IN THE WATER\033[0m\r', end="", flush=True)
+
+                print('\x1b[91m\x1b[1mALERT!!! ENEMY TORPEDO IN THE \
+WATER\033[0m\r', end="", flush=True)
                 sleep(0.08)
-            print('\033[?25h', end="") # Code to show cursor credited in README.md
+                print('\x1b[91mALERT!!! ENEMY TORPEDO IN THE \
+WATER\033[0m\r', end="", flush=True)
+                sleep(0.08)
+            print('\033[?25h', end="")  # Code credited in README.md
             enemy_shot_x_coor = (randint(0, 6))
             enemy_shot_y_coor = (randint(0, 6))
-            enemy_shot = [int(enemy_shot_x_coor)] + [int(enemy_shot_y_coor)]
+            enemy_shot = \
+                [int(enemy_shot_x_coor)] + [int(enemy_shot_y_coor)]
             enemy_shots.append(enemy_shot)
 
-            ### 10. CHECKS IF ENEMY SHOT IS IN MERCHANT SHIP LIST ###
+            # 10. CHECKS IF ENEMY SHOT IS IN MERCHANT SHIP LIST
             if enemy_shot in merchant_ship_locations:
-                print('\033[?25l', end="") # Code to hide cursor credited in README.md
-                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+                print('\033[?25l', end="")  # Code credited in README.md
+                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
                 for iterations in range(4):
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>\033[0m \x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROY\
+ED   \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTROYED   \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>\033[0m \x1b[7m\x1b[103m\x1b[30m\x1b[1m  MERCHANT SHIP DESTR\
+OYED   \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                print('\033[?25h', end="") # Code to show cursor credited in README.md
+                print('\033[?25h', end="")  # Code credited in README.md
                 merchant_ship_locations.remove(enemy_shot)
-                battle_grid[int(enemy_shot_x_coor)][int(enemy_shot_y_coor)] = '\x1b[93mM\x1b[0m'
+                battle_grid[int(enemy_shot_x_coor)][int(enemy_shot_y_coor)] = \
+                    '\x1b[93mM\x1b[0m'
                 merchant_ships_destroyed += 1
 
-            ### 11. CHECKS IF ENEMY SHOT IS IN BATTLESHIP HULL LIST ###    
+            # 11. CHECKS IF ENEMY SHOT IS IN BATTLESHIP HULL LIST
             elif enemy_shot in battleship_hull_locations:
-                print('\033[?25l', end="") # Code to hide cursor credited in README.md
-                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+                print('\033[?25l', end="")  # Code credited in README.md
+                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
                 for iterations in range(4):
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \033[41m\033[37m\033[1m       BATTLESHIP HIT       \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>\033[0m \033[41m\033[37m\033[1m       BATTLESHIP H\
+IT       \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[7m\033[41m\033[37m\033[1m       BATTLESHIP HIT       \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>\033[0m \x1b[7m\033[41m\033[37m\033[1m       BATTLESH\
+IP HIT       \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                print('\033[?25h', end="") # Code to show cursor credited in README.md
+                print('\033[?25h', end="")  # Code credited in README.md
                 battleship_hull_locations.remove(enemy_shot)
                 hull_plates_remaining -= 1
 
-            ### 12. ELSE IT IS A MISS ###    
+            # 12. ELSE IT IS A MISS
             else:
-                print('\033[?25l', end="") # Code to hide cursor credited in README.md
-                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
+                print('\033[?25l', end="")  # Code credited in README.md
+                typing_effect('\n\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m   \r', 0.005)
                 for iterations in range(3):
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mEN\
+EMY MISSED       \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mENEMY MISSED       \x1b[0m\r', end="", flush=True)
+                    print('\x1b[96m>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+>>>>>>>>>>>>>>>>>>>>>>\033[0m \x1b[107m \x1b[30m        \x1b[1mEN\
+EMY MISSED       \x1b[0m\r', end="", flush=True)
                     sleep(0.15)
-                print('\033[?25h', end="") # Code to show cursor credited in README.md
+                print('\033[?25h', end="")  # Code credited in README.md
                 enemy_misses.append(enemy_shot)
 
     enemy_ships_destroyed = 0
     merchant_ships_destroyed = 0
+
 
 def end_game_conditions():
     """
@@ -953,20 +1055,6 @@ rt!!\x1b[0m Type '\x1b[93mR\
             end_game_choice = input("                                       ")
             end_game_choice = end_game_choice.lower()
         if end_game_choice == "r":
-            #global enemy_ship_initialise_count
-            #global merchant_ship_initialise_count
-            #global battleship_hull_locations_initialise_count
-            #global hull_plates_remaining
-            #global torpedo_count
-            #global enemy_ship_locations
-            #global enemy_shots
-            #global enemy_misses
-            #global merchant_ship_locations
-            #global battleship_hull_locations
-            #global miss_locations
-            #global total_shots
-            #global battle_grid
-
             # Resets list values
             enemy_ship_locations = []
             enemy_shots = []
@@ -1115,20 +1203,6 @@ screen, or 'E' to exit program\n")
             end_game_choice = end_game_choice.lower()
 
         if end_game_choice == "r":
-            #global enemy_ship_initialise_count
-            #global merchant_ship_initialise_count
-            #global battleship_hull_locations_initialise_count
-            #global hull_plates_remaining
-            #global torpedo_count
-            #global enemy_ship_locations
-            #global enemy_shots
-            #global enemy_misses
-            #global merchant_ship_locations
-            #global battleship_hull_locations
-            #global miss_locations
-            #global total_shots
-            #global battle_grid
-
             # Resets list values
             enemy_ship_locations = []
             enemy_shots = []
@@ -1213,4 +1287,3 @@ def main():
 
 
 main()
-
