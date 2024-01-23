@@ -879,7 +879,7 @@ screen, or 'E' to exit program\n")
     our flagship, and sole surviving battleship. Your orders are to sail
     her into the heart of enemy territory, satisfy her thirst for vengeance,
     visit justice upon the enemy and restore peace to the seas.\n\n''', 0.03)
-        print('    Happy hunting.\n')
+            print('    Happy hunting.\n')
             end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
