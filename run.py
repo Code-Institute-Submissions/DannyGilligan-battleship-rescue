@@ -646,7 +646,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
 {merchant_ships_destroyed:02}\033[0m')
         print('\n')
 
-        # 2. PRINTS BATTLE GRIP TO SCREEN
+        # 2. PRINTS BATTLE GRID TO SCREEN
         # The code used below to print the 2D list was,
         # adapted from YouTube Tutorials published by,
         # the original creators 'Knowledge Mavens' and
@@ -701,9 +701,12 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
 {merchant_ships_destroyed:02}\033[0m')
             print('\n')
 
-            # Code below for printing out the 2D list
-            # was taken from YouTube tutorial credited
-            # in README.md
+            # The code used below to print the 2D list was,
+            # adapted from YouTube Tutorials published by,
+            # the original creators 'Knowledge Mavens' and
+            # 'Dr Codie, the links have been credited
+            # in the README.md file
+
             col_headers = []
             for i in range(7):
                 col_headers.append(i)
@@ -751,6 +754,12 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
 (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
 {merchant_ships_destroyed:02}\033[0m')
             print('\n')
+
+            # The code used below to print the 2D list was,
+            # adapted from YouTube Tutorials published by,
+            # the original creators 'Knowledge Mavens' and
+            # 'Dr Codie, the links have been credited
+            # in the README.md file
 
             col_headers = []
             for i in range(7):
@@ -817,7 +826,7 @@ ED   \x1b[0m\r', end="", flush=True)
                 '\x1b[93mM\x1b[0m'
             merchant_ships_destroyed += 1
 
-        # 8. ELSE IT IS A MISS ###
+        # 8. ELSE IT IS A MISS
         else:
             print('\033[?25l', end="")  # Code credited in README.md
             typing_effect('\x1b[96m>>>>>>>>>>>>>>>>>>>\
@@ -871,6 +880,12 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
 (\x1b[93mM\x1b[0m) Merchant ships destroyed: \x1b[96m\
 {merchant_ships_destroyed:02}\033[0m')
             print('\n')
+
+            # The code used below to print the 2D list was,
+            # adapted from YouTube Tutorials published by,
+            # the original creators 'Knowledge Mavens' and
+            # 'Dr Codie, the links have been credited
+            # in the README.md file
 
             col_headers = []
             for i in range(7):
