@@ -1034,26 +1034,5 @@ def main():
     end_game_conditions()
 
 
-#main()
+main()
 
-
-
-
-typing_effect(f'''\n    {username},
-###############################################################################
-    We've received confirmation that the merchant ships have reached our
-    Capital Port. The cargo has been secured successfully. That cargo was the
-    enemy's Chief Intelligence Officer, she defected after witnessing the evil
-    that was being unleashed upon the world. Our spy network was able to
-    arrange her extraction, but your intervention was the key to the mission's
-    success.\n
-    We have everything we need to take the fight to the enemy now,
-    details of every troop movement, artillery installation, ammunition depot,
-    airbase, naval base, weapons schematics and armour vulnerabilities.\n 
-    Our forces have been depleted, but they have never been more potent. In the
-    last 4 minutes, surgical strikes have wiped out 20% of the enemy's fighting
-    capacity. Our long range radars are now operational, we can provide you
-    with air support effectively. The Meridian Queen is now our flagship, and
-    sole surviving battleship. Your orders are to sail her into the heart of
-    enemy territory, satisfy her thirst for vengeance, visit justice upon the
-    enemy and restore peace to the seas.\n\n''', 0.03)
