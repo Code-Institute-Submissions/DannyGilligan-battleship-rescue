@@ -39,7 +39,7 @@ An overview of the key design aspects of the project is included below.
 <details> <!-- Container for process flows starts here -->
   <summary><b>Process Flows</b></summary>
 <br>
-The diagrams below represent the process flows throughout the main phases of the game (these are best viewed in raw format).
+The diagrams below represent the process flows throughout the main phases of the game. These are subject to change during the development phase of the game (best viewed in raw format).
 <br>
 <br>
 <details>
