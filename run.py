@@ -1227,7 +1227,7 @@ screen, or 'E' to exit program\n")
             \n    May the survivors be granted wisdom beyond our own.\n''')
             print('    God forgive us.\n')
             end_game_prompt = print("     \x1b[93mAle\
-            rt!!\x1b[0m Type '\x1b[93mR\
+rt!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
             end_game_choice = input("                                       ")
