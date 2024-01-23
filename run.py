@@ -666,7 +666,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
         # The code used below to print the 2D list was,
         # adapted from YouTube Tutorials published by,
         # the original creators 'Knowledge Mavens' and
-        # 'Dr Codie, the links have been credited
+        # 'Dr Codie', the links have been credited
         # in the README.md file
 
         col_headers = []
@@ -682,7 +682,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
             for col_elem in row_array:
                 print(col_elem, end=" ")
             print()
-
+        print(enemy_ship_locations)
         print('\x1b[92mWEAPONS READY\x1b[0m')
 
         # 3. PROMPTS USER TO ENTER VALID X COORDINATE INPUT
@@ -720,7 +720,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
             # The code used below to print the 2D list was,
             # adapted from YouTube Tutorials published by,
             # the original creators 'Knowledge Mavens' and
-            # 'Dr Codie, the links have been credited
+            # 'Dr Codie', the links have been credited
             # in the README.md file
 
             col_headers = []
@@ -774,7 +774,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
             # The code used below to print the 2D list was,
             # adapted from YouTube Tutorials published by,
             # the original creators 'Knowledge Mavens' and
-            # 'Dr Codie, the links have been credited
+            # 'Dr Codie', the links have been credited
             # in the README.md file
 
             col_headers = []
@@ -900,7 +900,7 @@ E\x1b[0m) Enemy ships destroyed:    \x1b[96m\
             # The code used below to print the 2D list was,
             # adapted from YouTube Tutorials published by,
             # the original creators 'Knowledge Mavens' and
-            # 'Dr Codie, the links have been credited
+            # 'Dr Codie', the links have been credited
             # in the README.md file
 
             col_headers = []

@@ -75,10 +75,219 @@ The diagrams below represent the process flows throughout the main phases of the
 <br>
 <br>
 
-## User Stories
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ USER STORIES SECTION -->
+## User Stories 
+
+
+The user stories relating to this MVP version of the game, from the perspective of both a user and a developer, are outlined below.
+<br>
+<!-- 'As a user' User Stories are shown below -->
+<details>
+  <summary><b>As a User</b></summary>
+<br>
+<table>
+<tr>
+<th>User Story</th><th>Result</th>
+</tr>
+<!-- User Story 1 begins -->
+<tr>
+<td>I am presented with a clear, organised start screen with game logo</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- User Story 1 ends -->
+<tr>
+<td>I can enter a username<td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If the username I submit is invalid, I am alerted to this and the requirements are emphasised to me</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am presented with difficulty levels to choose from</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If I enter an incorrect difficulty level, I am alerted to this and the requirements are emphasised to me</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am presented with a narrative providing a back story to the game and mission details</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can choose to accept or reject the mission</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If I enter the wrong input at the mission accept screen, I am alerted to this and the requirements are emphasised to me</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If I choose to reject the mission, I am provided with a confirmation message</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>When I choose to accept the mission, I am presented with a sitrep display providing details of the battleship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am presented with a clear, organised game screen giving an overview of the information related to the battle</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many torpedos are remaining</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many hull plates are remaining</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many enemy ships are remaining</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many merchant ships are remaining</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many shot I've missed</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see my shot accuracy</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many enemy ships have been destroyed</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see how many merchant ships have been destroyed</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am presented with a clear, organised 'battle grid' with rows and columns clearly identified</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see the 'weapons ready' message</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see where to enter the input for the row to fire upon</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If I enter an incorrect row input, I am alerted to this and the requirements are emphasised to me</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can clearly see where to enter the input for the column to fire upon</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If I enter an incorrect column input, I am alerted to this and the requirements are emphasised to me</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with immediate feedback if my shot was a miss</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with immediate feedback if my shot destroyed an enemy ship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with immediate feedback if my shot destroyed a merchant ship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am alerted when the enemy is firing upon my battleship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with immediate feedback if the enemy shot hit my battleship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with immediate feedback if the enemy shot missed</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with a battle update and mission status overview upon failing the mission</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with a narrative when the mission fails</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with a battle update and mission status overview upon accomplishing the mission</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with a narrative when the mission succeeds</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can choose to restart the game from the end game screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I can choose to exit the game from the end game screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+
+</table>
+
+[Back to User Stories](#user-stories)
 <br>
 <br>
 <br>
+
+</details>
+<!-- 'As a User' User Stories end here -->
+<!-- 'As a Developer' User Stories are shown below -->
+<details>
+  <summary><b>As a Developer</b></summary>
+<br>
+<table>
+<tr>
+<th>User Story</th><th>Result</th>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am presented with a clean, organised repository to work with</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with docstrings and relevant comments in the run.py file</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with a clear, organised README.md file</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>I am provided with detailed instructions on the deployment steps</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+</table>
+
+[Back to User Stories](#user-stories)
+<br>
+<br>
+<br>
+
+</details>
+
+
+
+<!-- User Stories section ends here -->
+
+
+
 
 ## Bugs
 <br>
