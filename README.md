@@ -78,7 +78,6 @@ The diagrams below represent the process flows throughout the main phases of the
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ USER STORIES SECTION -->
 ## User Stories 
 
-
 The user stories relating to this MVP version of the game, from the perspective of both a user and a developer, are outlined below.
 <br>
 <!-- 'As a user' User Stories are shown below -->
@@ -282,8 +281,6 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 </details>
 
-
-
 <!-- User Stories section ends here -->
 
 
@@ -295,6 +292,206 @@ The user stories relating to this MVP version of the game, from the perspective 
 <br>
 
 ## Manual Testing
+
+Several manual tests were performed across different devices, browsers and code validators. The results of which are outlined below.
+
+<br>
+<!-- 'As a user' User Stories are shown below -->
+<details>
+  <summary><b>As a User</b></summary>
+<br>
+<table>
+<tr>
+<th>Manual Testing</th><th>Result</th>
+</tr>
+<!-- User Story 1 begins -->
+<tr>
+<td>Banner art displays correctly on start screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- User Story 1 ends -->
+<tr>
+<td>Tag lines display correctly on start screen<td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Enter call sign prompt, with requirements highlighted, displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>When call sign does not meet requirements, alert is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Mission difficulty screen displays correctly, with options clearly visible</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>When incorrect mission difficulty option is entered, alert is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Cadet, Captain and Admiral difficulty options are recognised and accepted as valid inputs</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Connection to 'Central Command' animation displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Back story and mission details screen is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>Prompt to accept mission, with input requirements clearly visible, is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If invalid input is entered for the accept mission prompt, alert is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If mission is rejected, message and confirmation is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>When mission is accepted, the sitrep module loading screen is displayed correctly </td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitrep display screen is then displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>All initial game values in the sitrep display are presented correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The battle grid is displayed correctly with default symbols and row and columns clearly identified</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The weapons ready message is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The input to accept row to fire upon is displayed correctly<td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If an invalid row input is entered, the alert is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The input to accept column to fire upon is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>If an invalid column input is entered, the alert is displayed correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The shot feedback animation displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitrep panel data updates correctly if the shot is a miss</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitrep panel data updates correctly if the shot is an enemy hit</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitrep panel data updates correctly if the shot is a merchant ship hit</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitep panel updates the shot accuracy percentage correctly after each user shot</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The enemy torpedo in the water alert displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The enemy shot feedback animation displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The sitrep panel updates correctly if the enemy shot hits the user's battleship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The loop behaves as expected and requests another user shot after enemy shot is processed</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The battle grid is updated correctly with an 'X' symbol if the user shot misses</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The battle grid is updated correctly with an 'E' symbol if the user shot destroys an enemy ship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The battle grid is updated correctly with an 'M' symbol if the user shot destroys an enemy ship</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>All variations of shot inputs from row 0 column 0 to row 6 column 6 are accepted</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The game ends as expected when the user's torpedo count is less then the enemy ships remaining, resulting in mission failure</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The game ends as expected when the user's hull plates remaining reaches 0, resulting in mission failure</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The game ends as expected when the merchant ships remaining reaches 0, resulting in mission failure</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The game ends as expected when the enemy ships reaches 0, resulting in mission success</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>The mission failure narrative displays correctly</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>User can restart game successfully from mission failure narrative screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>User can exit program successfully from mission failure narrative screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>User can restart game successfully from mission success narrative screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
+<td>User can exit program successfully from mission success narrative screen</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+
+
+</table>
+
+[Back to Bug](#bugs)
+<br>
+<br>
+<br>
+
+</details>
+
+
+
+
+
 <br>
 <br>
 <br>
