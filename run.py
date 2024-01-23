@@ -834,7 +834,7 @@ Update : \x1b[96mEnemy Ships Destroyed\x1b[0m\n')
         clearscreen()
         sleep(0.2)
         print('\033[?25l', end="")  # Code to hide cursor credited in README.md
-        typing_effect(f'''\n    {username},
+        typing_effect(f'''    {username},
     We've received confirmation that the merchant ships have reached our
     Capital Port. The cargo has been secured successfully. That cargo was the
     enemy's Chief Intelligence Officer, she defected after witnessing the evil
@@ -860,7 +860,7 @@ screen, or 'E' to exit program\n")
         end_game_choice = end_game_choice.lower()
         while end_game_choice not in valid_end_game_choices:
             clearscreen()
-            print(f'''\n    {username},
+            print(f'''    {username},
     We've received confirmation that the merchant ships have reached our
     Capital Port. The cargo has been secured successfully. That cargo was the
     enemy's Chief Intelligence Officer, she defected after witnessing the evil
@@ -876,7 +876,7 @@ screen, or 'E' to exit program\n")
     with air support effectively. The Meridian Queen is now our flagship, and
     sole surviving battleship. Your orders are to sail her into the heart of
     enemy territory, satisfy her thirst for vengeance, visit justice upon the
-    enemy and restore peace to the seas. Happy hunting.\n\n''', 0.03)
+    enemy and restore peace to the seas. Happy hunting.\n\n''')
             end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
