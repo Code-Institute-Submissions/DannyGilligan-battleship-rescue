@@ -850,7 +850,7 @@ def end_game_conditions():
     clearscreen()
     sleep(0.2)
     print('\033[?25l', end="")  # Code to hide cursor credited in README.md
-    typing_effect(f'''    {username},
+    typing_effect(f'''\n    {username},
     We've received confirmation that the merchant ships have been destroyed.
     The cargo has been lost, there is nothing more we can do. Your orders are
     to stand down. All communication channels have been opened and made
@@ -865,8 +865,37 @@ def end_game_conditions():
     fallout in just enough numbers to prevent the extinction of our species.
     \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
     sleep(2)
-    print('    God forive us.')
+    print('    God forive us.\n')
+    sleep(2)
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
+    valid_end_game_choices = ['r', 'e']
+    end_game_prompt = print("              Type 'R' to return to the start screen, or 'E' to exit program\n")
+    end_game_choice = input("                                       ")
+    end_game_choice = end_game_choice.lower()
+    while end_game_choice not in valid_end_game_choices:
+        clearscreen()
+        print(f'''\n    {username},
+    We've received confirmation that the merchant ships have been destroyed.
+    The cargo has been lost, there is nothing more we can do. Your orders are
+    to stand down. All communication channels have been opened and made
+    available to the Meridian Queen. Have your crew contact loved ones, or
+    make peace in whichever way they choose.\n
+    We have lost this war, but so has the enemy. 4 minutes ago the
+    Oppenheimer Protocol was activated. Our last remaining ICBMs were
+    equipped with the experimental 'Hades' warhead and are currently en route
+    to targets of strategic value within enemy territory. The enemy has
+    already reciprocated in kind. Our analysts predict that small pockets of
+    humanity around the globe will survive the initial blasts and subsequent
+    fallout in just enough numbers to prevent the extinction of our species.
+        \n    May the survivors be granted wisdom beyond our own.\n\n''')
+        print('    God forive us.\n')
+        end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\x1b[0m' to return to the start screen, or '\x1b[93mE\x1b[0m' to exit program\n")
+        end_game_choice = input("                                       ")
+        end_game_choice = end_game_choice.lower()
+
+
+
+
 
 
 def main():
