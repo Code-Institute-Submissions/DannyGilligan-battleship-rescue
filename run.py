@@ -608,7 +608,7 @@ def game_screen():
     If the shot is not present in either, it is considered a miss.
     An enemy shot is then generated and checked against the merchant
     location list and battleship hull list, if it is in either, it
-    is a hit, if it is not present, it is a hit. The while loop 
+    is a hit, if it is not present, it is a hit. The while loop
     will continue running until the user runs out of torpedos, the
     battleship hull has no more plating or the merchant ships have
     all been sunk. To note, there is also a condition that will
