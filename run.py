@@ -854,7 +854,9 @@ def game_screen():
                     sleep(0.15)
                 print('\033[?25h', end="") # Code to show cursor credited in README.md
                 enemy_misses.append(enemy_shot)
-        
+
+    enemy_ships_destroyed = 0
+    merchant_ships_destroyed = 0
 
 def end_game_conditions():
     """
@@ -867,8 +869,25 @@ def end_game_conditions():
     to the user, along with options to either restart the game
     or exit the program.
     """
-    sleep(0.5)
+    global enemy_ship_locations
+    global merchant_ship_locations
+    global enemy_ship_initialise_count
+    global merchant_ship_initialise_count
+    global battleship_hull_locations_initialise_count
+    global hull_plates_remaining
+    global torpedo_count
+    global enemy_ship_locations
+    global enemy_shots
+    global enemy_misses
+    global merchant_ship_locations
+    global battleship_hull_locations
+    global miss_locations
+    global total_shots
+    global battle_grid
 
+    sleep(0.5)
+    enemy_ships_destroyed = 0
+    print(enemy_ships_destroyed)
     # NARRATIVE FOR MISSION SUCCESS IS SHOWN BELOW
     if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
@@ -934,6 +953,61 @@ rt!!\x1b[0m Type '\x1b[93mR\
             end_game_choice = input("                                       ")
             end_game_choice = end_game_choice.lower()
         if end_game_choice == "r":
+            #global enemy_ship_initialise_count
+            #global merchant_ship_initialise_count
+            #global battleship_hull_locations_initialise_count
+            #global hull_plates_remaining
+            #global torpedo_count
+            #global enemy_ship_locations
+            #global enemy_shots
+            #global enemy_misses
+            #global merchant_ship_locations
+            #global battleship_hull_locations
+            #global miss_locations
+            #global total_shots
+            #global battle_grid
+
+            # Resets list values
+            enemy_ship_locations = []
+            enemy_shots = []
+            enemy_misses = []
+            merchant_ship_locations = []
+            battleship_hull_locations = []
+            miss_locations = []
+            total_shots = []
+
+            # Reset counters
+            torpedo_count = 0
+            enemy_ship_initialise_count = 0
+            enemy_ships_destroyed = 0
+            merchant_ship_initialise_count = 0
+            merchant_ships_destroyed = 0
+            battleship_hull_locations_initialise_count = 0
+            hull_plates_remaining = 0
+
+            battle_grid = [
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m']
+            ]
             main()
         else:
             sleep(0.3)
@@ -1041,6 +1115,61 @@ screen, or 'E' to exit program\n")
             end_game_choice = end_game_choice.lower()
 
         if end_game_choice == "r":
+            #global enemy_ship_initialise_count
+            #global merchant_ship_initialise_count
+            #global battleship_hull_locations_initialise_count
+            #global hull_plates_remaining
+            #global torpedo_count
+            #global enemy_ship_locations
+            #global enemy_shots
+            #global enemy_misses
+            #global merchant_ship_locations
+            #global battleship_hull_locations
+            #global miss_locations
+            #global total_shots
+            #global battle_grid
+
+            # Resets list values
+            enemy_ship_locations = []
+            enemy_shots = []
+            enemy_misses = []
+            merchant_ship_locations = []
+            battleship_hull_locations = []
+            miss_locations = []
+            total_shots = []
+
+            # Reset counters
+            torpedo_count = 0
+            enemy_ship_initialise_count = 0
+            enemy_ships_destroyed = 0
+            merchant_ship_initialise_count = 0
+            merchant_ships_destroyed = 0
+            battleship_hull_locations_initialise_count = 0
+            hull_plates_remaining = 0
+
+            battle_grid = [
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m'],
+                ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+                    '\x1b[96m~\033[0m']
+            ]
             main()
         else:
             sleep(0.3)
