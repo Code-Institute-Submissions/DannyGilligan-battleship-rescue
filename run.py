@@ -871,7 +871,7 @@ Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
     The cargo has been lost, there is nothing more we can do. Your orders are
     to stand down. All communication channels have been opened and made
     available to the Meridian Queen. Have your crew contact loved ones, or
-    make peace in whichever way they choose.\n
+    make their peace in whichever way they choose.\n
     We have lost this war, but so has the enemy. 4 minutes ago the
     Oppenheimer Protocol was activated. Our last remaining ICBMs were
     equipped with the experimental 'Hades' warhead and are currently en route
@@ -881,7 +881,7 @@ Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
     fallout in just enough numbers to prevent the extinction of our species.
     \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
     sleep(3)
-    print('    God forive us.\n')
+    print('    God forgive us.\n')
     sleep(2)
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
     valid_end_game_choices = ['r', 'e']
@@ -905,7 +905,7 @@ screen, or 'E' to exit program\n")
     humanity around the globe will survive the initial blasts and subsequent
     fallout in just enough numbers to prevent the extinction of our species.
         \n    May the survivors be granted wisdom beyond our own.\n''')
-        print('    God forive us.\n')
+        print('    God forgive us.\n')
         end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
