@@ -348,23 +348,23 @@ def initialise_game_values():
     ]
 
     if mission_difficulty == 'cadet':
-        enemy_ship_initialise_count = 10
+        enemy_ship_initialise_count = 9
         merchant_ship_initialise_count = 8
-        battleship_hull_locations_initialise_count = 5
+        battleship_hull_locations_initialise_count = 8
         hull_plates_remaining = 10
         torpedo_count = 45
     elif mission_difficulty == 'captain':
-        enemy_ship_initialise_count = 12
+        enemy_ship_initialise_count = 10
         merchant_ship_initialise_count = 7
         battleship_hull_locations_initialise_count = 10
-        hull_plates_remaining = 8
+        hull_plates_remaining = 9
         torpedo_count = 40
     else:
         enemy_ship_initialise_count = 14
         merchant_ship_initialise_count = 6
-        battleship_hull_locations_initialise_count = 15
-        hull_plates_remaining = 6
-        torpedo_count = 35
+        battleship_hull_locations_initialise_count = 12
+        hull_plates_remaining = 8
+        torpedo_count = 38
 
 
 def mission_accept_screen():
