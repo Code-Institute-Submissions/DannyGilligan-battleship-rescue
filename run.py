@@ -869,7 +869,7 @@ def end_game_conditions():
     sleep(2)
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
     valid_end_game_choices = ['r', 'e']
-    end_game_prompt = print("              Type 'R' to return to the start screen, or 'E' to exit program\n")
+    end_game_prompt = print("         Type 'R' to return to the start screen, or 'E' to exit program\n")
     end_game_choice = input("                                       ")
     end_game_choice = end_game_choice.lower()
     while end_game_choice not in valid_end_game_choices:
@@ -887,7 +887,7 @@ def end_game_conditions():
     already reciprocated in kind. Our analysts predict that small pockets of
     humanity around the globe will survive the initial blasts and subsequent
     fallout in just enough numbers to prevent the extinction of our species.
-        \n    May the survivors be granted wisdom beyond our own.\n\n''')
+        \n    May the survivors be granted wisdom beyond our own.\n''')
         print('    God forive us.\n')
         end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\x1b[0m' to return to the start screen, or '\x1b[93mE\x1b[0m' to exit program\n")
         end_game_choice = input("                                       ")
