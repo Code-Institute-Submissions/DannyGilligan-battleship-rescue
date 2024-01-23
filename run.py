@@ -297,6 +297,39 @@ def initialise_game_values():
     global hull_plates_remaining
     global torpedo_count
 
+    # Resets list values
+    enemy_ship_locations = []
+    enemy_shots = []
+    enemy_misses = []
+    merchant_ship_locations = []
+    battleship_hull_locations = []
+    miss_locations = []
+    total_shots = []
+
+    battle_grid = [
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m'],
+        ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
+            '\x1b[96m~\033[0m']
+    ]
+
     if mission_difficulty == 'cadet':
         enemy_ship_initialise_count = 10
         merchant_ship_initialise_count = 8
