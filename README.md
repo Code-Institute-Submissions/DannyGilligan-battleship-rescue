@@ -280,9 +280,10 @@ The user stories relating to this MVP version of the game, from the perspective 
 <br>
 
 </details>
-
 <!-- User Stories section ends here -->
-
+<br>
+<br>
+<br>
 
 
 
