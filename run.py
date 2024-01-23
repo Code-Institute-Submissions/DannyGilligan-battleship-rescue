@@ -154,19 +154,20 @@ def typing_effect(text, speed):
     """
     The typing effect functions will provide a visual
     effect that mimics the text being 'typed' in real
-    time across the screen. This functions has been
-    adapted from a Stackoverflow post credited in the
-    README.md file
+    time across the screen. 
     """
+    # This function has been adapted from a Stackoverflow
+    # post credited in the README.md file.
+    # The change to the original code relates to adding
+    # speed as a parameter that can be adjusted as needed
+
     words = text
     for char in words:
         time.sleep(speed)  # amended to make speed a parameter
         sys.stdout.write(char)
         sys.stdout.flush()
 
-# The clearscreen code below was taken
-# in full, without any tweaking from a
-# Stackoverflow post credited in the README.md file
+
 
 
 def clearscreen():
@@ -175,6 +176,9 @@ def clearscreen():
     content from the current screen
     displayed to the user.
     """
+    # The clearscreen code below was taken
+    # in full, without any tweaking from a
+    # Stackoverflow post credited in the README.md file
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -876,7 +880,7 @@ Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
     humanity around the globe will survive the initial blasts and subsequent
     fallout in just enough numbers to prevent the extinction of our species.
     \n    May the survivors be granted wisdom beyond our own.\n\n''', 0.03)
-    sleep(2)
+    sleep(3)
     print('    God forive us.\n')
     sleep(2)
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
