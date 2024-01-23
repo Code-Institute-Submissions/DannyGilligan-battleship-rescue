@@ -314,6 +314,15 @@ def initialise_game_values():
     miss_locations = []
     total_shots = []
 
+    # Reset counters
+    torpedo_count = 0
+    enemy_ship_initialise_count = 0
+    enemy_ships_destroyed = 0
+    merchant_ship_initialise_count = 0
+    merchant_ships_destroyed = 0
+    battleship_hull_locations_initialise_count = 0
+    hull_plates_remaining = 0
+
     battle_grid = [
         ['\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
             '\x1b[96m~\033[0m', '\x1b[96m~\033[0m', '\x1b[96m~\033[0m',
