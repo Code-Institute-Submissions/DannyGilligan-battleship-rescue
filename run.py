@@ -296,6 +296,14 @@ def initialise_game_values():
     global battleship_hull_locations_initialise_count
     global hull_plates_remaining
     global torpedo_count
+    global enemy_ship_locations
+    global enemy_shots
+    global enemy_misses
+    global merchant_ship_locations
+    global battleship_hull_locations
+    global miss_locations
+    global total_shots
+    global battle_grid
 
     # Resets list values
     enemy_ship_locations = []
@@ -893,7 +901,7 @@ screen, or 'E' to exit program\n")
         while end_game_choice not in valid_end_game_choices:
             print('\033[?25l', end="")  # Code to hide cursor credited in README.md
             clearscreen()
-            print(f'''    {username},
+            print(f'''\n    {username},
     We received confirmation that the merchant ships have reached our Capital
     Port. The cargo has been secured successfully. That cargo was the enemy's
     Chief Intelligence Officer, she defected after witnessing the evil that
