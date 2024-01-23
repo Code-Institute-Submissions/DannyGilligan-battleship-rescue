@@ -265,6 +265,10 @@ The user stories relating to this MVP version of the game, from the perspective 
 </tr>
 <!-- spacer -->
 <tr>
+<td>I am provided with a validated PEP8 compliant code base in the run.py file</td><td>:heavy_check_mark:</td>
+</tr>
+<!-- spacer -->
+<tr>
 <td>I am provided with a clear, organised README.md file</td><td>:heavy_check_mark:</td>
 </tr>
 <!-- spacer -->
@@ -496,12 +500,8 @@ Several manual tests were performed during playthroughs of the game. The results
 <details>
   <summary><b>Code Validation</b></summary>
 <br>
-<!-- spacer -->
-<details>
-  <summary> <i>Code Institute PEP8 Linter Validation</i></summary>
-<br>
 
-The python code passed through the [Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/#) without returning any warnings or errors.
+The python code passed through the [Code Institute Python PEP8 Linter](https://pep8ci.herokuapp.com/#) without returning any warnings or errors.
 
 <br>
 <table>
@@ -519,7 +519,7 @@ The python code passed through the [Code Institute PEP8 Linter](https://pep8ci.h
 </tr>
 </table>
 </details>
-</details>
+
 
 
 <br>
