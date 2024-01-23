@@ -16,6 +16,8 @@
 # resolved bug, add condition to prevent an enemy shot when all enemy or merchant ships are destroyed, add screenshot of code
 # resolved bug, add conditions to prevent overwriting an enemy hit or merchant hit symbol when coordinates are fired upon again
 # https://pep8ci.herokuapp.com/ PEP8 Code Checker
+# Future feature, skip text
+# Future feature, user feedback to adjust game variables
 
 # >>>>>>>>>>>>>>> IMPORTS <<<<<<<<<<<<<<<
 
@@ -801,6 +803,16 @@ def game_screen():
         
 
 def end_game_conditions():
+    """
+    The end game conditions function will check for conditions
+    that are present relating to either a mission success or
+    mission failure. If the enemy ships have all been destroyed
+    while there are still merchant ships afloat, it will result
+    in mission success. Any other scenario will be considered
+    a mission failure. A narrative for both outcomes is displayed
+    to the user, along with options to either restart the game
+    or exit the program.
+    """
     sleep(0.5)
     if len(enemy_ship_locations) == 0 and len(merchant_ship_locations) > 0:
         clearscreen()
@@ -809,43 +821,43 @@ def end_game_conditions():
         clearscreen()
         if torpedo_count < int(len(enemy_ship_locations)):
             print('\n\n\n\n\n\n\n\n\n\x1b[1m             Battle \
-            Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
+Update : \x1b[96mTorpedo Quantity Insufficient\x1b[0m\n')
             for iterations in range(20):
                 print('             \x1b[1mMission Status:\
-                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
                 print('             \x1b[1mMission Status:\
-                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
         elif torpedo_count == 0 and int(len(enemy_ship_locations)) > 0:
             print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle \
-            Update : \x1b[96mTorpedo Complement Exhausted\x1b[0m\n')
+Update : \x1b[96mTorpedo Complement Exhausted\x1b[0m\n')
             for iterations in range(20):
                 print('                  \x1b[1mMission Status:\
-                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
                 print('                  \x1b[1mMission Status:\
-                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
         elif len(merchant_ship_locations) == 0:
             print('\n\n\n\n\n\n\n\n\n\x1b[1m                  Battle \
-            Update : \x1b[96mAll Merchant Ships Destroyed\x1b[0m\n')
+Update : \x1b[96mAll Merchant Ships Destroyed\x1b[0m\n')
             for iterations in range(20):
                 print('                  \x1b[1mMission Status:\
-                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
                 print('                  \x1b[1mMission Status:\
-                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
         else:
             print('\n\n\n\n\n\n\n\n\n\x1b[1m                    Battle \
-            Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
+Update : \x1b[96mBattleship Hull Breached\x1b[0m\n')
             for iterations in range(25):
                 print('                    \x1b[1mMission Status:\
-                \x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[1m\x1b[91mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
                 print('                    \x1b[1mMission Status:\
-                \x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
+\x1b[0m \x1b[97mFailed\x1b[0m\r', end="", flush=True)
                 sleep(0.1)
     clearscreen()
     sleep(0.2)
@@ -869,7 +881,8 @@ def end_game_conditions():
     sleep(2)
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
     valid_end_game_choices = ['r', 'e']
-    end_game_prompt = print("         Type 'R' to return to the start screen, or 'E' to exit program\n")
+    end_game_prompt = print("         Type 'R' to return to the start \
+screen, or 'E' to exit program\n")
     end_game_choice = input("                                       ")
     end_game_choice = end_game_choice.lower()
     while end_game_choice not in valid_end_game_choices:
@@ -889,7 +902,9 @@ def end_game_conditions():
     fallout in just enough numbers to prevent the extinction of our species.
         \n    May the survivors be granted wisdom beyond our own.\n''')
         print('    God forive us.\n')
-        end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\x1b[0m' to return to the start screen, or '\x1b[93mE\x1b[0m' to exit program\n")
+        end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
+\x1b[0m' to return to the start screen, or '\x1b[93mE\
+\x1b[0m' to exit program\n")
         end_game_choice = input("                                       ")
         end_game_choice = end_game_choice.lower()
 
@@ -905,10 +920,6 @@ ing from Central Command\x1b[1m')
         sleep(4)
         clearscreen()
         raise SystemExit()
-
-
-
-
 
 
 def main():
