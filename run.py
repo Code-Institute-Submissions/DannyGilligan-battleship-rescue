@@ -850,9 +850,7 @@ Update : \x1b[96mEnemy Ships Destroyed\x1b[0m\n')
     with air support effectively. The Meridian Queen is now our flagship, and
     sole surviving battleship. Your orders are to sail her into the heart of
     enemy territory, satisfy her thirst for vengeance, visit justice upon the
-    enemy and restore peace to the seas.\n\n''', 0.03)
-        sleep(2)
-        print('    Happy hunting.\n')
+    enemy and restore peace to the seas. Happy hunting.\n\n''', 0.03)
         sleep(1)
         print('\033[?25h', end="")  # Code to show cursor credited in README.md
         valid_end_game_choices = ['r', 'e']
@@ -878,7 +876,7 @@ screen, or 'E' to exit program\n")
     with air support effectively. The Meridian Queen is now our flagship, and
     sole surviving battleship. Your orders are to sail her into the heart of
     enemy territory, satisfy her thirst for vengeance, visit justice upon the
-    enemy and restore peace to the seas.\n\n''', 0.03)
+    enemy and restore peace to the seas. Happy hunting.\n\n''', 0.03)
             end_game_prompt = print("     \x1b[93mAlert!!\x1b[0m Type '\x1b[93mR\
 \x1b[0m' to return to the start screen, or '\x1b[93mE\
 \x1b[0m' to exit program\n")
