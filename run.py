@@ -896,7 +896,7 @@ screen, or 'E' to exit program\n")
     The cargo has been lost, there is nothing more we can do. Your orders are
     to stand down. All communication channels have been opened and made
     available to the Meridian Queen. Have your crew contact loved ones, or
-    make peace in whichever way they choose.\n
+    make their peace in whichever way they choose.\n
     We have lost this war, but so has the enemy. 4 minutes ago the
     Oppenheimer Protocol was activated. Our last remaining ICBMs were
     equipped with the experimental 'Hades' warhead and are currently en route
