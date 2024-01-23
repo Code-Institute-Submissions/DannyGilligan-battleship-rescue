@@ -567,7 +567,7 @@ SITREP Display Module\x1b[0m\n\n", 0.01)
     print("                          \x1b[92mSITRE\
 P Display Module Ready\033[0m")
     print('\033[?25h', end="")  # Code to show cursor credited in README.md
-    sleep(2)
+    sleep(3)
 
 
 ##################################################################################################################################################################### VALIDATED IN CI LINTER UP TO THIS POINT
