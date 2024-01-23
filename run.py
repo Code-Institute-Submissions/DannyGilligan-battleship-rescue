@@ -598,7 +598,23 @@ P Display Module Ready\033[0m")
 
 
 def game_screen():
-
+    """
+    The game screen function contains the core game mechanics.
+    It contains a while loop that will print the sitrep panel,
+    then the battle grid. Inputs are then requested from the user,
+    which are validated then assigned to a shot variable. The shot
+    variable is checked against the enemy location list and merchant
+    locations list. If the shot is present in either, it is a hit.
+    If the shot is not present in either, it is considered a miss.
+    An enemy shot is then generated and checked against the merchant
+    location list and battleship hull list, if it is in either, it
+    is a hit, if it is not present, it is a hit. The while loop 
+    will continue running until the user runs out of torpedos, the
+    battleship hull has no more plating or the merchant ships have
+    all been sunk. To note, there is also a condition that will
+    terminate the loop if the user does not have enough torpedos
+    remaining to win.
+    """
     global battle_grid
     global torpedo_count
     global enemy_ships_destroyed
