@@ -69,7 +69,7 @@ The diagrams below represent the process flows throughout the main phases of the
 <br>
 <br>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ USER STORIES SECTION -->
+
 ## User Stories 
 
 The user stories relating to this MVP version of the game, from the perspective of both a user and a developer, are outlined below.
@@ -302,11 +302,11 @@ Several manual tests were performed during playthroughs of the game. The results
 <tr>
 <th>Manual Test Scenario</th><th>Result</th>
 </tr>
-<!-- User Story 1 begins -->
+<!-- spacer -->
 <tr>
 <td>Banner art displays correctly on start screen</td><td>:heavy_check_mark:</td>
 </tr>
-<!-- User Story 1 ends -->
+<!-- spacer -->
 <tr>
 <td>Tag lines display correctly on start screen<td>:heavy_check_mark:</td>
 </tr>
@@ -560,9 +560,6 @@ Once the app is created, the setup page will be displayed. This page contains an
 
 </td>
 </table>
-
-
-
 </details>
 <!-- spacer -->
 <details>
@@ -579,10 +576,6 @@ On the Settings page, click on the 'Reveal Config Vars' button.
 
 </td>
 </table>
-
-
-
-
 </details>
 <!-- spacer -->
 <details>
@@ -616,8 +609,6 @@ Once the Config Vars are added, the next step is to add two buildpacks to the ap
 
 </td>
 </table>
-
-
 </details>
 <!-- spacer -->
 <details>
@@ -685,8 +676,6 @@ Select Github from the 'Deployment method' options.
 
 </td>
 </table>
-
-
 </details>
 <!-- spacer -->
 <details>
@@ -737,7 +726,6 @@ A confirmation will be displayed on the Github once the repository is connected 
 
 </td>
 </table>
-
 </details>
 <!-- spacer -->
 <details>
