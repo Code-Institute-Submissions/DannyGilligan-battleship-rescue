@@ -23,6 +23,11 @@
 
 
 ## Introduction
+
+
+
+
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -267,7 +272,7 @@ To improve the user experience, it may be possible to use libraries such as 'Ric
 <br>
 </details>
 
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -305,6 +310,7 @@ The diagrams below represent the process flows throughout the main phases of the
 ![Phase 3](assets/documentation/04_end_game_conditions.webp)
 </details>
 
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -519,6 +525,8 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 </details>
 <!-- User Stories section ends here -->
+
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -712,7 +720,7 @@ Once I had this information, I was able to amend the user shot variable and the 
 </details>
 
 </details>
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -942,7 +950,7 @@ The python code passed through the [Code Institute Python PEP8 Linter](https://p
 </details>
 
 
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -1215,7 +1223,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </details>
 
 The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com/
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -1299,7 +1307,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </table>
 <!-- Technologies Used section ends here -->
 
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -1467,16 +1475,10 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </td>
 </tr>
 
-
-
 </table>
-
-
-
-
 </details>
 
-
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
@@ -1488,6 +1490,8 @@ I want to acknowledge and thank the Student Support team at Code Institute again
 I'd also like to thank my mentor Martina Terlevic for the calls during the Python project and the very helpful feedback and suggestions.
 
 And most importantly, I'd like to acknowledge the need for humanity to start working harder at getting along with each other, let's keep the theme of mutually assured destruction confined to the realm of video games! 🙏
+
+[Back to Top](#battleship-rescue)
 <br>
 <br>
 <br>
