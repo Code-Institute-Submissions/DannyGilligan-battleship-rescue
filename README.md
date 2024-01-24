@@ -529,27 +529,22 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 <details>
   <summary><b>Resolved Bugs</b></summary>
-
+<br>
 
 <details>
   <summary> <i>Banner Art PEP8 Errors</i></summary>
-
-When adding the banner art, I encountered several warnings in the Code Institute python linter. I researched online, and one option was to print the banner art in a 'raw' format, however, due to the design of the art, this was not an optimal solution. There are three horizontal lines in the center of the banner art that I needed to use coloured text for, and also, I wanted them to be animated using the typing effect function.
-<br><br>
-The eventual solution was to split the banner art into three separate variables and print them individually to the console as needed.
-<br><br>
-This solution solved the issue in the python linter.
-
+<br>
 
 <table>
-<tr><th></th>Banner Art PEP8 Errors<th>Status</th></tr>
+<tr><th>Banner Art PEP8 Errors</th><th>Status</th></tr>
 
 <tr>
 <td>
+<br>
 When adding the banner art, I encountered several warnings in the Code Institute python linter. I researched online, and one option was to print the banner art in a 'raw' format, however, due to the design of the art, this was not an optimal solution. There are three horizontal lines in the center of the banner art that I needed to use coloured text for, and also, I wanted them to be animated using the typing effect function.
 <br>
 </td>
-<td>
+<td rowspan="6">
 :heavy_check_mark:
 </td>
 </tr>
@@ -564,8 +559,9 @@ When adding the banner art, I encountered several warnings in the Code Institute
 
 <tr>
 <td>
-The eventual solution was to split the banner art into three separate variables and print them individually to the console as needed.
 <br>
+The eventual solution was to split the banner art into three separate variables and print them individually to the console as needed.
+<br><br>
 </td>
 </tr>
 
@@ -579,8 +575,9 @@ The eventual solution was to split the banner art into three separate variables 
 
 <tr>
 <td>
-This solution solved the issue in the Code Institute python linter.
 <br>
+This solution solved the issue in the Code Institute python linter.
+<br><br>
 </td>
 </tr>
 
@@ -591,11 +588,13 @@ This solution solved the issue in the Code Institute python linter.
 
 </td>
 </tr>
-
-
-
 </table>
 </details>
+<!-- Banner art bug ends here -->
+
+
+
+
 
 </details>
 
