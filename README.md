@@ -1068,7 +1068,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <br>
 
 ## Credits
-
+<br>
 <details>
   <summary><b>Reference Materials Used</b></summary>
 <br><br>
