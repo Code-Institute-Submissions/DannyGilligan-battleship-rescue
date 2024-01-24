@@ -1223,6 +1223,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </details>
 
 The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com/
+
 [Back to Top](#battleship-rescue)
 <br>
 <br>
