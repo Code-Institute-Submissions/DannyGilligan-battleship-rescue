@@ -667,6 +667,58 @@ I initially enountered issues with getting the shot feedback animation to behave
 </details>
 
 
+<details>
+  <summary> <i>Shot Recognition</i></summary>
+<br>
+
+<table>
+<tr><th>Shot Recognition</th><th>Status</th></tr>
+
+<tr>
+<td>
+<br>
+I also experienced problems with registering the user and enemy shots on the battle grip. To solve the problem I used the 'type' method to determine what the computer was 'seeing'. This revealed that although the user input looked identical to what was expected, there were two different data types at play.
+<br><br>
+</td>
+<td rowspan="4">
+:heavy_check_mark:
+</td>
+</tr>
+
+<tr>
+<td>
+
+![Banner Art 1](assets/documentation/bug_04_shot_recognition_a.webp)
+
+</td>
+</tr>
+
+<tr>
+<td>
+<br>
+Once I had this information, I was able to amend the user shot variable and the inputs to create a 'shot' that would match the coordinates in the battle grid list exactly. This resolved the issue.
+<br><br>
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+![Banner Art 1](assets/documentation/bug_04_shot_recognition_b.webp)
+
+</td>
+</tr>
+
+
+
+</table>
+</details>
+
+
+
 
 
 
