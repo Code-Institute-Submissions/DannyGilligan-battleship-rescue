@@ -139,6 +139,38 @@ The battle grid is a 7 x 7 grid by default. A decision was made not to make it v
 <br>
 </details>
 
+<details>
+  <summary><b>Battleship Weapons</b></summary>
+<br>
+
+The user's role is to direct and fire the primary weapon of the battleship, in the narrative, this is described as the 'Sea Stiletto' nuclear torpedo. 
+<br><br>
+To fire the weapon, the coordinates are entered into the input fields when the 'Weapons Ready' alert is displayed, these coordinates are validated and once accepted, they will be registered on the battle grid.
+<br><br>
+
+![Battleship Weapons](assets/documentation/feature_07_battleship_weapons.webp)
+
+<br>
+</details>
+
+<details>
+  <summary><b>Enemy Weapons</b></summary>
+<br>
+
+Once the user has fired a torpedo, the enemy will then be given an opportunity to return fire. This involved automatically generating a random set of coordinates within the constraints of the battle grid.
+<br><br>
+The enemy's shot will then be checked against the user's 'hull plate locations' and also the merchant ship locations, either of which will be decremented if the enemy shot is successful.
+<br><br>
+
+![Enemy Weapons](assets/documentation/feature_08_enemy_weapons.webp)
+
+<br>
+</details>
+
+
+
+
+
 
 <br>
 <br>
