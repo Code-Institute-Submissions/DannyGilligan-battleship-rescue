@@ -263,7 +263,7 @@ The diagrams below represent the process flows throughout the main phases of the
 ## User Stories 
 
 The user stories relating to this MVP version of the game, from the perspective of both a user and a developer, are outlined below.
-<br>
+<br><br>
 <!-- 'As a user' User Stories are shown below -->
 <details>
   <summary><b>As a User</b></summary>
@@ -483,7 +483,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 ## Manual Testing
 
 Several manual tests were performed during playthroughs of the game. The results of which are outlined below.
-
+<br>
 <!-- Manual tests are shown below -->
 <details>
   <summary><b>Manual Testing</b></summary>
@@ -991,7 +991,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 ## Credits
 
 <details>
-  <summary>Reference Materials Used</summary>
+  <summary><b>Reference Materials Used</b></summary>
 <br>
 
 <table>
@@ -1034,7 +1034,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </details>
 
 <details>
-  <summary>Images</summary>
+  <summary><b>Images</b></summary>
 <br>
 
 <table>
