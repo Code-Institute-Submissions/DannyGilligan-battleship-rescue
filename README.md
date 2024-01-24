@@ -225,7 +225,7 @@ If any of the failure conditions are met, a 'Battle Update' will be displayed to
 
 <details>
   <summary><b>Future Features</b></summary>
-
+<br>
 <details>
   <summary> <i>Battleship: Vengeance</i></summary>
 <br>
