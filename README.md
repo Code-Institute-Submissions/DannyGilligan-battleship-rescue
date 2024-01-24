@@ -257,6 +257,14 @@ The game in its current state is very challenging, even at the lowest difficulty
 <br><br>
 </details>
 
+<details>
+  <summary> <i>External Libraries</i></summary>
+<br>
+To improve the user experience, it may be possible to use libraries such as 'Rich' and 'Colorama' to provide a more visually appealing interface.
+<br><br>
+</details>
+
+
 </details>
 
 
