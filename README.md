@@ -637,6 +637,37 @@ I was eventually able to find the right indentation levels for each list, within
 </table>
 </details>
 
+<details>
+  <summary> <i>Feedback Animation</i></summary>
+<br>
+
+<table>
+<tr><th>Feedback Animation</th><th>Status</th></tr>
+
+<tr>
+<td>
+<br>
+I initially enountered issues with getting the shot feedback animation to behave as expected, this animation involves printing text to the console, then flushing or overwriting that text using the carriage return escape character. However, I had overlooked this and included a new line escape character which resulted in several lines being printed, instead of just the one line being overwritten. The bug was resolved and behaves as expected in the deployed app.
+<br><br>
+</td>
+<td rowspan="2">
+:heavy_check_mark:
+</td>
+</tr>
+
+<tr>
+<td>
+
+![Banner Art 1](assets/documentation/bug_03_feedback_animation.webp)
+
+</td>
+</tr>
+
+</table>
+</details>
+
+
+
 
 
 </details>
