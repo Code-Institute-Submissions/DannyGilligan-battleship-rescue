@@ -121,7 +121,23 @@ The SITREP display, or 'situation report', is the main source of information dis
 <br>
 </details>
 
+<details>
+  <summary><b>Battle Grid</b></summary>
+<br>
 
+The battle grid is a graphical representation of a 2D nested list containing the coordinates used in the game. This list will initially hold a default '~' symbol to represent each coordinate. 
+<br><br>
+As the user progresses through the game, each coordinate will be updated after each shot with either a miss symbol 'X', enemy ship destroyed symbol 'E' or a merchant ship destroyed symbol 'M'.
+<br><br>
+To note, when either an enemy ship or merchant ship destroyed symbol is displayed, it will not be overwritten with an 'X' symbol if the user chooses to fire upon those same coordinates again.
+<br><br>
+The battle grid is a 7 x 7 grid by default. A decision was made not to make it variable in sise at the time of deployment, this was due to the impact on the positioning of other elements around the battle grid. The ability to allow the user to change the size of the grid has been included as a future feature to be implemented.
+<br><br>
+
+![Battle Grid](assets/documentation/feature_06_battle_grid.webp)
+
+<br>
+</details>
 
 
 <br>
