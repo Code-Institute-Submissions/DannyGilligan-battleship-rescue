@@ -30,7 +30,7 @@ This adaptation incorporates a slightly different game mechanic, whereby the use
 <br><br>
 The aim of this project generally is to create a fun, interactive, but very challenging game! It is aimed at a more mature audience who enjoy turn based strategy games, and would enjoy a challenging twist on the original battleship game. 
 <br><br>
-To note, due to the themes involved in the narrative provided to the user, which although fictional, depicts elements of warfare that some users may not enjoy. This is most suited to users who enjoy military themed games.
+To note, due to the themes involved in the narrative provided to the user, which although fictional, depicts elements of warfare that some users may not enjoy, this game is most suited to users who enjoy military themed games.
 <br><br>
 The link to the deployed app on heroku can be found [here](https://battleship-rescue-4a195bb43cc9.herokuapp.com/).
 
