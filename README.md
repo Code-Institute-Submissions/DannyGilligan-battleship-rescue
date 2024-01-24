@@ -24,7 +24,13 @@
 
 ## Introduction
 
+The Battleship Rescue game is the 3rd project deliverable as part of the Code Insititute Diploma in Full Stack Software Development. It is an adaptation of the classic turn based strategy Battleship game built using the Python coding language and designed using user centric design principles.
 
+This adaptation incorporates a slightly different game mechanic, whereby the user is in control of a single battleship with the objective of destroying the enemy's fleet before they destroy friendly merchant ships that also populate the playable grid. The locations of these merchant ships are hidden from the user and they can also be destroyed by friendly fire. The user must ensure that at least one merchant ship survives. The aim of this project generally is to create a fun, interactive, but very challenging game! It is aimed at a more mature audience who enjoy turn based strategy games, and would enjoy a challenging twist on the original battleship game. 
+
+To note, due to the themes involved in the narrative provided to the user, which although fictional, depicts elements of warfare that some users may not enjoy. This is most suited to users who enjoy military themed games.
+
+The link to the deployed app on heroku can be found [here](https://battleship-rescue-4a195bb43cc9.herokuapp.com/).
 
 
 [Back to Top](#battleship-rescue)
