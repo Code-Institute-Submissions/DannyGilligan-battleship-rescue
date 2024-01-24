@@ -167,7 +167,21 @@ The enemy's shot will then be checked against the user's 'hull plate locations' 
 <br>
 </details>
 
+<details>
+  <summary><b>Shot Feedback</b></summary>
+<br>
 
+After each shot is taken, either by the user's battlehip or the enemy, immediate feedback is provided with a quick animation.
+<br><br>
+Color is used here to provide a visually interesting feature and enhance the user experience.
+<br><br>
+A summary of the different shot feedback messages is shown below.
+<br><br>
+
+![Shot Feedback](assets/documentation/feature_09_shot_feedback.webp)
+
+<br>
+</details>
 
 
 
