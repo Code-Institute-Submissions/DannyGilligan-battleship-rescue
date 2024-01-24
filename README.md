@@ -135,7 +135,7 @@ As the user progresses through the game, each coordinate will be updated after e
 <br><br>
 To note, when either an enemy ship or merchant ship destroyed symbol is displayed, it will not be overwritten with an 'X' symbol if the user chooses to fire upon those same coordinates again.
 <br><br>
-The battle grid is a 7 x 7 grid by default. A decision was made not to make it variable in sise at the time of deployment, this was due to the impact on the positioning of other elements around the battle grid. The ability to allow the user to change the size of the grid has been included as a future feature to be implemented.
+The battle grid is a 7 x 7 grid by default. A decision was made not to make it variable in size at the time of deployment, this was due to the impact on the positioning of other elements around the battle grid. The ability to allow the user to change the size of the grid has been included as a future feature to be implemented.
 <br><br>
 
 ![Battle Grid](assets/documentation/feature_06_battle_grid.webp)
