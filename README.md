@@ -9,7 +9,7 @@
 
 * [Introduction](#introduction)
 * [Features](#features)
-* [Design](#design)
+* [Process Flows](#process-flows)
 * [User Stories](#user-stories)
 * [Bugs](#bugs)
 * [Manual Testing](#manual-testing)
@@ -32,15 +32,10 @@
 <br>
 <br>
 
-## Design
+## Process Flows
 
-An overview of the key design aspects of the project is included below.
-
-<details> <!-- Container for process flows starts here -->
-  <summary><b>Process Flows</b></summary>
-<br>
 The diagrams below represent the process flows throughout the main phases of the game. These are subject to change during the development phase of the game (best viewed in raw format).
-<br>
+
 <br>
 <details>
   <summary><i> Phase 1: Initialise Game</i></summary>
@@ -70,7 +65,6 @@ The diagrams below represent the process flows throughout the main phases of the
 ![Phase 3](assets/documentation/04_end_game_conditions.webp)
 </details>
 
-</details> <!-- Container for process flows ends here -->
 <br>
 <br>
 <br>
