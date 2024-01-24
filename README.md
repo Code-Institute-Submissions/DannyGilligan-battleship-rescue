@@ -223,6 +223,47 @@ If any of the failure conditions are met, a 'Battle Update' will be displayed to
 
 </details>
 
+<details>
+  <summary><b>Future Features<b></summary>
+
+<details>
+  <summary> <i>Battleship: Vengeance</i></summary>
+<br>
+If the user completes the mission in Battleship: Rescue successfully, the narrative leads up to a change in the direction of the war.
+<br><br>
+This allows a natural sequel mission to be developed, perhaps in the form of a timed mission where the user has to destroy as many enemy ships as possible, this would have a points scoring system, with different classes of enemy ships having different scores associated with them. Destroying certain types of ships would allow grant the user extra time. Also, at stages during the timed mission, the enemy could call in reinforcements which would appear on the battle grid on coordinates that were previously marked as 'missed shots'.
+<br>
+</details>
+
+<details>
+  <summary> <i>Battleship: Infiltrate</i></summary>
+<br>
+This feature would be another mission, where the user would navigate the battle grid while trying to stay out of the 'radar zone' of enemy ships. The enemy ships would be hidden from the user, however, the user would have a certain amount of attempts to deploy an EMP pulse that would disable the enemy's radars and make them visible on the battle grid for a brief amount of time. The mission would be successful once the user navigates the battleship to a designated point on the battle grid.
+<br>
+</details>
+
+<details>
+  <summary> <i>Skip Text</i></summary>
+<br>
+The game makes use of a 'typing effect' function (code credited in the 'Reference Materials Used' section). I personally really like the effect, but some users may prefer to have the option to skip the text and make it appear instantly. This will be a feature that will be included in a future update.
+<br>
+</details>
+
+<details>
+  <summary> <i>Game Variables</i></summary>
+<br>
+The game in its current state is very challenging, even at the lowest difficulty level. User feedback will be requested to gauge if players are enjoying the game, and what variables may need to be adjusted to provide a more positive playing experience. 
+<br>
+</details>
+
+
+
+
+
+
+</details>
+
+
 <br>
 <br>
 <br>
@@ -1076,7 +1117,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <br>
 <details>
   <summary><b>Reference Materials Used</b></summary>
-<br><br>
+<br>
 
 <table>
 <tr><th><b> Description </b></th><th><b> Link </b></th></tr>
