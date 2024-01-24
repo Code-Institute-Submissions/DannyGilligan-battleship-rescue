@@ -232,7 +232,7 @@ If any of the failure conditions are met, a 'Battle Update' will be displayed to
 <br>
 If the user completes the mission in 'Battleship: Rescue' successfully, the narrative leads up to an abrupt change in the direction of the war.
 <br><br>
-This allows a natural sequel mission to be developed, perhaps in the form of a timed mission where the user has to destroy as many enemy ships as possible, this would have a points scoring system, with different classes of enemy ships having different scores associated with them. Destroying certain types of ships would allow grant the user extra time.<br><br>Also, at stages during the timed mission, the enemy could call in reinforcements which would appear on the battle grid on coordinates that were previously marked as 'missed shots'.
+This allows a natural sequel mission to be developed, perhaps in the form of a timed mission where the user has to destroy as many enemy ships as possible, this would have a points scoring system, with different classes of enemy ships having different scores associated with them. Destroying certain types of ships would grant the user extra time.<br><br>Also, at stages during the timed mission, the enemy could call in reinforcements which would appear on the battle grid on coordinates that were previously marked as 'missed shots'.
 <br><br>
 </details>
 
@@ -263,8 +263,8 @@ The game in its current state is very challenging, even at the lowest difficulty
 To improve the user experience, it may be possible to use libraries such as 'Rich' and 'Colorama' to provide a more visually appealing interface.
 <br><br>
 </details>
-
-
+<br>
+<br>
 </details>
 
 
