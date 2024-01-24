@@ -183,6 +183,20 @@ A summary of the different shot feedback messages is shown below.
 <br>
 </details>
 
+<details>
+  <summary><b>Battle Update (Success)</b></summary>
+<br>
+
+If the user is able to sink all the enemy ships within the game constraints, a 'Battle Update' will be displayed giving immediate feedback on the mission's success.
+<br><br>
+This will be accompanied by a narrative giving more details on the outcome.
+<br><br>
+
+![Battle Update Success](assets/documentation/feature_10_battle_update_win.webp)
+
+<br>
+</details>
+
 
 
 
