@@ -93,6 +93,35 @@ It should be noted, that although the narrative is completely fictional and curs
 <br>
 </details>
 
+<details>
+  <summary><b>SITREP Display</b></summary>
+<br>
+
+The SITREP display, or 'situation report', is the main source of information displayed to the user during the game. An overview of the different fields is shown below.
+<br><br>
+<b>Torpedos remaining</b>: The current number of torpedos available to the user, if this is less than the enemy ships remaining, the game mission will fail.
+<br><br>
+<b>Hull plates remaining</b>: The current number of hull plates on the user's battleship, this is decremented with each enemy hit. If it reaches zero, the mission will fail.
+<br><br>
+<b>Enemy ships remaining</b>: The current number of enemy ships afloat. This is decremented with each successful user hit. If it reaches zero, the mission will succeed.
+<br><br>
+<b>Merchant ships remaining</b>: The current number of merchant ships afloat. This is decremented with each accidental user hit, and successful enemy hit. If it reaches zero, the mission will fail.
+<br><br>
+<b>Missed shots</b>: The current number of shots missed by the user.
+<br><br>
+<b>Shot accuracy</b>: This is a current statistic of the user's accuracy (enemy ships destroyed / total user shots, expressed as a percentage).
+<br><br>
+<b>Enemy ships destroyed</b>: The current number of enemy ships destroyed by the user.
+<br><br>
+<b>Merchant ships destroyed</b>: The current number of merchant ships destroyed, by both the user and the enemy (computer).
+<br><br>
+
+![SITREP Display](assets/documentation/feature_05_sitrep_display.webp)
+
+<br>
+</details>
+
+
 
 
 <br>
