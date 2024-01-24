@@ -542,7 +542,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 <td>
 <br>
 When adding the banner art, I encountered several warnings in the Code Institute python linter. I researched online, and one option was to print the banner art in a 'raw' format, however, due to the design of the art, this was not an optimal solution. There are three horizontal lines in the center of the banner art that I needed to use coloured text for, and also, I wanted them to be animated using the typing effect function.
-<br>
+<br><br>
 </td>
 <td rowspan="6">
 :heavy_check_mark:
@@ -591,8 +591,51 @@ This solution solved the issue in the Code Institute python linter.
 </table>
 </details>
 <!-- Banner art bug ends here -->
+<!-- PEP8 validation bug starts here -->
 
+<details>
+  <summary> <i>2D List PEP8 Errors</i></summary>
+<br>
 
+<table>
+<tr><th>2D List PEP8 Errors</th><th>Status</th></tr>
+
+<tr>
+<td>
+<br>
+Another validation error that I found tricky initially related to the 2D nested list that would contain the battle grid. It took several attempts to find the right format that would be considered valid by the python linter.
+<br><br>
+</td>
+<td rowspan="4">
+:heavy_check_mark:
+</td>
+</tr>
+
+<tr>
+<td>
+
+![Banner Art 1](assets/documentation/bug_02_pep8_a.webp)
+
+</td>
+</tr>
+
+<tr>
+<td>
+<br>
+I was eventually able to find the right indentation levels for each list, within the outer list.
+<br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+
+![Banner Art 1](assets/documentation/bug_02_pep8_b.webp)
+
+</td>
+</tr>
+</table>
+</details>
 
 
 
