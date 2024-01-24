@@ -720,6 +720,7 @@ Once I had this information, I was able to amend the user shot variable and the 
 </details>
 
 </details>
+
 [Back to Top](#battleship-rescue)
 <br>
 <br>
