@@ -1081,31 +1081,129 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <table>
 <tr><th><b> Description </b></th><th><b> Link </b></th></tr>
 <!-- Reference Material 1 begins -->
-<tr><td> Code Institute README.md Tutorial by Kasia Bogucka </td>
+<tr><td> Code Institute README.md Tutorial, by Kasia Bogucka </td>
 <td> 
 
 [here](https://www.youtube.com/watch?v=l1DE7L-4eKQ)  
 
 </td></tr>
 <!-- Reference Material 1 ends -->
-<tr><td> Guide to Milestone 3 MVP by Kasia Bogucka </td>
+<tr><td> Guide to Milestone 3 MVP, by Kasia Bogucka </td>
 <td> 
 
 [here](https://www.youtube.com/watch?v=nNXmC6Tq0qw)  
 
 </td></tr>
 <!-- Spacer -->
-<tr><td> Guide on code validation by Lane-Sawyer Thompson & Matt Rudge </td>
+<tr><td> Guide on code validation, by Lane-Sawyer Thompson & Matt Rudge </td>
 <td> 
 
 [here](https://www.youtube.com/watch?v=wiqAvRCheKo)  
 
 </td></tr>
 <!-- Spacer -->
-<tr><td> Milestone 3 Project FAQs by Lane-Sawyer Thompson & Lucy Rush </td>
+<tr><td> Milestone 3 Project FAQs, by Lane-Sawyer Thompson & Lucy Rush </td>
 <td> 
 
 [here](https://www.youtube.com/watch?v=BDKvisxzEbk)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Python Essentials LMS content, published by Code Institute </td>
+<td> 
+
+[here](https://codeinstitute.net/nl/)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Typing effect code, by Stackoverflow user Julian E. </td>
+<td> 
+
+[here](https://stackoverflow.com/questions/20302331/typing-effect-in-python)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Battleships YouTube Tutorial, published by Dr. Codie </td>
+<td> 
+
+[here](https://www.youtube.com/watch?v=GmWHhAGvaQA)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Battleships YouTube Tutorial, published by Knowledge Mavens </td>
+<td> 
+
+[here](https://youtu.be/tF1WRCrd_HQ?si=iNvp98Ue_nIN0itb)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Python YouTube Tutorial, published by Bro Code </td>
+<td> 
+
+[here](https://youtu.be/XKHEtdqhLK8?si=CVQ8plWFIZF3pwHm)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Colored text console codes, published by Replit user Coder100 </td>
+<td> 
+
+[here](https://replit.com/talk/ask/How-to-change-terminal-color-in-python/125888)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Information on divide by zero errors, published by Rollbar.com </td>
+<td> 
+
+[here](https://rollbar.com/blog/python-zerodivisionerror/#)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> How to format double digit numbers, by Stackoverflow user jkerian </td>
+<td> 
+
+[here](https://stackoverflow.com/questions/3505831/in-python-how-do-i-convert-a-single-digit-number-into-a-double-digits-string)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> How to clear terminal screen, by Stackoverflow user poke </td>
+<td> 
+
+[here](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> How to hide cursor in terminal, by Stackoverflow user gruvw </td>
+<td> 
+
+[here](https://stackoverflow.com/questions/5174810/how-to-turn-off-blinking-cursor-in-command-window)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Site used to calculate characters, charactercountonline.com </td>
+<td> 
+
+[here](https://www.charactercountonline.com/)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> How to print ASCII art, by Stackoverflow user Christian Gabor </td>
+<td> 
+
+[here](https://stackoverflow.com/questions/53840629/how-to-print-ascii-art)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> How to flush text when printing to console, published by realpython.com </td>
+<td> 
+
+[here](https://realpython.com/python-flush-print-output/)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Printing coloured text to console, by ozzmaker.com </td>
+<td> 
+
+[here](https://www.kaggle.com/discussions/general/273188)  
 
 </td></tr>
 <!-- Spacer -->
