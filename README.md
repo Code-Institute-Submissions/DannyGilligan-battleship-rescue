@@ -995,7 +995,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </div>
 </td>
 <td>Python</td>
-<td>Coding Language</td>
+<td>Coding language</td>
 <td>https://docs.python.org/3/</td>
 </tr>
 <!-- Technology Used 1 ends -->
@@ -1004,8 +1004,8 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 	<code><img width="50" src="assets/documentation/code_institute_icon.webp" alt="Python Linter" title="Python Linter"/></code>
 </div>
 </td>
-<td>Code Institute Python Linter</td>
-<td>Python PEP8 Validation</td>
+<td><br>Code Institute Python Linter<br><br></td>
+<td>Python PEP8 validation</td>
 <td>https://pep8ci.herokuapp.com/#</td>
 </tr>
 <!-- spacer -->
@@ -1015,7 +1015,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </div>
 </td>
 <td>Balsamiq</td>
-<td>Process Flows</td>
+<td>Process flows</td>
 <td>https://balsamiq.com/docs/</td>
 </tr>
 <!-- spacer -->
@@ -1045,7 +1045,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </div>
 </td>
 <td>Coffee</td>
-<td>Soul Regeneration</td>
+<td>Soul regeneration</td>
 <td>https://en.wikipedia.org/wiki/Coffee</td>
 </tr>
 <!-- spacer -->
@@ -1055,7 +1055,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 </div>
 </td>
 <td>Google</td>
-<td>First Officer</td>
+<td>First officer</td>
 <td>https://www.google.com/</td>
 </tr>
 <!-- spacer -->
