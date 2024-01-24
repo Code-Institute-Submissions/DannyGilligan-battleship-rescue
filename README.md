@@ -666,7 +666,6 @@ I initially enountered issues with getting the shot feedback animation to behave
 </table>
 </details>
 
-
 <details>
   <summary> <i>Shot Recognition</i></summary>
 <br>
@@ -677,7 +676,7 @@ I initially enountered issues with getting the shot feedback animation to behave
 <tr>
 <td>
 <br>
-I also experienced problems with registering the user and enemy shots on the battle grip. To solve the problem I used the 'type' method to determine what the computer was 'seeing'. This revealed that although the user input looked identical to what was expected, there were two different data types at play.
+I also experienced problems with registering the user and enemy shots on the battle grid. To solve the problem I used the 'type' method to determine what the computer was 'seeing'. This revealed that although the user input looked identical to what was expected, there were two different data types at play.
 <br><br>
 </td>
 <td rowspan="4">
@@ -696,11 +695,8 @@ I also experienced problems with registering the user and enemy shots on the bat
 <tr>
 <td>
 <br>
-Once I had this information, I was able to amend the user shot variable and the inputs to create a 'shot' that would match the coordinates in the battle grid list exactly. This resolved the issue.
+Once I had this information, I was able to amend the user shot variable and the inputs to create a 'shot' that would match the coordinates in the enemy ship list exactly. This resolved the issue.
 <br><br>
-</td>
-<td>
-
 </td>
 </tr>
 
@@ -712,15 +708,8 @@ Once I had this information, I was able to amend the user shot variable and the 
 </td>
 </tr>
 
-
-
 </table>
 </details>
-
-
-
-
-
 
 </details>
 
