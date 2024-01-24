@@ -253,7 +253,7 @@ The game makes use of a 'typing effect' function (code credited in the 'Referenc
 <details>
   <summary> <i>Game Variables</i></summary>
 <br>
-The game in its current state is very challenging, even at the lowest difficulty level.<br><br>User feedback will be requested to gauge if players are enjoying the game, and what variables may need to be adjusted to provide a more positive playing experience. 
+The game in its current state is very challenging, even at the lowest difficulty level.<br><br>User feedback will be requested to gauge if players are enjoying the game, and what variables may need to be adjusted to provide a more positive playing experience, e.g, grid size, torpedo counts, enemy ships etc. 
 <br><br>
 </details>
 
