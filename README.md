@@ -537,7 +537,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 <details>
   <summary><b>Resolved Bugs</b></summary>
-<br>
+<br><br>
 
 <details>
   <summary> <i>Banner Art PEP8 Errors</i></summary>
