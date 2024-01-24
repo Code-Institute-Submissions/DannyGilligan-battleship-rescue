@@ -483,7 +483,7 @@ The user stories relating to this MVP version of the game, from the perspective 
 ## Manual Testing
 
 Several manual tests were performed during playthroughs of the game. The results of which are outlined below.
-<br>
+<br><br>
 <!-- Manual tests are shown below -->
 <details>
   <summary><b>Manual Testing</b></summary>
@@ -984,6 +984,87 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <br>
 
 ## Technologies Used
+
+## Technologies Used 
+
+#### 
+<table>
+<tr><th>Logo</th><th>Name</th><th>Primary Role</th><th>Link</th></tr>
+<!-- Technology Used 1 begins -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/python_icon.webp" alt="Python" title="Python"/></code>
+</div>
+</td>
+<td>Python</td>
+<td>Coding Language</td>
+<td>https://docs.python.org/3/</td>
+</tr>
+<!-- Technology Used 1 ends -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/code_institute_icon.webp" alt="Python Linter" title="Python Linter"/></code>
+</div>
+</td>
+<td>Code Institute Python Linter</td>
+<td>Python PEP8 Validation</td>
+<td>https://pep8ci.herokuapp.com/#</td>
+</tr>
+<!-- spacer -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/tech_used_balsamiq.webp" alt="Balasmiq" title="Balasmiq"/></code>
+</div>
+</td>
+<td>Balsamiq</td>
+<td>Process Flows</td>
+<td>https://balsamiq.com/docs/</td>
+</tr>
+<!-- spacer -->
+<tr><td>
+<div>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/></code>
+</div>
+</td>
+<td>Github</td>
+<td>Site repository</td>
+<td>https://docs.github.com/en</td>
+</tr>
+<!-- spacer -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/tech_used_gitpod.webp" alt="Gitpod" title="Gitpod"/></code>
+</div>
+</td>
+<td>Gitpod</td>
+<td>Site development, IDE</td>
+<td>https://www.gitpod.io/docs/introduction</td>
+</tr>
+<!-- spacer -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/tech_used_coffee.webp" alt="Coffee" title="Coffee"/></code>
+</div>
+</td>
+<td>Coffee</td>
+<td>Soul Regeneration</td>
+<td>https://en.wikipedia.org/wiki/Coffee</td>
+</tr>
+<!-- spacer -->
+<tr><td>
+<div>
+	<code><img width="50" src="assets/documentation/tech_used_google.webp" alt="Google" title="Google"/></code>
+</div>
+</td>
+<td>Google</td>
+<td>First Officer</td>
+<td>https://www.google.com/</td>
+</tr>
+<!-- spacer -->
+</table>
+<!-- Technologies Used section ends here -->
+
+
 <br>
 <br>
 <br>
@@ -992,7 +1073,7 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 
 <details>
   <summary><b>Reference Materials Used</b></summary>
-<br>
+<br><br>
 
 <table>
 <tr><th><b> Description </b></th><th><b> Link </b></th></tr>
