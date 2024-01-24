@@ -85,7 +85,7 @@ A narrative has been created for the game, depicting a scenario where the user i
 <br>
 The narrative also subtly introduces the game mechanics to the user, and attempts to provide immersion for the user, which in turn will provide a more enjoyable user experience.
 <br><br>
-It should be noted, that although the narrative is completely fictional and cursory in nature, it tries to pack a punch in the few lines available. As it depicts scenarios of warfare, it may not be suitable for all audiences, this is aimed at adults instead of a younger audience.
+It should be noted, that although the narrative is completely fictional and cursory in nature, it tries to pack a punch in the few lines available. As it depicts scenarios of warfare, it may not be suitable for all audiences. As such. the game is aimed at adults instead of a younger audience.
 <br><br>
 
 ![Narrative](assets/documentation/feature_04_narrative.webp)
