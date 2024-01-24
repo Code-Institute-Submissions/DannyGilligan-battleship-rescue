@@ -197,7 +197,25 @@ This will be accompanied by a narrative giving more details on the outcome.
 <br>
 </details>
 
+<details>
+  <summary><b>Battle Update (Failed)</b></summary>
+<br>
 
+There is only one way to win the game, however, there are several to lose!
+<br><br>
+If the user's torpedos run out or if the number drops below the number of enemy ships afloat, the mission will fail.
+<br><br>
+If the user's hull plates run out, the mission will fail.
+<br><br>
+If the number of merchant ships afloat reaches zero, the mission will fail.
+<br><br>
+If any of the failure conditions are met, a 'Battle Update' will be displayed to the user providing immediate feedback on the mission failure. This will be accompanied by a narrative giving more details on the outcome.
+<br><br>
+
+![Battle Update Failed](assets/documentation/feature_10_battle_update_lose.webp)
+
+<br>
+</details>
 
 
 <br>
