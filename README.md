@@ -537,8 +537,8 @@ The user stories relating to this MVP version of the game, from the perspective 
 
 <details>
   <summary><b>Resolved Bugs</b></summary>
-<br><br>
-
+<br>
+<br>
 <details>
   <summary> <i>Banner Art PEP8 Errors</i></summary>
 <br>
@@ -1446,6 +1446,13 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <td> 
 
 [here](https://www.kaggle.com/discussions/general/273188)  
+
+</td></tr>
+<!-- Spacer -->
+<tr><td> Site used to generate ASCII banner art, patorjk.com </td>
+<td> 
+
+[here](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)  
 
 </td></tr>
 <!-- Spacer -->
