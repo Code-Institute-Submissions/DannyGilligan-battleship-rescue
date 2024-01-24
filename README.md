@@ -1482,6 +1482,12 @@ The live link to the app is https://battleship-rescue-4a195bb43cc9.herokuapp.com
 <br>
 
 ## Acknowledgements
+
+I want to acknowledge and thank the Student Support team at Code Institute again for helping me keep the developer dream alive.
+
+I'd also like to thank my mentor Martina Terlevic for the calls during the Python project and the very helpful feedback and suggestions.
+
+And most importantly, I'd like to acknowledge the need for humanity to start working harder at getting along with each other, let's keep the theme of mutually assured destruction confined to the realm of video games! 🙏
 <br>
 <br>
 <br>
